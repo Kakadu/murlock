@@ -1,0 +1,278 @@
+0 	 --> 
+	 --> ((! EXZ x (F(x) & (G(x) OR H(x))) & ( EXZ x (I(x) & F(x)))) & ( ALL x (!H(x) => J(x)))) => ( EXZ x (I(x) & J(x)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	(! EXZ x (F(x) & (G(x) OR H(x))) & ( EXZ x (I(x) & F(x)))) & ( ALL x (!H(x) => J(x))) --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (I(x) & J(x))
+dead minuses count: 0
+;;
+from 2 by rule &->
+
+2 	 --> 
+	! EXZ x (F(x) & (G(x) OR H(x))) & ( EXZ x (I(x) & F(x))) --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x))
+dead minuses count: 0
+;;
+from 3 by rule &->
+
+3 	 --> 
+	! EXZ x (F(x) & (G(x) OR H(x))) --> 
+	 --> 
+	 EXZ x (I(x) & F(x)) --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x))
+dead minuses count: 0
+;;
+from 4 by rule !->
+
+4 	 --> 
+	 --> 
+	 --> 
+	 EXZ x (I(x) & F(x)) --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 0
+;;
+from 5 by rule EXZ-->
+
+5 	 --> 
+	I(w1) & F(w1) --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 0
+;;
+from 6 by rule &->
+
+6 	F(w1), I(w1) --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 0
+;;
+from 7 by rule ALL -->
+
+7 	I(w1), F(w1) --> 
+	 --> 
+	!H(__t1) => J(__t1) --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 1
+;;
+from 8 by rule --> EXZ
+
+8 	F(w1), I(w1) --> 
+	 --> 
+	!H(__t1) => J(__t1) --> F(__t2) & (G(__t2) OR H(__t2))
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 2
+;;
+from 9 by rule --> EXZ
+
+9 	I(w1), F(w1) --> 
+	 --> 
+	!H(__t1) => J(__t1) --> I(__t3) & J(__t3), F(__t2) & (G(__t2) OR H(__t2))
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 3
+;;
+from 11, 10 by rule ->&
+
+10 	F(w1), I(w1) --> I(__t3)
+	 --> 
+	!H(__t1) => J(__t1) --> F(__t2) & (G(__t2) OR H(__t2))
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 3
+;;
+from 15, 14 by rule ->&
+
+11 	F(w1), I(w1) --> J(__t3)
+	 --> 
+	!H(__t1) => J(__t1) --> F(__t2) & (G(__t2) OR H(__t2))
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 3
+;;
+from 13, 12 by rule ->&
+
+12 	I(w1), F(w1) --> F(__t2), J(__t3)
+	 --> 
+	!H(__t1) => J(__t1) --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 3
+;;
+from 21, 20 by rule =>->
+
+13 	I(w1), F(w1) --> J(__t3)
+	 --> G(__t2) OR H(__t2)
+	!H(__t1) => J(__t1) --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 3
+;;
+from 19 by rule ->OR
+
+14 	I(w1), F(w1) --> F(__t2), I(__t3)
+	 --> 
+	!H(__t1) => J(__t1) --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 3
+;;
+from 18, 17 by rule =>->
+
+15 	I(w1), F(w1) --> I(__t3)
+	 --> G(__t2) OR H(__t2)
+	!H(__t1) => J(__t1) --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 3
+;;
+from 16 by rule ->OR
+
+16 	F(w1), I(w1) --> H(__t2), G(__t2), I(__t3)
+	 --> 
+	!H(__t1) => J(__t1) --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 3
+;;
+from 27, 26 by rule =>->
+
+17 	F(w1), I(w1) --> I(__t3), F(__t2)
+	 --> !H(__t1)
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 3
+;;
+from 25 by rule ->!
+
+18 	J(__t1), F(w1), I(w1) --> I(__t3), F(__t2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 0
+;;
+from 33 by rule 
+
+19 	F(w1), I(w1) --> H(__t2), G(__t2), J(__t3)
+	 --> 
+	!H(__t1) => J(__t1) --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 3
+;;
+from 24, 23 by rule =>->
+
+20 	F(w1), I(w1) --> J(__t3), F(__t2)
+	 --> !H(__t1)
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 3
+;;
+from 22 by rule ->!
+
+21 	J(__t1), F(w1), I(w1) --> J(__t3), F(__t2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 0
+;;
+from 37 by rule 
+
+22 	H(__t1), I(w1), F(w1) --> F(__t2), J(__t3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 0
+;;
+from 36 by rule 
+
+23 	I(w1), F(w1) --> J(__t3), G(__t2), H(__t2)
+	 --> !H(__t1)
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 3
+;;
+from 29 by rule ->!
+
+24 	J(__t1), I(w1), F(w1) --> J(__t3), G(__t2), H(__t2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 0
+;;
+from 34 by rule 
+
+25 	H(__t1), I(w1), F(w1) --> F(__t2), I(__t3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 0
+;;
+from 32 by rule 
+
+26 	I(w1), F(w1) --> I(__t3), G(__t2), H(__t2)
+	 --> !H(__t1)
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 3
+;;
+from 28 by rule ->!
+
+27 	J(__t1), I(w1), F(w1) --> I(__t3), G(__t2), H(__t2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x))
+dead minuses count: 0
+;;
+from 30 by rule 
+
+28 	H(__t1), F(w1), I(w1) --> H(__t2), G(__t2), I(__t3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 0
+;;
+from 31 by rule 
+
+29 	H(__t1), F(w1), I(w1) --> H(__t2), G(__t2), J(__t3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (!H(x) => J(x)) -->  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x)))
+dead minuses count: 0
+;;
+from 35 by rule 
+
+30 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+31 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+32 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+33 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+34 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+35 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+36 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+37 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]

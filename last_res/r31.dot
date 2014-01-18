@@ -1,0 +1,93 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	37 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	36 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	35 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	34 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	33 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	32 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	31 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	30 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	subgraph cluster2 {
+		29 [shape=record,label="{<seq> H(__t1), F(w1), I(w1),  ALL x (!H(x) =\> J(x)) \n--\>\nH(__t2), G(__t2), J(__t3),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip>  }"];
+	}
+	29 -> 35 [label=""]
+	subgraph cluster2 {
+		28 [shape=record,label="{<seq> H(__t1), F(w1), I(w1),  ALL x (!H(x) =\> J(x)) \n--\>\nH(__t2), G(__t2), I(__t3),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip>  }"];
+	}
+	28 -> 31 [label=""]
+	subgraph cluster2 {
+		27 [shape=record,label="{<seq> J(__t1), I(w1), F(w1),  ALL x (!H(x) =\> J(x)) \n--\>\nI(__t3), G(__t2), H(__t2),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip>  }"];
+	}
+	27 -> 30 [label=""]
+	26 [shape=record,label="{<seq> I(w1), F(w1),  ALL x (!H(x) =\> J(x)) \n--\>\nI(__t3), G(__t2), H(__t2), !H(__t1),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip> --\> !H(__t1) }"];
+	26 -> 28 [label="->!"]
+	subgraph cluster2 {
+		25 [shape=record,label="{<seq> H(__t1), I(w1), F(w1),  ALL x (!H(x) =\> J(x)) --\>F(__t2), I(__t3),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip>  }"];
+	}
+	25 -> 32 [label=""]
+	subgraph cluster2 {
+		24 [shape=record,label="{<seq> J(__t1), I(w1), F(w1),  ALL x (!H(x) =\> J(x)) \n--\>\nJ(__t3), G(__t2), H(__t2),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip>  }"];
+	}
+	24 -> 34 [label=""]
+	23 [shape=record,label="{<seq> I(w1), F(w1),  ALL x (!H(x) =\> J(x)) \n--\>\nJ(__t3), G(__t2), H(__t2), !H(__t1),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip> --\> !H(__t1) }"];
+	23 -> 29 [label="->!"]
+	subgraph cluster2 {
+		22 [shape=record,label="{<seq> H(__t1), I(w1), F(w1),  ALL x (!H(x) =\> J(x)) --\>F(__t2), J(__t3),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip>  }"];
+	}
+	22 -> 36 [label=""]
+	subgraph cluster2 {
+		21 [shape=record,label="{<seq> J(__t1), F(w1), I(w1),  ALL x (!H(x) =\> J(x)) --\>J(__t3), F(__t2),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip>  }"];
+	}
+	21 -> 37 [label=""]
+	20 [shape=record,label="{<seq> F(w1), I(w1),  ALL x (!H(x) =\> J(x)) \n--\>\nJ(__t3), F(__t2), !H(__t1),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip> --\> !H(__t1) }"];
+	20 -> 22 [label="->!"]
+	19 [shape=record,label="{<seq> F(w1), I(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) \n--\>\nH(__t2), G(__t2), J(__t3),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip> !H(__t1) =\> J(__t1) --\> }"];
+	19 -> 24 [label="=>->"]
+	19 -> 23 [label="=>->"]
+	subgraph cluster2 {
+		18 [shape=record,label="{<seq> J(__t1), F(w1), I(w1),  ALL x (!H(x) =\> J(x)) --\>I(__t3), F(__t2),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip>  }"];
+	}
+	18 -> 33 [label=""]
+	17 [shape=record,label="{<seq> F(w1), I(w1),  ALL x (!H(x) =\> J(x)) \n--\>\nI(__t3), F(__t2), !H(__t1),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip> --\> !H(__t1) }"];
+	17 -> 25 [label="->!"]
+	16 [shape=record,label="{<seq> F(w1), I(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) \n--\>\nH(__t2), G(__t2), I(__t3),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip> !H(__t1) =\> J(__t1) --\> }"];
+	16 -> 27 [label="=>->"]
+	16 -> 26 [label="=>->"]
+	15 [shape=record,label="{<seq> I(w1), F(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) \n--\>\nI(__t3), G(__t2) OR H(__t2),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip> --\> G(__t2) OR H(__t2) }"];
+	15 -> 16 [label="->OR"]
+	14 [shape=record,label="{<seq> I(w1), F(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) --\>F(__t2), I(__t3),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip> !H(__t1) =\> J(__t1) --\> }"];
+	14 -> 18 [label="=>->"]
+	14 -> 17 [label="=>->"]
+	13 [shape=record,label="{<seq> I(w1), F(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) \n--\>\nJ(__t3), G(__t2) OR H(__t2),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip> --\> G(__t2) OR H(__t2) }"];
+	13 -> 19 [label="->OR"]
+	12 [shape=record,label="{<seq> I(w1), F(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) --\>F(__t2), J(__t3),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip> !H(__t1) =\> J(__t1) --\> }"];
+	12 -> 21 [label="=>->"]
+	12 -> 20 [label="=>->"]
+	11 [shape=record,label="{<seq> F(w1), I(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) \n--\>\nJ(__t3), F(__t2) & (G(__t2) OR H(__t2)),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip> --\> F(__t2) & (G(__t2) OR H(__t2)) }"];
+	11 -> 13 [label="->&"]
+	11 -> 12 [label="->&"]
+	10 [shape=record,label="{<seq> F(w1), I(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) \n--\>\nI(__t3), F(__t2) & (G(__t2) OR H(__t2)),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip> --\> F(__t2) & (G(__t2) OR H(__t2)) }"];
+	10 -> 15 [label="->&"]
+	10 -> 14 [label="->&"]
+	9 [shape=record,label="{<seq> I(w1), F(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) \n--\>\nI(__t3) & J(__t3), F(__t2) & (G(__t2) OR H(__t2)),  EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip> --\> I(__t3) & J(__t3) }"];
+	9 -> 11 [label="->&"]
+	9 -> 10 [label="->&"]
+	8 [shape=record,label="{<seq> F(w1), I(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) \n--\>\nF(__t2) & (G(__t2) OR H(__t2)),  EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip> --\>  EXZ x (I(x) & J(x)) }"];
+	8 -> 9 [label="--> EXZ"]
+	7 [shape=record,label="{<seq> I(w1), F(w1), !H(__t1) =\> J(__t1),  ALL x (!H(x) =\> J(x)) --\> EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip> --\>  EXZ x (F(x) & (G(x) OR H(x))) }"];
+	7 -> 8 [label="--> EXZ"]
+	6 [shape=record,label="{<seq> F(w1), I(w1),  ALL x (!H(x) =\> J(x)) --\> EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip>  ALL x (!H(x) =\> J(x)) --\> }"];
+	6 -> 7 [label="ALL -->"]
+	5 [shape=record,label="{<seq> I(w1) & F(w1),  ALL x (!H(x) =\> J(x)) --\> EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & J(x)) |<lastfip> I(w1) & F(w1) --\> }"];
+	5 -> 6 [label="&->"]
+	4 [shape=record,label="{<seq>  EXZ x (I(x) & F(x)),  ALL x (!H(x) =\> J(x)) --\> EXZ x (I(x) & J(x)),  EXZ x (F(x) & (G(x) OR H(x))) |<lastfip>  EXZ x (I(x) & F(x)) --\> }"];
+	4 -> 5 [label="EXZ-->"]
+	3 [shape=record,label="{<seq> ! EXZ x (F(x) & (G(x) OR H(x))),  EXZ x (I(x) & F(x)),  ALL x (!H(x) =\> J(x)) \n--\>\n EXZ x (I(x) & J(x)) |<lastfip> ! EXZ x (F(x) & (G(x) OR H(x))) --\> }"];
+	3 -> 4 [label="!->"]
+	2 [shape=record,label="{<seq> ! EXZ x (F(x) & (G(x) OR H(x))) & ( EXZ x (I(x) & F(x))),  ALL x (!H(x) =\> J(x)) \n--\>\n EXZ x (I(x) & J(x)) |<lastfip> ! EXZ x (F(x) & (G(x) OR H(x))) & ( EXZ x (I(x) & F(x))) --\> }"];
+	2 -> 3 [label="&->"]
+	1 [shape=record,label="{<seq> (! EXZ x (F(x) & (G(x) OR H(x))) & ( EXZ x (I(x) & F(x)))) & ( ALL x (!H(x) =\> J(x))) \n--\>\n EXZ x (I(x) & J(x)) |<lastfip> (! EXZ x (F(x) & (G(x) OR H(x))) & ( EXZ x (I(x) & F(x)))) & ( ALL x (!H(x) =\> J(x))) --\> }"];
+	1 -> 2 [label="&->"]
+	0 [shape=record,label="{<seq>  \n--\>\n((! EXZ x (F(x) & (G(x) OR H(x))) & ( EXZ x (I(x) & F(x)))) & ( ALL x (!H(x) =\> J(x)))) =\> ( EXZ x (I(x) & J(x))) |<lastfip> --\> ((! EXZ x (F(x) & (G(x) OR H(x))) & ( EXZ x (I(x) & F(x)))) & ( ALL x (!H(x) =\> J(x)))) =\> ( EXZ x (I(x) & J(x))) }"];
+	0 -> 1 [label="->=>"]
+}

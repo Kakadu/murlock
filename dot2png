@@ -1,0 +1,2 @@
+dot -Tpng < fip.dot > graph.png
+gwenview graph.png&

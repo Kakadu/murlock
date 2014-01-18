@@ -1,0 +1,2 @@
+(ALL x [P(_a,x) OR (ALL y P(x,y))]) => (EXZ x (ALL y P(x,y)))
+

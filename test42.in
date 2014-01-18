@@ -1,0 +1,4 @@
+-dot on
+-pt liberalized
+-o r42
+! EXZ y (ALL x ( P(x,y)<=> ! EXZ z (P(x,z)&P(z,x)) ) )

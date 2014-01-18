@@ -1,0 +1,6 @@
+#!/bin/sh
+./murlock < 50.old.in
+./murlock < 50.in
+cp last_res/50.lists..tex test50.lib.tex -f
+cp last_res/50.old.lists..tex    test50.old.tex -f
+

@@ -1,0 +1,2 @@
+-o temp_res3/r44.in
+(ALL x [F(x) => (EXZ y (G(y)&H(x,y))) & (EXZ y (G(y) & !H(x,y)))]) & (EXZ x [J(x) & (ALL y [G(y) => H(x,y)])]) => (EXZ x (J(x) & !F(x)))

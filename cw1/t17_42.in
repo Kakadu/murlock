@@ -1,0 +1,1 @@
+ ! EXZ y (ALL x ( P(x,y)<=> ! EXZ z (P(x,z)&P(z,x)) ) ) 

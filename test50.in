@@ -1,0 +1,3 @@
+-dot on
+-o temp_res3/r50.dot
+(ALL x [P(_a,x) OR (ALL y P(x,y))]) => (EXZ x (ALL y P(x,y)))

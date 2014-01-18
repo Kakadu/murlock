@@ -1,0 +1,11 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	4 [label="Proving succeded"]
+	4 -> 0
+	3 [label="axiom"]
+	2 [shape=record,label="{<seq> p --\>p |<lastfip>  }"];
+	2 -> 3 [label=""]
+	1 [shape=record,label="{<seq>  --\>p, !p |<lastfip> --\> !p }"];
+	1 -> 2 [label="->!"]
+	0 [shape=record,label="{<seq>  --\>p OR !p |<lastfip> --\> p OR !p }"];
+	0 -> 1 [label="->OR"]
+}

@@ -1,0 +1,39 @@
+%\documentclass{cw1}
+%\begin{document}
+
+\begin{enumerate}
+\item $ \rightarrow   \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y)))))$\\
+ from [2] by rule $\exists \rightarrow $ with new term $\alpha$
+\item $ \rightarrow   \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+ from [3] by rule $\exists \rightarrow $ with new term $\beta$
+\item $ \rightarrow  P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y))),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y)))))$\\
+ from [4] by rule $ \Rightarrow \rightarrow $
+\item $P(\alpha) \rightarrow   \forall  x ( \forall  y P(y)),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+ from [5] by rule $\forall \rightarrow $ with new term $w1$
+\item $P(\alpha) \rightarrow   \forall  y P(y),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y)))))$\\
+ from [6] by rule $\forall \rightarrow $ with new term $w2$
+\item $P(\alpha) \rightarrow  P(w2),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+ from [7] by rule $\exists \rightarrow $ with new term $\gamma$
+\item $P(\alpha) \rightarrow  P(w2),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+  used in temporary unifications: [4]\\
+ from [8] by rule $\exists \rightarrow $ with new term $\delta$
+\item $P(\alpha) \rightarrow  P(w2), P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y))),  \exists  y (P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+  used in temporary unifications: [5]\\
+ from [9] by rule $ \Rightarrow \rightarrow $
+\item $P(\alpha) \rightarrow  P(w2),  \forall  x ( \forall  y P(y)),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+ from [10] by rule $\forall \rightarrow $ with new term $w3$
+\item $P(\alpha) \rightarrow  P(w2),  \forall  y P(y),  \exists  y (P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+ from [11] by rule $\forall \rightarrow $ with new term $w4$
+\item $P(\alpha) \rightarrow  P(w4), P(w2),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+ from [12] by rule $\exists \rightarrow $ with new term $\varepsilon$
+\item $P(\alpha) \rightarrow  P(w2), P(w4), P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y))),  \exists  y (P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+  used in temporary unifications: [6]\\
+ from [13] by rule $ \Rightarrow \rightarrow $
+\item $P(\gamma), P(\alpha) \rightarrow  P(w4), P(w2),  \forall  x ( \forall  y P(y)),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+ from [14] by rule $\forall \rightarrow $ with new term $w5$
+\item $P(\alpha), P(\gamma) \rightarrow  P(w2), P(w4),  \forall  y P(y),  \exists  y (P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\
+ from [15] by rule $\forall \rightarrow $ with new term $w6$
+\item $P(\gamma), P(\alpha) \rightarrow  P(w6), P(w4), P(w2),  \exists  y (P(\alpha)  \Rightarrow  ( \forall  x ( \forall  y P(y)))),  \exists  x ( \exists  y (P(x)  \Rightarrow  ( \forall  x ( \forall  y P(y))))),  \exists  y (P(\gamma)  \Rightarrow  ( \forall  x ( \forall  y P(y))))$\\ 
+ unification succeded using [$\gamma \mapsto w2$]
+\end{enumerate}
+%\end{document}

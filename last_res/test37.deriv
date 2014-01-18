@@ -1,0 +1,498 @@
+0 	 --> 
+	 --> ((( ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w)))))))) & ( ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))))) & (( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)))) => ( ALL x ( EXZ y R(x, y)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	(( ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w)))))))) & ( ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))))) & (( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x))) --> 
+	 --> 
+	 -->  ALL x ( EXZ y R(x, y))
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule &->
+
+2 	 --> 
+	( ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w)))))))) & ( ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z))))) --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 -->  ALL x ( EXZ y R(x, y))
+	 --> 
+dead minuses count: 0
+;;
+from 3 by rule &->
+
+3 	 --> 
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 -->  ALL x ( EXZ y R(x, y))
+	 ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))) --> 
+dead minuses count: 0
+;;
+from 4 by rule -->ALL
+
+4 	 --> 
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))) -->  EXZ y R(w1, y)
+dead minuses count: 0
+;;
+from 5 by rule ALL -->
+
+5 	 --> 
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 EXZ w ( ALL x ( EXZ y (((P(x, __t1) => P(y, w)) & P(y, __t1)) & (P(y, w) => ( EXZ u Q(u, w)))))) --> 
+	 ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))) -->  EXZ y R(w1, y)
+dead minuses count: 1
+;;
+from 6 by rule EXZ-->
+
+6 	 --> 
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y)
+dead minuses count: 1
+;;
+from 7 by rule ALL -->
+
+7 	 --> 
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 2
+;;
+from 8 by rule ALL -->
+
+8 	 --> 
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 EXZ y (((P(__t3, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2)))) --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y)
+dead minuses count: 3
+;;
+from 9 by rule EXZ-->
+
+9 	 --> 
+	((P(__t3, __t1) => P(w3, w2)) & P(w3, __t1)) & (P(w3, w2) => ( EXZ u Q(u, w2))) --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 3
+;;
+from 10 by rule &->
+
+10 	 --> 
+	(P(__t3, __t1) => P(w3, w2)) & P(w3, __t1) --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)), P(w3, w2) => ( EXZ u Q(u, w2)) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y)
+dead minuses count: 3
+;;
+from 11 by rule &->
+
+11 	P(w3, __t1) --> 
+	 --> 
+	P(w3, w2) => ( EXZ u Q(u, w2)), ( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)), P(__t3, __t1) => P(w3, w2) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 3
+;;
+from 12 by rule ALL -->
+
+12 	P(w3, __t1) --> 
+	 --> 
+	!P(__t2, __t4) => ( EXZ y Q(y, __t4)), P(__t3, __t1) => P(w3, w2), ( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)), P(w3, w2) => ( EXZ u Q(u, w2)) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y)
+dead minuses count: 4
+;;
+from 13 by rule --> EXZ
+
+13 	P(w3, __t1) --> R(w1, __t5)
+	 --> 
+	P(w3, w2) => ( EXZ u Q(u, w2)), ( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)), P(__t3, __t1) => P(w3, w2), !P(__t2, __t4) => ( EXZ y Q(y, __t4)) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 15, 14 by rule =>->
+
+14 	P(w3, __t1) --> P(w3, w2), R(w1, __t5)
+	 --> 
+	!P(__t2, __t4) => ( EXZ y Q(y, __t4)), P(__t3, __t1) => P(w3, w2), ( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 18, 17 by rule =>->
+
+15 	P(w3, __t1) --> R(w1, __t5)
+	 --> 
+	!P(__t2, __t4) => ( EXZ y Q(y, __t4)), P(__t3, __t1) => P(w3, w2), ( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 EXZ u Q(u, w2) --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 16 by rule EXZ-->
+
+16 	Q(w4, w2), P(w3, __t1) --> R(w1, __t5)
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)), P(__t3, __t1) => P(w3, w2), !P(__t2, __t4) => ( EXZ y Q(y, __t4)) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 22, 21 by rule =>->
+
+17 	P(w3, __t1) --> R(w1, __t5), P(w3, w2)
+	 --> !P(__t2, __t4)
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)), P(__t3, __t1) => P(w3, w2) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 20 by rule ->!
+
+18 	P(w3, __t1) --> R(w1, __t5), P(w3, w2)
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)), P(__t3, __t1) => P(w3, w2) --> 
+	 EXZ y Q(y, __t4) --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 19 by rule EXZ-->
+
+19 	Q(w5, __t4), P(w3, __t1) --> P(w3, w2), R(w1, __t5)
+	 --> 
+	P(__t3, __t1) => P(w3, w2), ( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 29, 28 by rule =>->
+
+20 	P(__t2, __t4), P(w3, __t1) --> P(w3, w2), R(w1, __t5)
+	 --> 
+	P(__t3, __t1) => P(w3, w2), ( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 26, 25 by rule =>->
+
+21 	P(w3, __t1), Q(w4, w2) --> R(w1, __t5)
+	 --> 
+	!P(__t2, __t4) => ( EXZ y Q(y, __t4)), P(__t3, __t1) => P(w3, w2) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y),  EXZ x ( EXZ y Q(x, y))
+dead minuses count: 5
+;;
+from 24 by rule --> EXZ
+
+22 	P(w3, __t1), Q(w4, w2) --> R(w1, __t5)
+	 --> 
+	!P(__t2, __t4) => ( EXZ y Q(y, __t4)), P(__t3, __t1) => P(w3, w2) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x R(x, x) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 23 by rule ALL -->
+
+23 	R(__t6, __t6), Q(w4, w2), P(w3, __t1) --> R(w1, __t5)
+	 --> 
+	P(__t3, __t1) => P(w3, w2), !P(__t2, __t4) => ( EXZ y Q(y, __t4)) --> 
+	 --> 
+	 ALL x R(x, x),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 32, 31 by rule =>->
+
+24 	Q(w4, w2), P(w3, __t1) --> R(w1, __t5)
+	 --> 
+	P(__t3, __t1) => P(w3, w2), !P(__t2, __t4) => ( EXZ y Q(y, __t4)) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ x ( EXZ y Q(x, y)),  EXZ y R(w1, y),  EXZ y Q(__t7, y)
+dead minuses count: 6
+;;
+from 33 by rule --> EXZ
+
+25 	P(w3, __t1), P(__t2, __t4) --> P(__t3, __t1), R(w1, __t5), P(w3, w2)
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 43, 42 by rule =>->
+
+26 	P(w3, w2), P(w3, __t1), P(__t2, __t4) --> R(w1, __t5), P(w3, w2)
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 27 by rule 
+
+27 LeafInfo of : [axiom]
+28 	P(w3, __t1), Q(w5, __t4) --> P(__t3, __t1), R(w1, __t5), P(w3, w2)
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 41, 40 by rule =>->
+
+29 	P(w3, w2), P(w3, __t1), Q(w5, __t4) --> R(w1, __t5), P(w3, w2)
+	 --> 
+	( EXZ x ( EXZ y Q(x, y))) => ( ALL x R(x, x)) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 30 by rule 
+
+30 LeafInfo of : [axiom]
+31 	P(w3, __t1), Q(w4, w2), R(__t6, __t6) --> P(__t3, __t1), R(w1, __t5)
+	 --> 
+	!P(__t2, __t4) => ( EXZ y Q(y, __t4)) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x R(x, x) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 39, 38 by rule =>->
+
+32 	P(w3, w2), P(w3, __t1), Q(w4, w2), R(__t6, __t6) --> R(w1, __t5)
+	 --> 
+	!P(__t2, __t4) => ( EXZ y Q(y, __t4)) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x R(x, x) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 37, 36 by rule =>->
+
+33 	P(w3, __t1), Q(w4, w2) --> Q(__t7, __t8), R(w1, __t5)
+	 --> 
+	!P(__t2, __t4) => ( EXZ y Q(y, __t4)), P(__t3, __t1) => P(w3, w2) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y Q(__t7, y),  EXZ y R(w1, y),  EXZ x ( EXZ y Q(x, y))
+dead minuses count: 7
+;;
+from 35, 34 by rule =>->
+
+34 	Q(w4, w2), P(w3, __t1) --> R(w1, __t5), Q(__t7, __t8)
+	 --> !P(__t2, __t4)
+	P(__t3, __t1) => P(w3, w2) --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ x ( EXZ y Q(x, y)),  EXZ y R(w1, y),  EXZ y Q(__t7, y)
+dead minuses count: 7
+;;
+from 53 by rule ->!
+
+35 	Q(w4, w2), P(w3, __t1) --> R(w1, __t5), Q(__t7, __t8)
+	 --> 
+	P(__t3, __t1) => P(w3, w2) --> 
+	 EXZ y Q(y, __t4) --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ x ( EXZ y Q(x, y)),  EXZ y R(w1, y),  EXZ y Q(__t7, y)
+dead minuses count: 7
+;;
+from 52 by rule EXZ-->
+
+36 	R(__t6, __t6), Q(w4, w2), P(w3, __t1), P(w3, w2) --> R(w1, __t5)
+	 --> !P(__t2, __t4)
+	 --> 
+	 --> 
+	 ALL x R(x, x),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 51 by rule ->!
+
+37 	R(__t6, __t6), Q(w4, w2), P(w3, __t1), P(w3, w2) --> R(w1, __t5)
+	 --> 
+	 --> 
+	 EXZ y Q(y, __t4) --> 
+	 ALL x R(x, x),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 50 by rule EXZ-->
+
+38 	R(__t6, __t6), Q(w4, w2), P(w3, __t1) --> R(w1, __t5), P(__t3, __t1)
+	 --> !P(__t2, __t4)
+	 --> 
+	 --> 
+	 ALL x R(x, x),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 49 by rule ->!
+
+39 	R(__t6, __t6), Q(w4, w2), P(w3, __t1) --> R(w1, __t5), P(__t3, __t1)
+	 --> 
+	 --> 
+	 EXZ y Q(y, __t4) --> 
+	 ALL x R(x, x),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 48 by rule EXZ-->
+
+40 	Q(w5, __t4), P(w3, __t1) --> P(w3, w2), R(w1, __t5), P(__t3, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y),  EXZ x ( EXZ y Q(x, y))
+dead minuses count: 5
+;;
+from 47 by rule --> EXZ
+
+41 	Q(w5, __t4), P(w3, __t1) --> P(w3, w2), R(w1, __t5), P(__t3, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x R(x, x) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 46 by rule ALL -->
+
+42 	P(__t2, __t4), P(w3, __t1) --> P(w3, w2), R(w1, __t5), P(__t3, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y R(w1, y),  EXZ x ( EXZ y Q(x, y))
+dead minuses count: 5
+;;
+from 45 by rule --> EXZ
+
+43 	P(__t2, __t4), P(w3, __t1) --> P(w3, w2), R(w1, __t5), P(__t3, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x R(x, x) -->  EXZ y R(w1, y)
+dead minuses count: 5
+;;
+from 44 by rule ALL -->
+
+44 	R(__t9, __t9), P(w3, __t1), P(__t2, __t4) --> P(__t3, __t1), R(w1, __t5), P(w3, w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x R(x, x),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 57 by rule 
+
+45 	P(w3, __t1), P(__t2, __t4) --> P(__t3, __t1), R(w1, __t5), P(w3, w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ x ( EXZ y Q(x, y)),  EXZ y R(w1, y),  EXZ y Q(__t10, y)
+dead minuses count: 6
+;;
+from 54 by rule --> EXZ
+
+46 	R(__t11, __t11), P(w3, __t1), Q(w5, __t4) --> P(__t3, __t1), R(w1, __t5), P(w3, w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x R(x, x),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 65 by rule 
+
+47 	P(w3, __t1), Q(w5, __t4) --> P(__t3, __t1), R(w1, __t5), P(w3, w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL z (!P(__t2, z) => ( EXZ y Q(y, z))) -->  EXZ x ( EXZ y Q(x, y)),  EXZ y R(w1, y),  EXZ y Q(__t12, y)
+dead minuses count: 6
+;;
+from 55 by rule --> EXZ
+
+48 	Q(w6, __t4), P(w3, __t1), Q(w4, w2), R(__t6, __t6) --> P(__t3, __t1), R(w1, __t5)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x R(x, x) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 63 by rule 
+
+49 	P(__t2, __t4), P(w3, __t1), Q(w4, w2), R(__t6, __t6) --> P(__t3, __t1), R(w1, __t5)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x R(x, x) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 62 by rule 
+
+50 	Q(w7, __t4), P(w3, w2), P(w3, __t1), Q(w4, w2), R(__t6, __t6) --> R(w1, __t5)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x R(x, x) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 61 by rule 
+
+51 	P(__t2, __t4), P(w3, w2), P(w3, __t1), Q(w4, w2), R(__t6, __t6) --> R(w1, __t5)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))),  ALL x R(x, x) -->  EXZ y R(w1, y)
+dead minuses count: 6
+;;
+from 60 by rule 
+
+52 	Q(w8, __t4), P(w3, __t1), Q(w4, w2) --> Q(__t7, __t8), R(w1, __t5)
+	 --> 
+	P(__t3, __t1) => P(w3, w2) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y Q(__t7, y),  EXZ y R(w1, y),  EXZ x ( EXZ y Q(x, y))
+dead minuses count: 7
+;;
+from 59 by rule 
+
+53 	P(__t2, __t4), P(w3, __t1), Q(w4, w2) --> Q(__t7, __t8), R(w1, __t5)
+	 --> 
+	P(__t3, __t1) => P(w3, w2) --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y Q(__t7, y),  EXZ y R(w1, y),  EXZ x ( EXZ y Q(x, y))
+dead minuses count: 7
+;;
+from 58 by rule 
+
+54 	P(__t2, __t4), P(w3, __t1) --> Q(__t10, __t13), P(w3, w2), R(w1, __t5), P(__t3, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y Q(__t10, y),  EXZ y R(w1, y),  EXZ x ( EXZ y Q(x, y))
+dead minuses count: 7
+;;
+from 56 by rule 
+
+55 	Q(w5, __t4), P(w3, __t1) --> Q(__t12, __t14), P(w3, w2), R(w1, __t5), P(__t3, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z (!P(__t2, z) => ( EXZ y Q(y, z))),  ALL z ( EXZ w ( ALL x ( EXZ y (((P(x, z) => P(y, w)) & P(y, z)) & (P(y, w) => ( EXZ u Q(u, w))))))),  ALL x ( ALL z (!P(x, z) => ( EXZ y Q(y, z)))),  ALL x ( EXZ y (((P(x, __t1) => P(y, w2)) & P(y, __t1)) & (P(y, w2) => ( EXZ u Q(u, w2))))) -->  EXZ y Q(__t12, y),  EXZ y R(w1, y),  EXZ x ( EXZ y Q(x, y))
+dead minuses count: 7
+;;
+from 64 by rule 
+
+56 LeafInfo of : [__t5 => w1\n__t4 => __t1\n__t2 => __t3\n]
+57 LeafInfo of : [__t9 => w1\n__t5 => w1\n__t4 => __t1\n__t2 => __t3\n]
+58 LeafInfo of : [__t8 => w2\n__t7 => w4\n__t5 => w1\n__t4 => __t1\n__t2 => __t3\n]
+59 LeafInfo of : [__t8 => w2\n__t7 => w4\n__t5 => w1\n__t4 => __t1\n__t2 => __t3\n]
+60 LeafInfo of : [__t6 => w1\n__t5 => w1\n__t4 => __t1\n__t2 => __t3\n]
+61 LeafInfo of : [__t6 => w1\n__t5 => w1\n__t4 => __t1\n__t2 => __t3\n]
+62 LeafInfo of : [__t6 => w1\n__t5 => w1\n__t4 => __t1\n__t2 => __t3\n]
+63 LeafInfo of : [__t6 => w1\n__t5 => w1\n__t4 => __t1\n__t2 => __t3\n]
+64 LeafInfo of : [__t5 => w1\n__t4 => __t1\n__t2 => __t3\n__t14 => __t1\n__t12 => w5\n]
+65 LeafInfo of : [__t5 => w1\n__t4 => __t1\n__t2 => __t3\n__t11 => w1\n]

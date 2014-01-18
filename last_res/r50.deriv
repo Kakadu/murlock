@@ -1,0 +1,184 @@
+0 	 --> 
+	 --> ( ALL x (P(_a, x) OR ( ALL y P(x, y)))) => ( EXZ x ( ALL y P(x, y)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 0
+;;
+from 2 by rule ALL -->
+
+2 	 --> 
+	 --> 
+	P(_a, __t1) OR ( ALL y P(__t1, y)) --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 1
+;;
+from 3 by rule --> EXZ
+
+3 	 --> 
+	 --> 
+	P(_a, __t1) OR ( ALL y P(__t1, y)) --> 
+	 -->  ALL y P(__t2, y)
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 2
+;;
+from 4 by rule -->ALL
+
+4 	 --> P(__t2, w1)
+	 --> 
+	P(_a, __t1) OR ( ALL y P(__t1, y)) --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 2
+;;
+from 6, 5 by rule OR->
+
+5 	P(_a, __t1) --> P(__t2, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 0
+;;
+from 9 by rule ALL -->
+
+6 	 --> P(__t2, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 2
+;;
+from 7 by rule ALL -->
+
+7 	P(__t1, __t3) --> P(__t2, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL y P(__t1, y),  ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 0
+;;
+from 8 by rule ALL -->
+
+8 	P(__t1, __t4), P(__t1, __t3) --> P(__t2, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 1
+;;
+from 10 by rule ALL -->
+
+9 	P(_a, __t1) --> P(__t2, w1)
+	 --> 
+	P(_a, __t5) OR ( ALL y P(__t5, y)) --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 1
+;;
+from 11 by rule --> EXZ
+
+10 	P(__t1, __t3), P(__t1, __t4) --> P(__t2, w1)
+	 --> 
+	P(_a, __t6) OR ( ALL y P(__t6, y)) --> 
+	 --> 
+	 ALL y P(__t1, y),  ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 2
+;;
+from 12 by rule --> EXZ
+
+11 	P(_a, __t1) --> P(__t2, w1)
+	 --> 
+	P(_a, __t5) OR ( ALL y P(__t5, y)) --> 
+	 -->  ALL y P(__t7, y)
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 2
+;;
+from 13 by rule -->ALL
+
+12 	P(__t1, __t4), P(__t1, __t3) --> P(__t2, w1)
+	 --> 
+	P(_a, __t6) OR ( ALL y P(__t6, y)) --> 
+	 -->  ALL y P(__t8, y)
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 3
+;;
+from 14 by rule -->ALL
+
+13 	P(_a, __t1) --> P(__t7, w2), P(__t2, w1)
+	 --> 
+	P(_a, __t5) OR ( ALL y P(__t5, y)) --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 2
+;;
+from 18, 17 by rule OR->
+
+14 	P(__t1, __t3), P(__t1, __t4) --> P(__t8, w3), P(__t2, w1)
+	 --> 
+	P(_a, __t6) OR ( ALL y P(__t6, y)) --> 
+	 --> 
+	 ALL y P(__t1, y),  ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 3
+;;
+from 16, 15 by rule OR->
+
+15 	P(_a, __t6), P(__t1, __t4), P(__t1, __t3) --> P(__t2, w1), P(__t8, w3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 3
+;;
+from 22 by rule 
+
+16 	P(__t1, __t4), P(__t1, __t3) --> P(__t2, w1), P(__t8, w3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y),  ALL y P(__t6, y) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 3
+;;
+from 21 by rule 
+
+17 	P(_a, __t5), P(_a, __t1) --> P(__t2, w1), P(__t7, w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 2
+;;
+from 20 by rule 
+
+18 	P(_a, __t1) --> P(__t2, w1), P(__t7, w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t5, y) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 2
+;;
+from 19 by rule ALL -->
+
+19 	P(__t5, __t9), P(_a, __t1) --> P(__t7, w2), P(__t2, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL y P(__t5, y),  ALL x (P(_a, x) OR ( ALL y P(x, y))) -->  EXZ x ( ALL y P(x, y))
+dead minuses count: 3
+;;
+from 23 by rule 
+
+20 LeafInfo of : [__t7 => w1\n__t5 => w1\n__t2 => _a\n__t1 => _a\n]
+21 LeafInfo of : [__t6 => w1\n__t4 => w1\n__t2 => _a\n__t1 => _a\n]
+22 LeafInfo of : [__t6 => w1\n__t4 => w1\n__t2 => _a\n__t1 => _a\n]
+23 LeafInfo of : [__t9 => w2\n__t7 => w1\n__t5 => w1\n__t2 => _a\n__t1 => _a\n]

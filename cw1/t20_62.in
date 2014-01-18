@@ -1,0 +1,2 @@
+[ALL x(F(_a) & (F(x)=>F(G(x))) => F(G(G(x))) )] == ALL x [[!F(_a) OR F(x) OR F(G(G(x)))] & [!F(_a) OR !F(G(x)) OR F(G(G(x)))]]
+

@@ -1,0 +1,65 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	25 [label="__t3 => w2\n"]
+	24 [label="__t3 => w2\n"]
+	23 [label="__t2 => w1\n"]
+	22 [label="__t2 => w1\n"]
+	subgraph cluster1 {
+		21 [shape=record,label="{<seq> Q(w5), Q(w2), P(__t1), P(__t3) \n--\>\nQ(__t1), Q(__t3),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip>  }"];
+	}
+	21 -> 25 [label=""]
+	subgraph cluster1 {
+		20 [shape=record,label="{<seq> Q(w2), P(__t1), P(__t3) \n--\>\nP(w4), Q(__t1), Q(__t3),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip>  }"];
+	}
+	20 -> 24 [label=""]
+	subgraph cluster1 {
+		19 [shape=record,label="{<seq> Q(w6), P(__t1), P(__t2) \n--\>\nP(w1), Q(__t1), Q(__t2),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip>  }"];
+	}
+	19 -> 23 [label=""]
+	subgraph cluster1 {
+		18 [shape=record,label="{<seq> P(__t1), P(__t2) \n--\>\nP(w3), P(w1), Q(__t1), Q(__t2),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip>  }"];
+	}
+	18 -> 22 [label=""]
+	17 [shape=record,label="{<seq> P(__t2), P(__t1), P(w3) =\> Q(w6) \n--\>\nQ(__t2), Q(__t1), P(w1),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> P(w3) =\> Q(w6) --\> }"];
+	17 -> 19 [label="=>->"]
+	17 -> 18 [label="=>->"]
+	16 [shape=record,label="{<seq> P(__t3), P(__t1), Q(w2), P(w4) =\> Q(w5) \n--\>\nQ(__t3), Q(__t1),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> P(w4) =\> Q(w5) --\> }"];
+	16 -> 21 [label="=>->"]
+	16 -> 20 [label="=>->"]
+	15 [shape=record,label="{<seq> Q(w2), P(__t1), P(w4) =\> Q(w5) \n--\>\nQ(__t1), P(__t3) =\> Q(__t3),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\> P(__t3) =\> Q(__t3) }"];
+	15 -> 16 [label="->=>"]
+	14 [shape=record,label="{<seq> P(__t1), P(w3) =\> Q(w6) \n--\>\nP(w1), Q(__t1), P(__t2) =\> Q(__t2),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\> P(__t2) =\> Q(__t2) }"];
+	14 -> 17 [label="->=>"]
+	13 [shape=record,label="{<seq> P(__t1) \n--\>\nQ(__t1), P(w1), (P(w3) =\> Q(w6)) =\> (P(__t2) =\> Q(__t2)),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\> (P(w3) =\> Q(w6)) =\> (P(__t2) =\> Q(__t2)) }"];
+	13 -> 14 [label="->=>"]
+	12 [shape=record,label="{<seq> P(__t1), Q(w2) \n--\>\nQ(__t1), (P(w4) =\> Q(w5)) =\> (P(__t3) =\> Q(__t3)),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\> (P(w4) =\> Q(w5)) =\> (P(__t3) =\> Q(__t3)) }"];
+	12 -> 15 [label="->=>"]
+	11 [shape=record,label="{<seq> Q(w2), P(__t1) \n--\>\nQ(__t1),  ALL z ((P(w4) =\> Q(z)) =\> (P(__t3) =\> Q(__t3))),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\>  ALL z ((P(w4) =\> Q(z)) =\> (P(__t3) =\> Q(__t3))) }"];
+	11 -> 12 [label="-->ALL"]
+	10 [shape=record,label="{<seq> P(__t1) \n--\>\nP(w1), Q(__t1),  ALL z ((P(w3) =\> Q(z)) =\> (P(__t2) =\> Q(__t2))),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\>  ALL z ((P(w3) =\> Q(z)) =\> (P(__t2) =\> Q(__t2))) }"];
+	10 -> 13 [label="-->ALL"]
+	9 [shape=record,label="{<seq> P(__t1), Q(w2) \n--\>\nQ(__t1),  ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(__t3) =\> Q(__t3)))),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\>  ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(__t3) =\> Q(__t3)))) }"];
+	9 -> 11 [label="-->ALL"]
+	8 [shape=record,label="{<seq> P(__t1) \n--\>\nQ(__t1), P(w1),  ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(__t2) =\> Q(__t2)))),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\>  ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(__t2) =\> Q(__t2)))) }"];
+	8 -> 10 [label="-->ALL"]
+	subgraph cluster2 {
+		7 [shape=record,label="{<seq> Q(w2), P(__t1) --\>Q(__t1),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\>  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) }"];
+	}
+	7 -> 9 [label="--> EXZ"]
+	subgraph cluster2 {
+		6 [shape=record,label="{<seq> P(__t1) \n--\>\nP(w1), Q(__t1),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\>  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) }"];
+	}
+	6 -> 8 [label="--> EXZ"]
+	5 [shape=record,label="{<seq> P(__t1), P(w1) =\> Q(w2) --\>Q(__t1),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> P(w1) =\> Q(w2) --\> }"];
+	5 -> 7 [label="=>->"]
+	5 -> 6 [label="=>->"]
+	4 [shape=record,label="{<seq> P(w1) =\> Q(w2) \n--\>\nP(__t1) =\> Q(__t1),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\> P(__t1) =\> Q(__t1) }"];
+	4 -> 5 [label="->=>"]
+	3 [shape=record,label="{<seq>  \n--\>\n(P(w1) =\> Q(w2)) =\> (P(__t1) =\> Q(__t1)),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\> (P(w1) =\> Q(w2)) =\> (P(__t1) =\> Q(__t1)) }"];
+	3 -> 4 [label="->=>"]
+	2 [shape=record,label="{<seq>  \n--\>\n ALL z ((P(w1) =\> Q(z)) =\> (P(__t1) =\> Q(__t1))),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\>  ALL z ((P(w1) =\> Q(z)) =\> (P(__t1) =\> Q(__t1))) }"];
+	2 -> 3 [label="-->ALL"]
+	1 [shape=record,label="{<seq>  \n--\>\n ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(__t1) =\> Q(__t1)))),  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\>  ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(__t1) =\> Q(__t1)))) }"];
+	1 -> 2 [label="-->ALL"]
+	0 [shape=record,label="{<seq>  --\> EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) |<lastfip> --\>  EXZ x ( ALL y ( ALL z ((P(y) =\> Q(z)) =\> (P(x) =\> Q(x))))) }"];
+	0 -> 1 [label="--> EXZ"]
+}

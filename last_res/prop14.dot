@@ -1,0 +1,79 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	38 [label="Proving succeded"]
+	38 -> 0
+	37 [label="axiom"]
+	36 [shape=record,label="{<seq> q --\>q, p, p |<lastfip>  }"];
+	36 -> 37 [label=""]
+	35 [label="axiom"]
+	34 [shape=record,label="{<seq> p, q --\>p, p |<lastfip>  }"];
+	34 -> 35 [label=""]
+	33 [shape=record,label="{<seq> q, !q --\>p, p |<lastfip> !q --\> }"];
+	33 -> 36 [label="!->"]
+	32 [label="axiom"]
+	31 [shape=record,label="{<seq> q, q --\>q, p |<lastfip>  }"];
+	31 -> 32 [label=""]
+	30 [label="axiom"]
+	29 [shape=record,label="{<seq> p, q, q --\>p |<lastfip>  }"];
+	29 -> 30 [label=""]
+	28 [shape=record,label="{<seq> q, q, !q --\>p |<lastfip> !q --\> }"];
+	28 -> 31 [label="!->"]
+	27 [shape=record,label="{<seq> q, !q OR p --\>p, p |<lastfip> !q OR p --\> }"];
+	27 -> 34 [label="OR->"]
+	27 -> 33 [label="OR->"]
+	26 [label="axiom"]
+	25 [shape=record,label="{<seq> p, !q OR p --\>p, q |<lastfip>  }"];
+	25 -> 26 [label=""]
+	24 [label="axiom"]
+	23 [label="axiom"]
+	22 [shape=record,label="{<seq> p --\>q, p, q |<lastfip>  }"];
+	22 -> 23 [label=""]
+	21 [shape=record,label="{<seq> q, p, p --\>q |<lastfip>  }"];
+	21 -> 24 [label=""]
+	20 [label="axiom"]
+	19 [label="axiom"]
+	18 [shape=record,label="{<seq> q --\>q, p, p |<lastfip>  }"];
+	18 -> 19 [label=""]
+	17 [shape=record,label="{<seq> q, p, q --\>p |<lastfip>  }"];
+	17 -> 20 [label=""]
+	16 [shape=record,label="{<seq> q, p == q --\>p |<lastfip> p == q --\> }"];
+	16 -> 18 [label="==->"]
+	16 -> 17 [label="==->"]
+	15 [shape=record,label="{<seq> p, p == q --\>q |<lastfip> p == q --\> }"];
+	15 -> 22 [label="==->"]
+	15 -> 21 [label="==->"]
+	14 [label="axiom"]
+	13 [shape=record,label="{<seq> p, !p, !q OR p --\>q |<lastfip> !p --\> }"];
+	13 -> 25 [label="!->"]
+	12 [shape=record,label="{<seq> q, p, !q OR p --\>q |<lastfip>  }"];
+	12 -> 14 [label=""]
+	11 [shape=record,label="{<seq> q, !p, !q OR p --\>p |<lastfip> !p --\> }"];
+	11 -> 27 [label="!->"]
+	10 [shape=record,label="{<seq> q, q, !q OR p --\>p |<lastfip> !q OR p --\> }"];
+	10 -> 29 [label="OR->"]
+	10 -> 28 [label="OR->"]
+	9 [shape=record,label="{<seq> q, q OR !p, !q OR p --\>p |<lastfip> q OR !p --\> }"];
+	9 -> 11 [label="OR->"]
+	9 -> 10 [label="OR->"]
+	8 [shape=record,label="{<seq> p, q OR !p, !q OR p --\>q |<lastfip> q OR !p --\> }"];
+	8 -> 13 [label="OR->"]
+	8 -> 12 [label="OR->"]
+	7 [shape=record,label="{<seq> p == q --\>q, !p |<lastfip> --\> !p }"];
+	7 -> 15 [label="->!"]
+	6 [shape=record,label="{<seq> p == q --\>p, !q |<lastfip> --\> !q }"];
+	6 -> 16 [label="->!"]
+	5 [shape=record,label="{<seq> p == q --\>!q OR p |<lastfip> --\> !q OR p }"];
+	5 -> 6 [label="->OR"]
+	4 [shape=record,label="{<seq> p == q --\>q OR !p |<lastfip> --\> q OR !p }"];
+	4 -> 7 [label="->OR"]
+	3 [shape=record,label="{<seq> !q OR p, q OR !p --\>p == q |<lastfip> --\> p == q }"];
+	3 -> 9 [label="->=="]
+	3 -> 8 [label="->=="]
+	2 [shape=record,label="{<seq> (q OR !p) & (!q OR p) --\>p == q |<lastfip> (q OR !p) & (!q OR p) --\> }"];
+	2 -> 3 [label="&->"]
+	1 [shape=record,label="{<seq> p == q --\>(q OR !p) & (!q OR p) |<lastfip> --\> (q OR !p) & (!q OR p) }"];
+	1 -> 5 [label="->&"]
+	1 -> 4 [label="->&"]
+	0 [shape=record,label="{<seq>  --\>(p == q) == ((q OR !p) & (!q OR p)) |<lastfip> --\> (p == q) == ((q OR !p) & (!q OR p)) }"];
+	0 -> 2 [label="->=="]
+	0 -> 1 [label="->=="]
+}

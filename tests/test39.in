@@ -1,0 +1,2 @@
+-o temp_res3/r39.dot
+! (EXZ x ALL y (F(y,x) == !F(y,y)))

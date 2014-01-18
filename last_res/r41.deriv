@@ -1,0 +1,138 @@
+0 	 --> 
+	 --> ( ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x)))))) => ! EXZ z ( ALL x F(x, z))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	 --> ! EXZ z ( ALL x F(x, z))
+	 --> 
+	 --> 
+	 ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))) --> 
+dead minuses count: 0
+;;
+from 2 by rule ->!
+
+2 	 --> 
+	 --> 
+	 --> 
+	 EXZ z ( ALL x F(x, z)) --> 
+	 ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))) --> 
+dead minuses count: 0
+;;
+from 3 by rule EXZ-->
+
+3 	 --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))),  ALL x F(x, w1) --> 
+dead minuses count: 0
+;;
+from 4 by rule ALL -->
+
+4 	 --> 
+	 --> 
+	 --> 
+	 EXZ y ( ALL x (F(x, y) == (F(x, __t1) & !F(x, x)))) --> 
+	 ALL x F(x, w1),  ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))) --> 
+dead minuses count: 1
+;;
+from 5 by rule EXZ-->
+
+5 	 --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))),  ALL x F(x, w1),  ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))) --> 
+dead minuses count: 1
+;;
+from 6 by rule ALL -->
+
+6 	F(__t2, w1) --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))),  ALL x F(x, w1),  ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))) --> 
+dead minuses count: 2
+;;
+from 7 by rule ALL -->
+
+7 	F(__t2, w1) --> 
+	 --> 
+	F(__t3, w2) == (F(__t3, __t1) & !F(__t3, __t3)) --> 
+	 --> 
+	 ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))),  ALL x F(x, w1),  ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))) --> 
+dead minuses count: 3
+;;
+from 9, 8 by rule ==->
+
+8 	F(__t3, w2), F(__t2, w1) --> 
+	F(__t3, __t1) & !F(__t3, __t3) --> 
+	 --> 
+	 --> 
+	 ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))),  ALL x F(x, w1),  ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))) --> 
+dead minuses count: 3
+;;
+from 12 by rule &->
+
+9 	F(__t2, w1) --> F(__t3, w2)
+	 --> 
+	 --> F(__t3, __t1) & !F(__t3, __t3)
+	 --> 
+	 ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))),  ALL x F(x, w1),  ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))) --> 
+dead minuses count: 3
+;;
+from 11, 10 by rule ->&
+
+10 	F(__t2, w1) --> F(__t3, __t1), F(__t3, w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))),  ALL x F(x, w1),  ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))) --> 
+dead minuses count: 0
+;;
+from 17 by rule 
+
+11 	F(__t2, w1) --> F(__t3, w2)
+	 --> !F(__t3, __t3)
+	 --> 
+	 --> 
+	 ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))),  ALL x F(x, w1),  ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))) --> 
+dead minuses count: 3
+;;
+from 14 by rule ->!
+
+12 	F(__t3, __t1), F(__t2, w1), F(__t3, w2) --> 
+	!F(__t3, __t3) --> 
+	 --> 
+	 --> 
+	 ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))),  ALL x F(x, w1),  ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))) --> 
+dead minuses count: 3
+;;
+from 13 by rule !->
+
+13 	F(__t3, w2), F(__t2, w1), F(__t3, __t1) --> F(__t3, __t3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))),  ALL x F(x, w1),  ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))) --> 
+dead minuses count: 0
+;;
+from 15 by rule 
+
+14 	F(__t3, __t3), F(__t2, w1) --> F(__t3, w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (F(x, w2) == (F(x, __t1) & !F(x, x))),  ALL x F(x, w1),  ALL z ( EXZ y ( ALL x (F(x, y) == (F(x, z) & !F(x, x))))) --> 
+dead minuses count: 0
+;;
+from 16 by rule 
+
+15 LeafInfo of : [__t3 => w2\n__t2 => w2\n__t1 => w1\n]
+16 LeafInfo of : [__t3 => w2\n__t2 => w2\n__t1 => w1\n]
+17 LeafInfo of : [__t3 => w2\n__t2 => w2\n__t1 => w1\n]

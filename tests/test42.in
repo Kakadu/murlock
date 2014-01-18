@@ -1,0 +1,3 @@
+-dot on
+-o temp_res3/r42.dot
+! EXZ y (ALL x ( P(x,y)<=> ! EXZ z (P(x,z)&P(z,x)) ) )

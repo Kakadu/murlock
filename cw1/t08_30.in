@@ -1,0 +1,3 @@
+ (ALL x (F(x) OR G(x) => !H(x)))&(ALL x((G(x) => !I(x)) => F(x)&H(x))) => (ALL x I(x))
+
+

@@ -1,0 +1,37 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	17 [label="Proving succeded"]
+	17 -> 0
+	16 [label="axiom"]
+	15 [shape=record,label="{<seq> q --\>p, q |<lastfip>  }"];
+	15 -> 16 [label=""]
+	14 [label="axiom"]
+	13 [shape=record,label="{<seq> p --\>q, p |<lastfip>  }"];
+	13 -> 14 [label=""]
+	12 [label="axiom"]
+	11 [shape=record,label="{<seq> q --\>p, q |<lastfip>  }"];
+	11 -> 12 [label=""]
+	10 [shape=record,label="{<seq>  --\>p, q, !p |<lastfip> --\> !p }"];
+	10 -> 13 [label="->!"]
+	9 [label="axiom"]
+	8 [shape=record,label="{<seq> p --\>q, p |<lastfip>  }"];
+	8 -> 9 [label=""]
+	7 [shape=record,label="{<seq>  --\>q, p, !q |<lastfip> --\> !q }"];
+	7 -> 15 [label="->!"]
+	6 [shape=record,label="{<seq> !q =\> p --\>p, q |<lastfip> !q =\> p --\> }"];
+	6 -> 8 [label="=>->"]
+	6 -> 7 [label="=>->"]
+	5 [shape=record,label="{<seq> !p =\> q --\>q, p |<lastfip> !p =\> q --\> }"];
+	5 -> 11 [label="=>->"]
+	5 -> 10 [label="=>->"]
+	4 [shape=record,label="{<seq> !q, !p =\> q --\>p |<lastfip> !q --\> }"];
+	4 -> 5 [label="!->"]
+	3 [shape=record,label="{<seq> !p, !q =\> p --\>q |<lastfip> !p --\> }"];
+	3 -> 6 [label="!->"]
+	2 [shape=record,label="{<seq> !q =\> p --\>!p =\> q |<lastfip> --\> !p =\> q }"];
+	2 -> 3 [label="->=>"]
+	1 [shape=record,label="{<seq> !p =\> q --\>!q =\> p |<lastfip> --\> !q =\> p }"];
+	1 -> 4 [label="->=>"]
+	0 [shape=record,label="{<seq>  --\>(!p =\> q) == (!q =\> p) |<lastfip> --\> (!p =\> q) == (!q =\> p) }"];
+	0 -> 2 [label="->=="]
+	0 -> 1 [label="->=="]
+}

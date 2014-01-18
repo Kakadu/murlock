@@ -1,0 +1,227 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	100 [label="__t38 => w4\n"]
+	99 [label="__t27 => w5\n"]
+	98 [label="__t36 => w9\n__t3 => w1\n"]
+	97 [label="__t3 => w1\n"]
+	96 [label="__t34 => w7\n__t3 => w1\n"]
+	95 [label="__t21 => w1\n__t1 => w1\n"]
+	94 [label="__t21 => w1\n__t1 => w1\n"]
+	93 [label="__t22 => w1\n__t1 => w1\n"]
+	92 [label="__t22 => w1\n__t1 => w1\n"]
+	91 [label="__t3 => w1\n"]
+	90 [label="__t32 => w2\n__t1 => w1\n"]
+	89 [label="__t7 => w1\n__t1 => w1\n"]
+	88 [label="__t7 => w1\n__t1 => w1\n"]
+	87 [label="__t1 => w1\n"]
+	86 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), Q(w4), S(w4), Q(__t28), P(__t16) =\> ( ALL y Q(y)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nS(__t38), S(__t4), G(w1),  EXZ x S(x) |<lastfip>  }"];
+	86 -> 100 [label=""]
+	85 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), Q(__t27), P(__t15) =\> ( ALL y Q(y)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nS(__t37), S(__t4), G(w1), Q(w5), R(w5),  EXZ x S(x) |<lastfip>  }"];
+	85 -> 99 [label=""]
+	84 [shape=record,label="{<seq> Q(__t36), G(__t3), F(w1), P(w1), Q(__t2), F(__t14) =\> G(__t14), P(__t26) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nG(w1), Q(w9), R(w9) |<lastfip>  }"];
+	84 -> 98 [label=""]
+	83 [shape=record,label="{<seq> Q(__t35), G(__t3), F(w1), P(w1), Q(__t2), Q(w8), S(w8), F(__t13) =\> G(__t13), P(__t25) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nG(w1) |<lastfip>  }"];
+	83 -> 97 [label=""]
+	82 [shape=record,label="{<seq> Q(__t34), F(w1), P(w1), Q(__t2), F(__t12) =\> G(__t12), P(__t24) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t3), G(w1), Q(w7), R(w7) |<lastfip>  }"];
+	82 -> 96 [label=""]
+	81 [shape=record,label="{<seq> Q(__t33), F(w1), P(w1), Q(__t2), Q(w6), S(w6), F(__t11) =\> G(__t11), P(__t23) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t3), G(w1) |<lastfip>  }"];
+	81 -> 91 [label=""]
+	80 [shape=record,label="{<seq> G(__t22), P(w1), F(w1), G(__t5), P(__t10) =\> ( ALL y Q(y)),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w3), Q(w3), G(w1), P(__t1) |<lastfip>  }"];
+	80 -> 92 [label=""]
+	79 [shape=record,label="{<seq> P(w1), F(w1), G(__t5), P(__t10) =\> ( ALL y Q(y)),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nF(__t22), R(w3), Q(w3), G(w1), P(__t1) |<lastfip>  }"];
+	79 -> 93 [label=""]
+	78 [shape=record,label="{<seq> G(__t21), P(w1), F(w1), P(__t9) =\> ( ALL y Q(y)),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w3), Q(w3), G(w1), P(__t1), F(__t5) |<lastfip>  }"];
+	78 -> 94 [label=""]
+	77 [shape=record,label="{<seq> P(w1), F(w1), P(__t9) =\> ( ALL y Q(y)),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nF(__t21), R(w3), Q(w3), G(w1), P(__t1), F(__t5) |<lastfip>  }"];
+	77 -> 95 [label=""]
+	76 [shape=record,label="{<seq> S(w2), Q(w2), P(w1), F(w1), P(__t20) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nS(__t32), S(__t8), G(w1), P(__t1),  EXZ x S(x) |<lastfip>  }"];
+	76 -> 90 [label=""]
+	75 [shape=record,label="{<seq> G(__t7), F(w1), P(w1), Q(w2), S(w2), F(__t31) =\> G(__t31), P(__t19) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) \n--\>\nP(__t1), G(w1) |<lastfip>  }"];
+	75 -> 89 [label=""]
+	74 [shape=record,label="{<seq> F(w1), P(w1), Q(w2), S(w2), F(__t30) =\> G(__t30), P(__t18) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t7), P(__t1), G(w1) |<lastfip>  }"];
+	74 -> 88 [label=""]
+	73 [shape=record,label="{<seq> P(w1), F(w1), P(__t17) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nS(__t29), S(__t6), R(w3), Q(w3), G(w1), P(__t1),  EXZ x S(x) |<lastfip>  }"];
+	73 -> 87 [label=""]
+	72 [shape=record,label="{<seq> Q(__t28), S(w4), Q(w4), F(w1), P(w1), Q(__t2), P(__t16) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y) \n--\>\nG(w1), S(__t4),  EXZ x S(x) |<lastfip> --\>  EXZ x S(x) }"];
+	72 -> 86 [label="--> EXZ"]
+	71 [shape=record,label="{<seq> Q(__t27), F(w1), P(w1), Q(__t2), P(__t15) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y) \n--\>\nR(w5), Q(w5), G(w1), S(__t4),  EXZ x S(x) |<lastfip> --\>  EXZ x S(x) }"];
+	71 -> 85 [label="--> EXZ"]
+	70 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), G(__t3), P(__t26) =\> ( ALL y Q(y)), F(__t14) =\> G(__t14),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w9), Q(w9), G(w1) |<lastfip>  ALL y Q(y) --\> }"];
+	70 -> 84 [label="ALL -->"]
+	69 [shape=record,label="{<seq> S(w8), Q(w8), Q(__t2), P(w1), F(w1), G(__t3), P(__t25) =\> ( ALL y Q(y)), F(__t13) =\> G(__t13),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1) |<lastfip>  ALL y Q(y) --\> }"];
+	69 -> 83 [label="ALL -->"]
+	68 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), P(__t24) =\> ( ALL y Q(y)), F(__t12) =\> G(__t12),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w7), Q(w7), G(w1), F(__t3) |<lastfip>  ALL y Q(y) --\> }"];
+	68 -> 82 [label="ALL -->"]
+	67 [shape=record,label="{<seq> S(w6), Q(w6), Q(__t2), P(w1), F(w1), P(__t23) =\> ( ALL y Q(y)), F(__t11) =\> G(__t11),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), F(__t3) |<lastfip>  ALL y Q(y) --\> }"];
+	67 -> 81 [label="ALL -->"]
+	66 [shape=record,label="{<seq> G(__t5), F(w1), P(w1), F(__t22) =\> G(__t22), P(__t10) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) \n--\>\nP(__t1), G(w1), Q(w3), R(w3) |<lastfip> F(__t22) =\> G(__t22) --\> }"];
+	66 -> 80 [label="=>->"]
+	66 -> 79 [label="=>->"]
+	65 [shape=record,label="{<seq> F(w1), P(w1), F(__t21) =\> G(__t21), P(__t9) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t5), P(__t1), G(w1), Q(w3), R(w3) |<lastfip> F(__t21) =\> G(__t21) --\> }"];
+	65 -> 78 [label="=>->"]
+	65 -> 77 [label="=>->"]
+	64 [shape=record,label="{<seq> F(w1), P(w1), Q(w2), S(w2), P(__t20) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nP(__t1), G(w1), S(__t8),  EXZ x S(x) |<lastfip> --\>  EXZ x S(x) }"];
+	64 -> 76 [label="--> EXZ"]
+	63 [shape=record,label="{<seq> S(w2), Q(w2), P(w1), F(w1), G(__t7), P(__t19) =\> ( ALL y Q(y)),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), P(__t1) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	63 -> 75 [label="ALL -->"]
+	62 [shape=record,label="{<seq> S(w2), Q(w2), P(w1), F(w1), P(__t18) =\> ( ALL y Q(y)),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), P(__t1), F(__t7) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	62 -> 74 [label="ALL -->"]
+	61 [shape=record,label="{<seq> F(w1), P(w1), P(__t17) =\> ( ALL y Q(y)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nP(__t1), G(w1), Q(w3), R(w3), S(__t6),  EXZ x S(x) |<lastfip> --\>  EXZ x S(x) }"];
+	61 -> 73 [label="--> EXZ"]
+	60 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), Q(w4), S(w4), P(__t16) =\> ( ALL y Q(y)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nS(__t4), G(w1),  EXZ x S(x) |<lastfip>  ALL y Q(y) --\> }"];
+	60 -> 72 [label="ALL -->"]
+	59 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), P(__t15) =\> ( ALL y Q(y)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nS(__t4), G(w1), Q(w5), R(w5),  EXZ x S(x) |<lastfip>  ALL y Q(y) --\> }"];
+	59 -> 71 [label="ALL -->"]
+	58 [shape=record,label="{<seq> G(__t3), F(w1), P(w1), Q(__t2), F(__t14) =\> G(__t14),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nG(w1), Q(w9), R(w9) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	58 -> 70 [label="ALL -->"]
+	57 [shape=record,label="{<seq> G(__t3), F(w1), P(w1), Q(__t2), Q(w8), S(w8), F(__t13) =\> G(__t13),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nG(w1) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	57 -> 69 [label="ALL -->"]
+	56 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2), F(__t12) =\> G(__t12),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t3), G(w1), Q(w7), R(w7) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	56 -> 68 [label="ALL -->"]
+	55 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2), Q(w6), S(w6), F(__t11) =\> G(__t11),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t3), G(w1) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	55 -> 67 [label="ALL -->"]
+	54 [shape=record,label="{<seq> P(w1), F(w1), G(__t5), P(__t10) =\> ( ALL y Q(y)),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w3), Q(w3), G(w1), P(__t1) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	54 -> 66 [label="ALL -->"]
+	53 [shape=record,label="{<seq> P(w1), F(w1), P(__t9) =\> ( ALL y Q(y)),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w3), Q(w3), G(w1), P(__t1), F(__t5) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	53 -> 65 [label="ALL -->"]
+	subgraph cluster2 {
+		52 [shape=record,label="{<seq> G(__t7), F(w1), P(w1), Q(w2), S(w2),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) \n--\>\nP(__t1), G(w1) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	}
+	52 -> 63 [label="ALL -->"]
+	subgraph cluster2 {
+		51 [shape=record,label="{<seq> F(w1), P(w1), Q(w2), S(w2),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t7), P(__t1), G(w1) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	}
+	51 -> 62 [label="ALL -->"]
+	subgraph cluster2 {
+		50 [shape=record,label="{<seq> G(__t5), F(w1), P(w1),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) \n--\>\nP(__t1), G(w1), Q(w3), R(w3) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	}
+	50 -> 54 [label="ALL -->"]
+	subgraph cluster2 {
+		49 [shape=record,label="{<seq> F(w1), P(w1),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) --\>F(__t5), P(__t1), G(w1), Q(w3), R(w3) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	}
+	49 -> 53 [label="ALL -->"]
+	subgraph cluster2 {
+		48 [shape=record,label="{<seq> S(w2), Q(w2), P(w1), F(w1),  ALL x (P(x) =\> ( ALL y Q(y))) --\>S(__t8), G(w1), P(__t1),  EXZ x S(x) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	}
+	48 -> 64 [label="ALL -->"]
+	47 [shape=record,label="{<seq> S(w2), Q(w2), P(w1), F(w1), F(__t7) =\> G(__t7),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), P(__t1) |<lastfip> F(__t7) =\> G(__t7) --\> }"];
+	47 -> 52 [label="=>->"]
+	47 -> 51 [label="=>->"]
+	subgraph cluster2 {
+		46 [shape=record,label="{<seq> P(w1), F(w1),  ALL x (P(x) =\> ( ALL y Q(y))) --\>S(__t6), R(w3), Q(w3), G(w1), P(__t1),  EXZ x S(x) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	}
+	46 -> 61 [label="ALL -->"]
+	45 [shape=record,label="{<seq> P(w1), F(w1), F(__t5) =\> G(__t5),  ALL x (F(x) =\> G(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w3), Q(w3), G(w1), P(__t1) |<lastfip> F(__t5) =\> G(__t5) --\> }"];
+	45 -> 50 [label="=>->"]
+	45 -> 49 [label="=>->"]
+	subgraph cluster2 {
+		44 [shape=record,label="{<seq> S(w6), Q(w6), Q(__t2), P(w1), F(w1),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), F(__t3) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	}
+	44 -> 55 [label="ALL -->"]
+	subgraph cluster2 {
+		43 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w7), Q(w7), G(w1), F(__t3) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	}
+	43 -> 56 [label="ALL -->"]
+	subgraph cluster2 {
+		42 [shape=record,label="{<seq> S(w8), Q(w8), Q(__t2), P(w1), F(w1), G(__t3),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	}
+	42 -> 57 [label="ALL -->"]
+	subgraph cluster2 {
+		41 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), G(__t3),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w9), Q(w9), G(w1) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	}
+	41 -> 58 [label="ALL -->"]
+	subgraph cluster2 {
+		40 [shape=record,label="{<seq> S(w4), Q(w4), F(w1), P(w1), Q(__t2),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y) \n--\>\nG(w1), S(__t4),  EXZ x S(x) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	}
+	40 -> 60 [label="ALL -->"]
+	subgraph cluster2 {
+		39 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y) --\>R(w5), Q(w5), G(w1), S(__t4),  EXZ x S(x) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	}
+	39 -> 59 [label="ALL -->"]
+	38 [shape=record,label="{<seq> G(__t3), F(w1), P(w1), Q(__t2),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nG(w1), Q(w9) OR R(w9) |<lastfip> --\> Q(w9) OR R(w9) }"];
+	38 -> 41 [label="->OR"]
+	37 [shape=record,label="{<seq> G(__t3), F(w1), P(w1), Q(__t2), Q(w8) & S(w8),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nG(w1) |<lastfip> Q(w8) & S(w8) --\> }"];
+	37 -> 42 [label="&->"]
+	36 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t3), G(w1), Q(w7) OR R(w7) |<lastfip> --\> Q(w7) OR R(w7) }"];
+	36 -> 43 [label="->OR"]
+	35 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2), Q(w6) & S(w6),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t3), G(w1) |<lastfip> Q(w6) & S(w6) --\> }"];
+	35 -> 44 [label="&->"]
+	34 [shape=record,label="{<seq> F(w1), P(w1),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) --\>P(__t1), G(w1), Q(w3), R(w3) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	34 -> 45 [label="ALL -->"]
+	33 [shape=record,label="{<seq> F(w1), P(w1),  ALL x (P(x) =\> ( ALL y Q(y))) --\>P(__t1), G(w1), Q(w3), R(w3),  EXZ x S(x) |<lastfip> --\>  EXZ x S(x) }"];
+	33 -> 46 [label="--> EXZ"]
+	32 [shape=record,label="{<seq> F(w1), P(w1), Q(w2), S(w2),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL x (F(x) =\> G(x)) \n--\>\nP(__t1), G(w1) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	32 -> 47 [label="ALL -->"]
+	31 [shape=record,label="{<seq> F(w1), P(w1), Q(w2), S(w2),  ALL x (P(x) =\> ( ALL y Q(y))) --\>P(__t1), G(w1),  EXZ x S(x) |<lastfip> --\>  EXZ x S(x) }"];
+	31 -> 48 [label="--> EXZ"]
+	30 [shape=record,label="{<seq> S(w2), Q(w2), P(w1), F(w1), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), P(__t1) |<lastfip> ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))) --\> }"];
+	30 -> 32 [label="=>->"]
+	30 -> 31 [label="=>->"]
+	29 [shape=record,label="{<seq> P(w1), F(w1), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nR(w3), Q(w3), G(w1), P(__t1) |<lastfip> ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))) --\> }"];
+	29 -> 34 [label="=>->"]
+	29 -> 33 [label="=>->"]
+	28 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1),  EXZ x (Q(x) & S(x)),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), F(__t3) |<lastfip>  EXZ x (Q(x) & S(x)) --\> }"];
+	28 -> 35 [label="EXZ-->"]
+	27 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), F(__t3),  ALL x (Q(x) OR R(x)) |<lastfip> --\>  ALL x (Q(x) OR R(x)) }"];
+	27 -> 36 [label="-->ALL"]
+	26 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), G(__t3),  EXZ x (Q(x) & S(x)),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1) |<lastfip>  EXZ x (Q(x) & S(x)) --\> }"];
+	26 -> 37 [label="EXZ-->"]
+	25 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), G(__t3),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1),  ALL x (Q(x) OR R(x)) |<lastfip> --\>  ALL x (Q(x) OR R(x)) }"];
+	25 -> 38 [label="-->ALL"]
+	24 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) --\>S(__t4), G(w1), Q(w5) OR R(w5),  EXZ x S(x) |<lastfip> --\> Q(w5) OR R(w5) }"];
+	24 -> 39 [label="->OR"]
+	23 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), Q(w4) & S(w4),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nS(__t4), G(w1),  EXZ x S(x) |<lastfip> Q(w4) & S(w4) --\> }"];
+	23 -> 40 [label="&->"]
+	22 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2),  EXZ x (Q(x) & S(x)),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y) \n--\>\nG(w1), S(__t4),  EXZ x S(x) |<lastfip>  EXZ x (Q(x) & S(x)) --\> }"];
+	22 -> 23 [label="EXZ-->"]
+	21 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y) --\>G(w1), S(__t4),  ALL x (Q(x) OR R(x)),  EXZ x S(x) |<lastfip> --\>  ALL x (Q(x) OR R(x)) }"];
+	21 -> 24 [label="-->ALL"]
+	20 [shape=record,label="{<seq> G(__t3), F(w1), P(w1), Q(__t2), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nG(w1) |<lastfip> ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))) --\> }"];
+	20 -> 26 [label="=>->"]
+	20 -> 25 [label="=>->"]
+	19 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nF(__t3), G(w1) |<lastfip> ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))) --\> }"];
+	19 -> 28 [label="=>->"]
+	19 -> 27 [label="=>->"]
+	18 [shape=record,label="{<seq> F(w1), P(w1), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nP(__t1), G(w1), Q(w3) OR R(w3) |<lastfip> --\> Q(w3) OR R(w3) }"];
+	18 -> 29 [label="->OR"]
+	17 [shape=record,label="{<seq> F(w1), P(w1), Q(w2) & S(w2), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nP(__t1), G(w1) |<lastfip> Q(w2) & S(w2) --\> }"];
+	17 -> 30 [label="&->"]
+	16 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nS(__t4), G(w1),  EXZ x S(x) |<lastfip> ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))) --\> }"];
+	16 -> 22 [label="=>->"]
+	16 -> 21 [label="=>->"]
+	15 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), F(__t3) =\> G(__t3), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL x (F(x) =\> G(x)),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1) |<lastfip> F(__t3) =\> G(__t3) --\> }"];
+	15 -> 20 [label="=>->"]
+	15 -> 19 [label="=>->"]
+	14 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) =\> G(x)) \n--\>\nG(w1) |<lastfip>  ALL x (F(x) =\> G(x)) --\> }"];
+	14 -> 15 [label="ALL -->"]
+	13 [shape=record,label="{<seq> F(w1), P(w1), Q(__t2), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y) \n--\>\nG(w1),  EXZ x S(x) |<lastfip> --\>  EXZ x S(x) }"];
+	13 -> 16 [label="--> EXZ"]
+	12 [shape=record,label="{<seq> P(w1), F(w1), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  EXZ x (Q(x) & S(x)),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), P(__t1) |<lastfip>  EXZ x (Q(x) & S(x)) --\> }"];
+	12 -> 17 [label="EXZ-->"]
+	11 [shape=record,label="{<seq> P(w1), F(w1), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1), P(__t1),  ALL x (Q(x) OR R(x)) |<lastfip> --\>  ALL x (Q(x) OR R(x)) }"];
+	11 -> 18 [label="-->ALL"]
+	10 [shape=record,label="{<seq> Q(__t2), P(w1), F(w1), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL y Q(y),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1) |<lastfip> ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))) --\> }"];
+	10 -> 14 [label="=>->"]
+	10 -> 13 [label="=>->"]
+	9 [shape=record,label="{<seq> F(w1), P(w1), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  ALL x (P(x) =\> ( ALL y Q(y))),  ALL y Q(y) \n--\>\nG(w1) |<lastfip>  ALL y Q(y) --\> }"];
+	9 -> 10 [label="ALL -->"]
+	8 [shape=record,label="{<seq> F(w1), P(w1), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nP(__t1), G(w1) |<lastfip> ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))) --\> }"];
+	8 -> 12 [label="=>->"]
+	8 -> 11 [label="=>->"]
+	7 [shape=record,label="{<seq> P(w1), F(w1), P(__t1) =\> ( ALL y Q(y)), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1) |<lastfip> P(__t1) =\> ( ALL y Q(y)) --\> }"];
+	7 -> 9 [label="=>->"]
+	7 -> 8 [label="=>->"]
+	6 [shape=record,label="{<seq> F(w1), P(w1), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1) |<lastfip>  ALL x (P(x) =\> ( ALL y Q(y))) --\> }"];
+	6 -> 7 [label="ALL -->"]
+	5 [shape=record,label="{<seq> P(w1) & F(w1), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\nG(w1) |<lastfip> P(w1) & F(w1) --\> }"];
+	5 -> 6 [label="&->"]
+	4 [shape=record,label="{<seq> ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\n(P(w1) & F(w1)) =\> G(w1) |<lastfip> --\> (P(w1) & F(w1)) =\> G(w1) }"];
+	4 -> 5 [label="->=>"]
+	3 [shape=record,label="{<seq> ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))), ( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))),  ALL x (P(x) =\> ( ALL y Q(y))) \n--\>\n ALL x ((P(x) & F(x)) =\> G(x)) |<lastfip> --\>  ALL x ((P(x) & F(x)) =\> G(x)) }"];
+	3 -> 4 [label="-->ALL"]
+	2 [shape=record,label="{<seq> ( ALL x (P(x) =\> ( ALL y Q(y)))) & (( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x)))), ( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))) \n--\>\n ALL x ((P(x) & F(x)) =\> G(x)) |<lastfip> ( ALL x (P(x) =\> ( ALL y Q(y)))) & (( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x)))) --\> }"];
+	2 -> 3 [label="&->"]
+	1 [shape=record,label="{<seq> (( ALL x (P(x) =\> ( ALL y Q(y)))) & (( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))))) & (( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x)))) \n--\>\n ALL x ((P(x) & F(x)) =\> G(x)) |<lastfip> (( ALL x (P(x) =\> ( ALL y Q(y)))) & (( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))))) & (( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x)))) --\> }"];
+	1 -> 2 [label="&->"]
+	0 [shape=record,label="{<seq>  \n--\>\n((( ALL x (P(x) =\> ( ALL y Q(y)))) & (( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))))) & (( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))))) =\> ( ALL x ((P(x) & F(x)) =\> G(x))) |<lastfip> --\> ((( ALL x (P(x) =\> ( ALL y Q(y)))) & (( ALL x (Q(x) OR R(x))) =\> ( EXZ x (Q(x) & S(x))))) & (( EXZ x S(x)) =\> ( ALL x (F(x) =\> G(x))))) =\> ( ALL x ((P(x) & F(x)) =\> G(x))) }"];
+	0 -> 1 [label="->=>"]
+}

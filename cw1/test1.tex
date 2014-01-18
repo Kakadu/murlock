@@ -1,0 +1,97 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,scale=0.60]
+  \pgfsetlinewidth{1bp}
+%%
+\pgfsetcolor{black}
+  % Edge: 5 -> 6
+  \draw [->] (281bp,343.79bp) .. controls (281bp,331.34bp) and (281bp,314.61bp)  .. (281bp,290.19bp);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (303bp,317bp) node {$\rightarrow$ $\vee$};
+  % Edge: 6 -> 7
+  \draw [->] (281bp,253.79bp) .. controls (281bp,241.34bp) and (281bp,224.61bp)  .. (281bp,200.19bp);
+  \draw (295.5bp,227bp) node {$\rightarrow$ !};
+  % Edge: 2 -> 3
+  \draw [->] (281bp,613.79bp) .. controls (281bp,601.34bp) and (281bp,584.61bp)  .. (281bp,560.19bp);
+  \draw (295.5bp,587bp) node {$\rightarrow$ !};
+  % Edge: 8 -> 9
+  \draw [->] (281bp,73.708bp) .. controls (281bp,65.464bp) and (281bp,55.538bp)  .. (281bp,36.082bp);
+  % Edge: 4 -> 5
+  \draw [->] (281bp,433.79bp) .. controls (281bp,421.34bp) and (281bp,404.61bp)  .. (281bp,380.19bp);
+  \draw (309.5bp,407bp) node {$\rightarrow$  $\exists$};
+  % Edge: 0 -> 1
+  \draw [->] (281bp,793.79bp) .. controls (281bp,781.34bp) and (281bp,764.61bp)  .. (281bp,740.19bp);
+  \draw (309.5bp,767bp) node {$\rightarrow$  $\exists$};
+  % Edge: 1 -> 2
+  \draw [->] (281bp,703.79bp) .. controls (281bp,691.34bp) and (281bp,674.61bp)  .. (281bp,650.19bp);
+  \draw (303bp,677bp) node {$\rightarrow$ $\vee$};
+  % Edge: 3 -> 4
+  \draw [->] (281bp,523.79bp) .. controls (281bp,511.34bp) and (281bp,494.61bp)  .. (281bp,470.19bp);
+  \draw (305.5bp,497bp) node {$\rightarrow$ $ \forall$};
+  % Edge: 7 -> 8
+  \draw [->] (281bp,163.79bp) .. controls (281bp,151.34bp) and (281bp,134.61bp)  .. (281bp,110.19bp);
+  \draw (305.5bp,137bp) node {$\rightarrow$ $ \forall$};
+  % Node: 1
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,722bp) node {1:   $\rightarrow$ ( $ \forall$ z P(z)) $\vee$ !P(\_\_t1),  $\exists$ x (( $ \forall$ z P(z)) $\vee$ !P(x))};
+\end{scope}
+  % Node: 0
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,812bp) node {0:   $\rightarrow$  $\exists$ x (( $ \forall$ z P(z)) $\vee$ !P(x))};
+\end{scope}
+  % Node: 3
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,542bp) node {3:  P(\_\_t1) $\rightarrow$  $ \forall$ z P(z),  $\exists$ x (( $ \forall$ z P(z)) $\vee$ !P(x))};
+\end{scope}
+  % Node: 2
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,632bp) node {2:   $\rightarrow$ !P(\_\_t1),  $ \forall$ z P(z),  $\exists$ x (( $ \forall$ z P(z)) $\vee$ !P(x))};
+\end{scope}
+  % Node: 5
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,362bp) node {5:  P(\_\_t1) $\rightarrow$ P(w1), ( $ \forall$ z P(z)) $\vee$ !P(\_\_t2),  $\exists$ x (( $ \forall$ z P(z)) $\vee$ !P(x))};
+\end{scope}
+  % Node: 4
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,452bp) node {4:  P(\_\_t1) $\rightarrow$ P(w1),  $\exists$ x (( $ \forall$ z P(z)) $\vee$ !P(x))};
+\end{scope}
+  % Node: 7
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,182bp) node {7:  P(\_\_t2), P(\_\_t1) $\rightarrow$ P(w1),  $ \forall$ z P(z),  $\exists$ x (( $ \forall$ z P(z)) $\vee$ !P(x))};
+\end{scope}
+  % Node: 6
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,272bp) node {6:  P(\_\_t1) $\rightarrow$ P(w1), !P(\_\_t2),  $ \forall$ z P(z),  $\exists$ x (( $ \forall$ z P(z)) $\vee$ !P(x))};
+\end{scope}
+  % Node: 9
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,18bp) node {\_\_t2 => w1};
+\end{scope}
+  % Node: 8
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (281bp,92bp) node {8:  P(\_\_t1), P(\_\_t2) $\rightarrow$ P(w2), P(w1),  $\exists$ x (( $ \forall$ z P(z)) $\vee$ !P(x))};
+\end{scope}
+%
+фывафыавффыва
+\end{tikzpicture}
+

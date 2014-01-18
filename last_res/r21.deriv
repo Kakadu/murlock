@@ -1,0 +1,246 @@
+0 	 --> 
+	 --> (( EXZ x (p => F(x))) & ( EXZ x (F(x) => p))) => ( EXZ x (p == F(x)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	( EXZ x (p => F(x))) & ( EXZ x (F(x) => p)) --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 0
+;;
+from 2 by rule &->
+
+2 	 --> 
+	 --> 
+	 --> 
+	 EXZ x (F(x) => p),  EXZ x (p => F(x)) --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 0
+;;
+from 3 by rule EXZ-->
+
+3 	 --> 
+	 --> 
+	F(w1) => p --> 
+	 EXZ x (p => F(x)) --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 0
+;;
+from 4 by rule EXZ-->
+
+4 	 --> 
+	 --> 
+	p => F(w2), F(w1) => p --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 0
+;;
+from 5 by rule --> EXZ
+
+5 	 --> 
+	 --> 
+	F(w1) => p, p => F(w2) --> p == F(__t1)
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 7, 6 by rule ->==
+
+6 	p --> F(__t1)
+	 --> 
+	p => F(w2), F(w1) => p --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 11, 10 by rule =>->
+
+7 	F(__t1) --> p
+	 --> 
+	p => F(w2), F(w1) => p --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 9, 8 by rule =>->
+
+8 	F(__t1) --> p, p
+	 --> 
+	F(w1) => p --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 19, 18 by rule =>->
+
+9 	F(w2), F(__t1) --> p
+	 --> 
+	F(w1) => p --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 16, 15 by rule =>->
+
+10 	p --> p, F(__t1)
+	 --> 
+	F(w1) => p --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 12 by rule 
+
+11 	F(w2), p --> F(__t1)
+	 --> 
+	F(w1) => p --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 14, 13 by rule =>->
+
+12 LeafInfo of : [axiom]
+13 	p, F(w2) --> F(w1), F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 0
+;;
+from 21 by rule --> EXZ
+
+14 	p, p, F(w2) --> F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 0
+;;
+from 29, 23 by rule --> EXZ
+
+15 	F(__t1), F(w2) --> F(w1), p
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 0
+;;
+from 37, 32, 24 by rule --> EXZ
+
+16 	p, F(__t1), F(w2) --> p
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 17 by rule 
+
+17 LeafInfo of : [axiom]
+18 	F(__t1) --> F(w1), p, p
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 0
+;;
+from 41, 33, 25, 45 by rule 
+
+19 	p, F(__t1) --> p, p
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 20 by rule 
+
+20 LeafInfo of : [axiom]
+21 	F(w2), p --> F(__t1), F(w1)
+	 --> 
+	 --> p == F(__t2)
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 27, 26, 22 by rule ->==
+
+22 LeafInfo of : [3]
+23 LeafInfo of : [3]
+24 LeafInfo of : [3]
+25 LeafInfo of : [3]
+26 	p, p, F(w2) --> F(__t2), F(w1), F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 39, 31, 43 by rule 
+
+27 	F(__t2), p, F(w2) --> p, F(w1), F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 28 by rule 
+
+28 LeafInfo of : [axiom]
+29 	F(w2), p, p --> F(__t1)
+	 --> 
+	 --> p == F(__t3)
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 35, 34, 30 by rule ->==
+
+30 LeafInfo of : [4]
+31 LeafInfo of : [4]
+32 LeafInfo of : [4]
+33 LeafInfo of : [4]
+34 	p, p, p, F(w2) --> F(__t3), F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 40, 44 by rule 
+
+35 	F(__t3), p, p, F(w2) --> p, F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 36 by rule 
+
+36 LeafInfo of : [axiom]
+37 	F(w2), F(__t1) --> p, F(w1)
+	 --> 
+	 --> p == F(__t4)
+	 --> 
+	 -->  EXZ x (p == F(x))
+dead minuses count: 1
+;;
+from 38, 42 by rule 
+
+38 LeafInfo of : [5]
+39 LeafInfo of : [5]
+40 LeafInfo of : [5]
+41 LeafInfo of : [5]
+42 LeafInfo of : [__t1 => w1\n]
+43 LeafInfo of : [__t2 => w2\n__t1 => w1\n]
+44 LeafInfo of : [__t3 => w2\n__t1 => w1\n]
+45 LeafInfo of : [__t1 => w1\n]

@@ -1,0 +1,3 @@
+(ALL x EXZ y F(x,y)) & (ALL x EXZ y G(x,y)) & (ALL x ALL y (F(x,y) OR G(x,y) => (ALL z (F(y,z) OR G(y,z) => H(x,z))))) => (ALL x EXZ y H(x,y))
+
+

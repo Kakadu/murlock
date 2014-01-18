@@ -1,0 +1,2 @@
+ [ALL x (p OR F(x))] == [p OR (ALL x F(x))] 
+

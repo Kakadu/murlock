@@ -1,0 +1,450 @@
+0 	 --> 
+	 --> ((( ALL x ((F(x) & (G(x) OR H(x))) => I(x))) & ( ALL x ((I(x) & H(x)) => J(x)))) & ( ALL x (K(x) => H(x)))) => ( ALL x ((F(x) & K(x)) => J(x)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	(( ALL x ((F(x) & (G(x) OR H(x))) => I(x))) & ( ALL x ((I(x) & H(x)) => J(x)))) & ( ALL x (K(x) => H(x))) --> 
+	 --> 
+	 -->  ALL x ((F(x) & K(x)) => J(x))
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule &->
+
+2 	 --> 
+	( ALL x ((F(x) & (G(x) OR H(x))) => I(x))) & ( ALL x ((I(x) & H(x)) => J(x))) --> 
+	 --> 
+	 -->  ALL x ((F(x) & K(x)) => J(x))
+	 ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 3 by rule &->
+
+3 	 --> 
+	 --> 
+	 --> 
+	 -->  ALL x ((F(x) & K(x)) => J(x))
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 4 by rule -->ALL
+
+4 	 --> 
+	 --> (F(w1) & K(w1)) => J(w1)
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 5 by rule ->=>
+
+5 	 --> J(w1)
+	F(w1) & K(w1) --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 6 by rule &->
+
+6 	K(w1), F(w1) --> J(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 7 by rule ALL -->
+
+7 	F(w1), K(w1) --> J(w1)
+	 --> 
+	(F(__t1) & (G(__t1) OR H(__t1))) => I(__t1) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 1
+;;
+from 8 by rule ALL -->
+
+8 	K(w1), F(w1) --> J(w1)
+	 --> 
+	K(__t2) => H(__t2), (F(__t1) & (G(__t1) OR H(__t1))) => I(__t1) --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 2
+;;
+from 9 by rule ALL -->
+
+9 	F(w1), K(w1) --> J(w1)
+	 --> 
+	(I(__t3) & H(__t3)) => J(__t3), (F(__t1) & (G(__t1) OR H(__t1))) => I(__t1), K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 11, 10 by rule =>->
+
+10 	K(w1), F(w1) --> J(w1)
+	 --> 
+	K(__t2) => H(__t2), (F(__t1) & (G(__t1) OR H(__t1))) => I(__t1) --> I(__t3) & H(__t3)
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 15, 14 by rule ->&
+
+11 	J(__t3), K(w1), F(w1) --> J(w1)
+	 --> 
+	K(__t2) => H(__t2), (F(__t1) & (G(__t1) OR H(__t1))) => I(__t1) --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 13, 12 by rule =>->
+
+12 	F(w1), K(w1), J(__t3) --> K(__t2), J(w1)
+	 --> 
+	(F(__t1) & (G(__t1) OR H(__t1))) => I(__t1) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 23, 22 by rule =>->
+
+13 	H(__t2), F(w1), K(w1), J(__t3) --> J(w1)
+	 --> 
+	(F(__t1) & (G(__t1) OR H(__t1))) => I(__t1) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 21, 20 by rule =>->
+
+14 	F(w1), K(w1) --> I(__t3), J(w1)
+	 --> 
+	(F(__t1) & (G(__t1) OR H(__t1))) => I(__t1), K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 19, 18 by rule =>->
+
+15 	F(w1), K(w1) --> H(__t3), J(w1)
+	 --> 
+	(F(__t1) & (G(__t1) OR H(__t1))) => I(__t1), K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 17, 16 by rule =>->
+
+16 	K(w1), F(w1) --> J(w1), H(__t3)
+	 --> 
+	K(__t2) => H(__t2) --> F(__t1) & (G(__t1) OR H(__t1))
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 35, 34 by rule ->&
+
+17 	I(__t1), K(w1), F(w1) --> J(w1), H(__t3)
+	 --> 
+	K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 33, 32 by rule =>->
+
+18 	K(w1), F(w1) --> J(w1), I(__t3)
+	 --> 
+	K(__t2) => H(__t2) --> F(__t1) & (G(__t1) OR H(__t1))
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 31, 30 by rule ->&
+
+19 	I(__t1), K(w1), F(w1) --> J(w1), I(__t3)
+	 --> 
+	K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 29, 28 by rule =>->
+
+20 	J(__t3), K(w1), F(w1), H(__t2) --> J(w1)
+	 --> 
+	 --> F(__t1) & (G(__t1) OR H(__t1))
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 27, 26 by rule ->&
+
+21 	I(__t1), J(__t3), K(w1), F(w1), H(__t2) --> J(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 51 by rule 
+
+22 	J(__t3), K(w1), F(w1) --> J(w1), K(__t2)
+	 --> 
+	 --> F(__t1) & (G(__t1) OR H(__t1))
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 25, 24 by rule ->&
+
+23 	I(__t1), J(__t3), K(w1), F(w1) --> J(w1), K(__t2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 48 by rule 
+
+24 	F(w1), K(w1), J(__t3) --> F(__t1), K(__t2), J(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 49 by rule 
+
+25 	F(w1), K(w1), J(__t3) --> K(__t2), J(w1)
+	 --> G(__t1) OR H(__t1)
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 43 by rule ->OR
+
+26 	H(__t2), F(w1), K(w1), J(__t3) --> F(__t1), J(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 52 by rule 
+
+27 	H(__t2), F(w1), K(w1), J(__t3) --> J(w1)
+	 --> G(__t1) OR H(__t1)
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 42 by rule ->OR
+
+28 	F(w1), K(w1), I(__t1) --> K(__t2), I(__t3), J(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 54 by rule 
+
+29 	H(__t2), F(w1), K(w1), I(__t1) --> I(__t3), J(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 55 by rule 
+
+30 	F(w1), K(w1) --> F(__t1), I(__t3), J(w1)
+	 --> 
+	K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 41, 40 by rule =>->
+
+31 	F(w1), K(w1) --> I(__t3), J(w1)
+	 --> G(__t1) OR H(__t1)
+	K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 39 by rule ->OR
+
+32 	F(w1), K(w1), I(__t1) --> K(__t2), H(__t3), J(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 60 by rule 
+
+33 	H(__t2), F(w1), K(w1), I(__t1) --> H(__t3), J(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 61 by rule 
+
+34 	F(w1), K(w1) --> F(__t1), H(__t3), J(w1)
+	 --> 
+	K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 38, 37 by rule =>->
+
+35 	F(w1), K(w1) --> H(__t3), J(w1)
+	 --> G(__t1) OR H(__t1)
+	K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 3
+;;
+from 36 by rule ->OR
+
+36 	K(w1), F(w1) --> H(__t1), G(__t1), J(w1), H(__t3)
+	 --> 
+	K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 47, 46 by rule =>->
+
+37 	K(w1), F(w1) --> K(__t2), J(w1), H(__t3), F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 63 by rule 
+
+38 	H(__t2), K(w1), F(w1) --> J(w1), H(__t3), F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 62 by rule 
+
+39 	K(w1), F(w1) --> H(__t1), G(__t1), J(w1), I(__t3)
+	 --> 
+	K(__t2) => H(__t2) --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 3
+;;
+from 45, 44 by rule =>->
+
+40 	K(w1), F(w1) --> K(__t2), J(w1), I(__t3), F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 57 by rule 
+
+41 	H(__t2), K(w1), F(w1) --> J(w1), I(__t3), F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 56 by rule 
+
+42 	J(__t3), K(w1), F(w1), H(__t2) --> H(__t1), G(__t1), J(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 53 by rule 
+
+43 	J(__t3), K(w1), F(w1) --> H(__t1), G(__t1), J(w1), K(__t2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) & (G(x) OR H(x))) => I(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x (K(x) => H(x)) --> 
+dead minuses count: 0
+;;
+from 50 by rule 
+
+44 	F(w1), K(w1) --> K(__t2), I(__t3), J(w1), G(__t1), H(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 58 by rule 
+
+45 	H(__t2), F(w1), K(w1) --> I(__t3), J(w1), G(__t1), H(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 59 by rule 
+
+46 	F(w1), K(w1) --> K(__t2), H(__t3), J(w1), G(__t1), H(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 64 by rule 
+
+47 	H(__t2), F(w1), K(w1) --> H(__t3), J(w1), G(__t1), H(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (K(x) => H(x)),  ALL x ((I(x) & H(x)) => J(x)),  ALL x ((F(x) & (G(x) OR H(x))) => I(x)) --> 
+dead minuses count: 0
+;;
+from 65 by rule 
+
+48 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+49 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+50 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+51 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+52 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+53 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+54 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+55 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+56 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+57 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+58 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+59 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+60 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+61 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+62 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+63 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+64 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+65 LeafInfo of : [__t3 => w1\n__t2 => w1\n__t1 => w1\n]

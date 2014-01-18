@@ -1,0 +1,2 @@
+-o temp_res3/r27.dot
+(EXZ x(F(x) & !G(x))) & (ALL x (F(x)=>H(x))) & (ALL x (J(x) & I(x) => F(x))) & [(EXZ x (H(x)&!G(x)))=> (ALL x(I(x)=>!H(x)))] => (ALL x (J(x) => !I(x)))

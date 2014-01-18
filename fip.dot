@@ -1,0 +1,27 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	12 [label="Proving succeded"]
+	12 -> 0
+	11 [label="axiom"]
+	10 [label="axiom"]
+	9 [shape=record,label="{<seq> Q(w1), P(w1) --\>R(w1), Q(w1) |<lastfip>  }"];
+	9 -> 10 [label=""]
+	8 [shape=record,label="{<seq> P(w1) --\>P(w1), R(w1), Q(w1) |<lastfip>  }"];
+	8 -> 11 [label=""]
+	7 [label="axiom"]
+	6 [shape=record,label="{<seq> R(w1), P(w1), P(w1) =\> Q(w1) --\>R(w1) |<lastfip>  }"];
+	6 -> 7 [label=""]
+	5 [shape=record,label="{<seq> P(w1), P(w1) =\> Q(w1) --\>Q(w1), R(w1) |<lastfip> P(w1) =\> Q(w1) --\> }"];
+	5 -> 9 [label="=>->"]
+	5 -> 8 [label="=>->"]
+	4 [shape=record,label="{<seq> P(w1), Q(w1) =\> R(w1), P(w1) =\> Q(w1) --\>R(w1) |<lastfip> Q(w1) =\> R(w1) --\> }"];
+	4 -> 6 [label="=>->"]
+	4 -> 5 [label="=>->"]
+	3 [shape=record,label="{<seq> P(w1), (P(w1) =\> Q(w1)) & (Q(w1) =\> R(w1)) --\>R(w1) |<lastfip> (P(w1) =\> Q(w1)) & (Q(w1) =\> R(w1)) --\> }"];
+	3 -> 4 [label="&->"]
+	2 [shape=record,label="{<seq> (P(w1) =\> Q(w1)) & (Q(w1) =\> R(w1)) --\>P(w1) =\> R(w1) |<lastfip> --\> P(w1) =\> R(w1) }"];
+	2 -> 3 [label="->=>"]
+	1 [shape=record,label="{<seq>  --\>((P(w1) =\> Q(w1)) & (Q(w1) =\> R(w1))) =\> (P(w1) =\> R(w1)) |<lastfip> --\> ((P(w1) =\> Q(w1)) & (Q(w1) =\> R(w1))) =\> (P(w1) =\> R(w1)) }"];
+	1 -> 2 [label="->=>"]
+	0 [shape=record,label="{<seq>  --\> ALL x (((P(x) =\> Q(x)) & (Q(x) =\> R(x))) =\> (P(x) =\> R(x))) |<lastfip> --\>  ALL x (((P(x) =\> Q(x)) & (Q(x) =\> R(x))) =\> (P(x) =\> R(x))) }"];
+	0 -> 1 [label="-->ALL"]
+}

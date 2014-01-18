@@ -1,0 +1,169 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	65 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	64 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	63 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	62 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	61 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	60 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	59 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	58 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	57 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	56 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	55 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	54 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	53 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	52 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	51 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	50 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	49 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	48 [label="__t3 => w1\n__t2 => w1\n__t1 => w1\n"]
+	subgraph cluster2 {
+		47 [shape=record,label="{<seq> H(__t2), F(w1), K(w1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nH(__t3), J(w1), G(__t1), H(__t1) |<lastfip>  }"];
+	}
+	47 -> 65 [label=""]
+	subgraph cluster2 {
+		46 [shape=record,label="{<seq> F(w1), K(w1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nK(__t2), H(__t3), J(w1), G(__t1), H(__t1) |<lastfip>  }"];
+	}
+	46 -> 64 [label=""]
+	subgraph cluster2 {
+		45 [shape=record,label="{<seq> H(__t2), F(w1), K(w1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nI(__t3), J(w1), G(__t1), H(__t1) |<lastfip>  }"];
+	}
+	45 -> 59 [label=""]
+	subgraph cluster2 {
+		44 [shape=record,label="{<seq> F(w1), K(w1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nK(__t2), I(__t3), J(w1), G(__t1), H(__t1) |<lastfip>  }"];
+	}
+	44 -> 58 [label=""]
+	subgraph cluster2 {
+		43 [shape=record,label="{<seq> J(__t3), K(w1), F(w1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nH(__t1), G(__t1), J(w1), K(__t2) |<lastfip>  }"];
+	}
+	43 -> 50 [label=""]
+	subgraph cluster2 {
+		42 [shape=record,label="{<seq> J(__t3), K(w1), F(w1), H(__t2),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nH(__t1), G(__t1), J(w1) |<lastfip>  }"];
+	}
+	42 -> 53 [label=""]
+	subgraph cluster2 {
+		41 [shape=record,label="{<seq> H(__t2), K(w1), F(w1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), I(__t3), F(__t1) |<lastfip>  }"];
+	}
+	41 -> 56 [label=""]
+	subgraph cluster2 {
+		40 [shape=record,label="{<seq> K(w1), F(w1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nK(__t2), J(w1), I(__t3), F(__t1) |<lastfip>  }"];
+	}
+	40 -> 57 [label=""]
+	39 [shape=record,label="{<seq> K(w1), F(w1), K(__t2) =\> H(__t2),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nH(__t1), G(__t1), J(w1), I(__t3) |<lastfip> K(__t2) =\> H(__t2) --\> }"];
+	39 -> 45 [label="=>->"]
+	39 -> 44 [label="=>->"]
+	subgraph cluster2 {
+		38 [shape=record,label="{<seq> H(__t2), K(w1), F(w1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), H(__t3), F(__t1) |<lastfip>  }"];
+	}
+	38 -> 62 [label=""]
+	subgraph cluster2 {
+		37 [shape=record,label="{<seq> K(w1), F(w1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nK(__t2), J(w1), H(__t3), F(__t1) |<lastfip>  }"];
+	}
+	37 -> 63 [label=""]
+	36 [shape=record,label="{<seq> K(w1), F(w1), K(__t2) =\> H(__t2),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nH(__t1), G(__t1), J(w1), H(__t3) |<lastfip> K(__t2) =\> H(__t2) --\> }"];
+	36 -> 47 [label="=>->"]
+	36 -> 46 [label="=>->"]
+	35 [shape=record,label="{<seq> F(w1), K(w1), K(__t2) =\> H(__t2),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nH(__t3), J(w1), G(__t1) OR H(__t1) |<lastfip> --\> G(__t1) OR H(__t1) }"];
+	35 -> 36 [label="->OR"]
+	34 [shape=record,label="{<seq> F(w1), K(w1), K(__t2) =\> H(__t2),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nF(__t1), H(__t3), J(w1) |<lastfip> K(__t2) =\> H(__t2) --\> }"];
+	34 -> 38 [label="=>->"]
+	34 -> 37 [label="=>->"]
+	subgraph cluster2 {
+		33 [shape=record,label="{<seq> H(__t2), F(w1), K(w1), I(__t1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nH(__t3), J(w1) |<lastfip>  }"];
+	}
+	33 -> 61 [label=""]
+	subgraph cluster2 {
+		32 [shape=record,label="{<seq> F(w1), K(w1), I(__t1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nK(__t2), H(__t3), J(w1) |<lastfip>  }"];
+	}
+	32 -> 60 [label=""]
+	31 [shape=record,label="{<seq> F(w1), K(w1), K(__t2) =\> H(__t2),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nI(__t3), J(w1), G(__t1) OR H(__t1) |<lastfip> --\> G(__t1) OR H(__t1) }"];
+	31 -> 39 [label="->OR"]
+	30 [shape=record,label="{<seq> F(w1), K(w1), K(__t2) =\> H(__t2),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nF(__t1), I(__t3), J(w1) |<lastfip> K(__t2) =\> H(__t2) --\> }"];
+	30 -> 41 [label="=>->"]
+	30 -> 40 [label="=>->"]
+	subgraph cluster2 {
+		29 [shape=record,label="{<seq> H(__t2), F(w1), K(w1), I(__t1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nI(__t3), J(w1) |<lastfip>  }"];
+	}
+	29 -> 55 [label=""]
+	subgraph cluster2 {
+		28 [shape=record,label="{<seq> F(w1), K(w1), I(__t1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nK(__t2), I(__t3), J(w1) |<lastfip>  }"];
+	}
+	28 -> 54 [label=""]
+	27 [shape=record,label="{<seq> H(__t2), F(w1), K(w1), J(__t3),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nJ(w1), G(__t1) OR H(__t1) |<lastfip> --\> G(__t1) OR H(__t1) }"];
+	27 -> 42 [label="->OR"]
+	subgraph cluster2 {
+		26 [shape=record,label="{<seq> H(__t2), F(w1), K(w1), J(__t3),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nF(__t1), J(w1) |<lastfip>  }"];
+	}
+	26 -> 52 [label=""]
+	25 [shape=record,label="{<seq> F(w1), K(w1), J(__t3),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nK(__t2), J(w1), G(__t1) OR H(__t1) |<lastfip> --\> G(__t1) OR H(__t1) }"];
+	25 -> 43 [label="->OR"]
+	subgraph cluster2 {
+		24 [shape=record,label="{<seq> F(w1), K(w1), J(__t3),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nF(__t1), K(__t2), J(w1) |<lastfip>  }"];
+	}
+	24 -> 49 [label=""]
+	subgraph cluster2 {
+		23 [shape=record,label="{<seq> I(__t1), J(__t3), K(w1), F(w1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), K(__t2) |<lastfip>  }"];
+	}
+	23 -> 48 [label=""]
+	22 [shape=record,label="{<seq> J(__t3), K(w1), F(w1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), K(__t2), F(__t1) & (G(__t1) OR H(__t1)) |<lastfip> --\> F(__t1) & (G(__t1) OR H(__t1)) }"];
+	22 -> 25 [label="->&"]
+	22 -> 24 [label="->&"]
+	subgraph cluster2 {
+		21 [shape=record,label="{<seq> I(__t1), J(__t3), K(w1), F(w1), H(__t2),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1) |<lastfip>  }"];
+	}
+	21 -> 51 [label=""]
+	20 [shape=record,label="{<seq> J(__t3), K(w1), F(w1), H(__t2),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), F(__t1) & (G(__t1) OR H(__t1)) |<lastfip> --\> F(__t1) & (G(__t1) OR H(__t1)) }"];
+	20 -> 27 [label="->&"]
+	20 -> 26 [label="->&"]
+	19 [shape=record,label="{<seq> I(__t1), K(w1), F(w1), K(__t2) =\> H(__t2),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), I(__t3) |<lastfip> K(__t2) =\> H(__t2) --\> }"];
+	19 -> 29 [label="=>->"]
+	19 -> 28 [label="=>->"]
+	18 [shape=record,label="{<seq> K(w1), F(w1), K(__t2) =\> H(__t2),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), I(__t3), F(__t1) & (G(__t1) OR H(__t1)) |<lastfip> --\> F(__t1) & (G(__t1) OR H(__t1)) }"];
+	18 -> 31 [label="->&"]
+	18 -> 30 [label="->&"]
+	17 [shape=record,label="{<seq> I(__t1), K(w1), F(w1), K(__t2) =\> H(__t2),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), H(__t3) |<lastfip> K(__t2) =\> H(__t2) --\> }"];
+	17 -> 33 [label="=>->"]
+	17 -> 32 [label="=>->"]
+	16 [shape=record,label="{<seq> K(w1), F(w1), K(__t2) =\> H(__t2),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), H(__t3), F(__t1) & (G(__t1) OR H(__t1)) |<lastfip> --\> F(__t1) & (G(__t1) OR H(__t1)) }"];
+	16 -> 35 [label="->&"]
+	16 -> 34 [label="->&"]
+	15 [shape=record,label="{<seq> F(w1), K(w1), (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1), K(__t2) =\> H(__t2),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nH(__t3), J(w1) |<lastfip> (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1) --\> }"];
+	15 -> 17 [label="=>->"]
+	15 -> 16 [label="=>->"]
+	14 [shape=record,label="{<seq> F(w1), K(w1), (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1), K(__t2) =\> H(__t2),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nI(__t3), J(w1) |<lastfip> (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1) --\> }"];
+	14 -> 19 [label="=>->"]
+	14 -> 18 [label="=>->"]
+	13 [shape=record,label="{<seq> H(__t2), F(w1), K(w1), J(__t3), (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nJ(w1) |<lastfip> (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1) --\> }"];
+	13 -> 21 [label="=>->"]
+	13 -> 20 [label="=>->"]
+	12 [shape=record,label="{<seq> F(w1), K(w1), J(__t3), (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nK(__t2), J(w1) |<lastfip> (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1) --\> }"];
+	12 -> 23 [label="=>->"]
+	12 -> 22 [label="=>->"]
+	11 [shape=record,label="{<seq> J(__t3), K(w1), F(w1), K(__t2) =\> H(__t2), (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1) |<lastfip> K(__t2) =\> H(__t2) --\> }"];
+	11 -> 13 [label="=>->"]
+	11 -> 12 [label="=>->"]
+	10 [shape=record,label="{<seq> K(w1), F(w1), K(__t2) =\> H(__t2), (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1), I(__t3) & H(__t3) |<lastfip> --\> I(__t3) & H(__t3) }"];
+	10 -> 15 [label="->&"]
+	10 -> 14 [label="->&"]
+	9 [shape=record,label="{<seq> F(w1), K(w1), (I(__t3) & H(__t3)) =\> J(__t3), (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1), K(__t2) =\> H(__t2),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nJ(w1) |<lastfip> (I(__t3) & H(__t3)) =\> J(__t3) --\> }"];
+	9 -> 11 [label="=>->"]
+	9 -> 10 [label="=>->"]
+	8 [shape=record,label="{<seq> K(w1), F(w1), K(__t2) =\> H(__t2), (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1) |<lastfip>  ALL x ((I(x) & H(x)) =\> J(x)) --\> }"];
+	8 -> 9 [label="ALL -->"]
+	7 [shape=record,label="{<seq> F(w1), K(w1), (F(__t1) & (G(__t1) OR H(__t1))) =\> I(__t1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nJ(w1) |<lastfip>  ALL x (K(x) =\> H(x)) --\> }"];
+	7 -> 8 [label="ALL -->"]
+	6 [shape=record,label="{<seq> K(w1), F(w1),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\nJ(w1) |<lastfip>  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) --\> }"];
+	6 -> 7 [label="ALL -->"]
+	5 [shape=record,label="{<seq> F(w1) & K(w1),  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\nJ(w1) |<lastfip> F(w1) & K(w1) --\> }"];
+	5 -> 6 [label="&->"]
+	4 [shape=record,label="{<seq>  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x (K(x) =\> H(x)) \n--\>\n(F(w1) & K(w1)) =\> J(w1) |<lastfip> --\> (F(w1) & K(w1)) =\> J(w1) }"];
+	4 -> 5 [label="->=>"]
+	3 [shape=record,label="{<seq>  ALL x (K(x) =\> H(x)),  ALL x ((I(x) & H(x)) =\> J(x)),  ALL x ((F(x) & (G(x) OR H(x))) =\> I(x)) \n--\>\n ALL x ((F(x) & K(x)) =\> J(x)) |<lastfip> --\>  ALL x ((F(x) & K(x)) =\> J(x)) }"];
+	3 -> 4 [label="-->ALL"]
+	2 [shape=record,label="{<seq> ( ALL x ((F(x) & (G(x) OR H(x))) =\> I(x))) & ( ALL x ((I(x) & H(x)) =\> J(x))),  ALL x (K(x) =\> H(x)) \n--\>\n ALL x ((F(x) & K(x)) =\> J(x)) |<lastfip> ( ALL x ((F(x) & (G(x) OR H(x))) =\> I(x))) & ( ALL x ((I(x) & H(x)) =\> J(x))) --\> }"];
+	2 -> 3 [label="&->"]
+	1 [shape=record,label="{<seq> (( ALL x ((F(x) & (G(x) OR H(x))) =\> I(x))) & ( ALL x ((I(x) & H(x)) =\> J(x)))) & ( ALL x (K(x) =\> H(x))) \n--\>\n ALL x ((F(x) & K(x)) =\> J(x)) |<lastfip> (( ALL x ((F(x) & (G(x) OR H(x))) =\> I(x))) & ( ALL x ((I(x) & H(x)) =\> J(x)))) & ( ALL x (K(x) =\> H(x))) --\> }"];
+	1 -> 2 [label="&->"]
+	0 [shape=record,label="{<seq>  \n--\>\n((( ALL x ((F(x) & (G(x) OR H(x))) =\> I(x))) & ( ALL x ((I(x) & H(x)) =\> J(x)))) & ( ALL x (K(x) =\> H(x)))) =\> ( ALL x ((F(x) & K(x)) =\> J(x))) |<lastfip> --\> ((( ALL x ((F(x) & (G(x) OR H(x))) =\> I(x))) & ( ALL x ((I(x) & H(x)) =\> J(x)))) & ( ALL x (K(x) =\> H(x)))) =\> ( ALL x ((F(x) & K(x)) =\> J(x))) }"];
+	0 -> 1 [label="->=>"]
+}

@@ -1,0 +1,2 @@
+EXZ x (EXZ y (P(x) => ALL x (ALL y P(y)) ) )
+

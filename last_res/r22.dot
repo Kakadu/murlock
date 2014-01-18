@@ -1,0 +1,57 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	23 [label="__t2 => __t3\n"]
+	22 [label="__t4 => w1\n"]
+	21 [label="axiom"]
+	subgraph cluster1 {
+		20 [shape=record,label="{<seq> F(__t2), F(__t5),  ALL x F(x),  ALL x (p == F(x)) --\>F(__t3), p, p, p, F(__t1) |<lastfip>  }"];
+	}
+	20 -> 23 [label=""]
+	19 [shape=record,label="{<seq> F(__t3), p, F(__t2), F(__t5),  ALL x F(x),  ALL x (p == F(x)) --\>p, p, F(__t1) |<lastfip>  }"];
+	19 -> 21 [label=""]
+	18 [label="axiom"]
+	17 [shape=record,label="{<seq> F(__t1), p, p,  ALL x (p == F(x)) --\>F(__t4), p, F(w1) |<lastfip>  }"];
+	17 -> 18 [label=""]
+	subgraph cluster1 {
+		16 [shape=record,label="{<seq> F(__t4), p, F(__t1), p, p,  ALL x (p == F(x)) --\>F(w1) |<lastfip>  }"];
+	}
+	16 -> 22 [label=""]
+	15 [shape=record,label="{<seq> F(__t5), F(__t2), p == F(__t3),  ALL x (p == F(x)),  ALL x F(x) --\>F(__t1), p, p |<lastfip> p == F(__t3) --\> }"];
+	15 -> 20 [label="==->"]
+	15 -> 19 [label="==->"]
+	14 [shape=record,label="{<seq> p, p, F(__t1), p == F(__t4),  ALL x (p == F(x)) --\>F(w1) |<lastfip> p == F(__t4) --\> }"];
+	14 -> 17 [label="==->"]
+	14 -> 16 [label="==->"]
+	13 [shape=record,label="{<seq> F(__t2), p == F(__t3),  ALL x F(x),  ALL x (p == F(x)) --\>p, p, F(__t1) |<lastfip>  ALL x F(x) --\> }"];
+	13 -> 15 [label="ALL -->"]
+	12 [label="axiom"]
+	11 [shape=record,label="{<seq> p,  ALL x (p == F(x)) --\>F(__t1), p, F(w1) |<lastfip>  }"];
+	11 -> 12 [label=""]
+	subgraph cluster2 {
+		10 [shape=record,label="{<seq> F(__t1), p, p,  ALL x (p == F(x)) --\>F(w1) |<lastfip>  ALL x (p == F(x)) --\> }"];
+	}
+	10 -> 14 [label="ALL -->"]
+	9 [label="axiom"]
+	subgraph cluster2 {
+		8 [shape=record,label="{<seq> F(__t2),  ALL x (p == F(x)),  ALL x F(x) --\>F(__t1), p, p |<lastfip>  ALL x (p == F(x)) --\> }"];
+	}
+	8 -> 13 [label="ALL -->"]
+	7 [shape=record,label="{<seq> F(__t1), p, F(__t2),  ALL x (p == F(x)),  ALL x F(x) --\>p |<lastfip>  }"];
+	7 -> 9 [label=""]
+	6 [shape=record,label="{<seq> p, p == F(__t1),  ALL x (p == F(x)) --\>F(w1) |<lastfip> p == F(__t1) --\> }"];
+	6 -> 11 [label="==->"]
+	6 -> 10 [label="==->"]
+	5 [shape=record,label="{<seq> F(__t2), p == F(__t1),  ALL x F(x),  ALL x (p == F(x)) --\>p |<lastfip> p == F(__t1) --\> }"];
+	5 -> 8 [label="==->"]
+	5 -> 7 [label="==->"]
+	4 [shape=record,label="{<seq> p == F(__t1),  ALL x (p == F(x)),  ALL x F(x) --\>p |<lastfip>  ALL x F(x) --\> }"];
+	4 -> 5 [label="ALL -->"]
+	3 [shape=record,label="{<seq> p, p == F(__t1),  ALL x (p == F(x)) --\> ALL x F(x) |<lastfip> --\>  ALL x F(x) }"];
+	3 -> 6 [label="-->ALL"]
+	2 [shape=record,label="{<seq> p == F(__t1),  ALL x (p == F(x)) --\>p == ( ALL x F(x)) |<lastfip> --\> p == ( ALL x F(x)) }"];
+	2 -> 4 [label="->=="]
+	2 -> 3 [label="->=="]
+	1 [shape=record,label="{<seq>  ALL x (p == F(x)) --\>p == ( ALL x F(x)) |<lastfip>  ALL x (p == F(x)) --\> }"];
+	1 -> 2 [label="ALL -->"]
+	0 [shape=record,label="{<seq>  --\>( ALL x (p == F(x))) =\> (p == ( ALL x F(x))) |<lastfip> --\> ( ALL x (p == F(x))) =\> (p == ( ALL x F(x))) }"];
+	0 -> 1 [label="->=>"]
+}

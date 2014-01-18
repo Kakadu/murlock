@@ -1,0 +1,3 @@
+-dot on
+#-o temp_res3/r40.dot
+EXZ y (ALL x (P(x,y) == P(x,x))) => ![ALL x (EXZ y (ALL z (P(x,y) == !P(z,x))))]

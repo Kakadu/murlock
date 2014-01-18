@@ -1,0 +1,21 @@
+digraph X {
+	1 [shape=record,label="{  --\> EXZ x (( ALL z P(z)) OR !P(x)) }"];
+	1 -> 2
+	2 [shape=record,label="{  --\>( ALL z P(z)) OR !P(__t1),  EXZ x (( ALL z P(z)) OR !P(x)) }"];
+	2 -> 3
+	3 [shape=record,label="{  --\>!P(__t1),  ALL z P(z),  EXZ x (( ALL z P(z)) OR !P(x)) }"];
+	3 -> 4
+	4 [shape=record,label="{ P(__t1) --\> ALL z P(z),  EXZ x (( ALL z P(z)) OR !P(x)) }"];
+	4 -> 5
+	5 [shape=record,label="{ P(__t1) --\>P(w1),  EXZ x (( ALL z P(z)) OR !P(x)) }"];
+	5 -> 6
+	6 [shape=record,label="{ P(__t1) --\>P(w1), ( ALL z P(z)) OR !P(__t2),  EXZ x (( ALL z P(z)) OR !P(x)) }"];
+	6 -> 7
+	7 [shape=record,label="{ P(__t1) --\>P(w1), !P(__t2),  ALL z P(z),  EXZ x (( ALL z P(z)) OR !P(x)) }"];
+	7 -> 8
+	8 [shape=record,label="{ P(__t2), P(__t1) --\>P(w1),  ALL z P(z),  EXZ x (( ALL z P(z)) OR !P(x)) }"];
+	8 -> 9
+	9 [shape=record,label="{ P(__t1), P(__t2) --\>P(w2), P(w1),  EXZ x (( ALL z P(z)) OR !P(x)) }"];
+	10 [shape=plaintext,label="__t2 => w1\n"]
+	9 -> 10
+}

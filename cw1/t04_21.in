@@ -1,0 +1,1 @@
+(EXZ x (p => F(x))) & (EXZ x (F(x)=> p)) => (EXZ x (p <=> F(x)))

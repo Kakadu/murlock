@@ -1,0 +1,71 @@
+#!/bin/bash
+if [ ! -f murlock ]; then
+        echo "murlock not found"
+        exit
+fi
+
+N=1
+test_formula () {
+	args=$1;count=$2;out_file=$3;sum=0	
+	for blablai in `seq $count`; do
+	   echo -e $args | ./murlock > .temp.log #/dev/null
+	   eval `cat .temp.log | grep DURATION`
+	   sum=`echo $DURATION + $sum | bc`
+	done;
+	avg=`echo "scale=10; $sum * 1000 / $count" | bc`
+	avg=`printf "%4.2f" $avg`
+	eval `cat .temp.log | grep maxiters`
+	eval `cat .temp.log | grep NODESCOUNT`
+}
+test_euristics () {
+	# test euristics for liberlised and classic lazy
+	file=$1; n=$2; n1=$3
+	file_cnt=`cat $file`
+	graph_str="$2 "
+	i="0"
+	for op1 in 0 2  ; do
+		for op2 in 0 1; do
+		ops="$op1${op2}1"
+		out_file="./last_res/$n.$ops"
+		str="-dot on\n-ug 0\n-op $ops\n-o $out_file\n$file_cnt"
+#		echo  "*** $str ***" 
+		#echo "before test_formula i=$i"
+		test_formula "$str" $N "$out_file..info" 
+		#echo "after test_formula i=$i"
+#		avg1=`echo $avg | head -c 5`
+		avg1=$avg
+		arr[$i]=$avg1; arr[$i+1]=$NODESCOUNT
+		#echo "i=$i"
+		#echo "${arr[0]} ${arr[1]} ${arr[2]} ${arr[3]} ${arr[4]} ${arr[5]} ${arr[6]} ${arr[7]}"
+		
+		if [ $i -eq 0 ]; then
+			arr[2]="0"
+		else
+			formula="scale=10; (${arr[$i]} - ${arr[0]}) / ${arr[0]} * 100"
+#		       	echo "formula=$formula"	
+			val=`echo "$formula" | bc | head -c 5`
+			arr[$i+2]=`printf "%4.2f" $val`
+#			echo ${arr[$i+2]}
+		fi
+		i=`echo "$i+3" | bc`
+
+		nodes1=$NODESCOUNT
+		graph_str="$graph_str& $avg1 & $nodes1 "
+		done
+	done;
+	graph_str="$2 & ${arr[0]} & ${arr[1]} & ${arr[3]} & ${arr[4]} & ${arr[5]}\\% & ${arr[6]} & ${arr[7]} & ${arr[8]}\\% & ${arr[9]} & ${arr[10]} & ${arr[11]}\\% \\\\"
+	echo $graph_str
+	echo -e " ${arr[0]}  ${arr[1]} ${arr[2]}  ${arr[3]}  ${arr[4]}  ${arr[5]} ${arr[6]}  ${arr[7]} ${arr[8]} ${arr[9]}  ${arr[10]}  ${arr[11]}" >> .getpic1.out
+}
+
+iter_files () {
+	echo "" > .getpic1.out
+	for file in `ls t*.in`; do
+		read formula < $file
+		num=${file%???}; num=${num##*_} # number in Pelletier
+		n=${file%%_*}; n=${n##*t}
+		test_euristics "$file" $num $n
+	done
+}
+
+iter_files

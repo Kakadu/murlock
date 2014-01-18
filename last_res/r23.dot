@@ -1,0 +1,35 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	16 [label="__t1 => w2\n"]
+	15 [label="__t2 => w1\n"]
+	14 [shape=record,label="{<seq> F(__t2),  ALL x F(x) --\>F(w1), p |<lastfip>  }"];
+	14 -> 15 [label=""]
+	13 [label="axiom"]
+	12 [shape=record,label="{<seq> F(__t1),  ALL x (p OR F(x)) --\>F(w2), p |<lastfip>  }"];
+	12 -> 16 [label=""]
+	11 [shape=record,label="{<seq> p,  ALL x (p OR F(x)) --\>F(w2), p |<lastfip>  }"];
+	11 -> 13 [label=""]
+	10 [shape=record,label="{<seq> p OR F(__t1),  ALL x (p OR F(x)) --\>p, F(w2) |<lastfip> p OR F(__t1) --\> }"];
+	10 -> 12 [label="OR->"]
+	10 -> 11 [label="OR->"]
+	9 [label="axiom"]
+	8 [shape=record,label="{<seq>  ALL x F(x) --\>p, F(w1) |<lastfip>  ALL x F(x) --\> }"];
+	8 -> 14 [label="ALL -->"]
+	7 [shape=record,label="{<seq> p --\>p, F(w1) |<lastfip>  }"];
+	7 -> 9 [label=""]
+	6 [shape=record,label="{<seq> p OR ( ALL x F(x)) --\>F(w1), p |<lastfip> p OR ( ALL x F(x)) --\> }"];
+	6 -> 8 [label="OR->"]
+	6 -> 7 [label="OR->"]
+	5 [shape=record,label="{<seq>  ALL x (p OR F(x)) --\>F(w2), p |<lastfip>  ALL x (p OR F(x)) --\> }"];
+	5 -> 10 [label="ALL -->"]
+	4 [shape=record,label="{<seq>  ALL x (p OR F(x)) --\>p,  ALL x F(x) |<lastfip> --\>  ALL x F(x) }"];
+	4 -> 5 [label="-->ALL"]
+	3 [shape=record,label="{<seq> p OR ( ALL x F(x)) --\>p OR F(w1) |<lastfip> --\> p OR F(w1) }"];
+	3 -> 6 [label="->OR"]
+	2 [shape=record,label="{<seq> p OR ( ALL x F(x)) --\> ALL x (p OR F(x)) |<lastfip> --\>  ALL x (p OR F(x)) }"];
+	2 -> 3 [label="-->ALL"]
+	1 [shape=record,label="{<seq>  ALL x (p OR F(x)) --\>p OR ( ALL x F(x)) |<lastfip> --\> p OR ( ALL x F(x)) }"];
+	1 -> 4 [label="->OR"]
+	0 [shape=record,label="{<seq>  --\>( ALL x (p OR F(x))) == (p OR ( ALL x F(x))) |<lastfip> --\> ( ALL x (p OR F(x))) == (p OR ( ALL x F(x))) }"];
+	0 -> 2 [label="->=="]
+	0 -> 1 [label="->=="]
+}

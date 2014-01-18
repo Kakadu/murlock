@@ -1,0 +1,3 @@
+(ALL x (F(x) & (G(x) OR H(x)) => I(x)))&[ALL x (I(x)&H(x) => J(x))]&(ALL x(K(x)=>H(x))) => (ALL x(F(x) & K(x) => J(x)))
+
+

@@ -1,0 +1,2 @@
+-o last_res/r59.dot
+(ALL x (F(x) == !F(G(x)))) => (EXZ x (F(x) & !F(G(x))))

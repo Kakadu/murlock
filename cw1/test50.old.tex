@@ -1,0 +1,49 @@
+\begin{enumerate}
+\item $ \rightarrow  ( \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))))  \Rightarrow  ( \exists  x ( \forall  y P(x, y)))$\\
+ from [2] by rule $ \Rightarrow \rightarrow $
+\item $ \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow   \exists  x ( \forall  y P(x, y))$\\
+ from [3] by rule $\rightarrow \forall $ with new term $\alpha$
+\item $P(c1, \alpha)  \vee  ( \forall  y P(\alpha, y)),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow   \exists  x ( \forall  y P(x, y))$\\
+ from [4] by rule $\exists \rightarrow $ with new term $\beta$
+\item $P(c1, \alpha)  \vee  ( \forall  y P(\alpha, y)),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow   \forall  y P(\beta, y),  \exists  x ( \forall  y P(x, y))$\\
+ from [5] by rule $\forall \rightarrow $ with new term $w1$
+\item $P(c1, \alpha)  \vee  ( \forall  y P(\alpha, y)),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+ from [6, 7] by rule $\rightarrow  \vee $
+\item $P(c1, \alpha),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [4]\\
+ from [9] by rule $\rightarrow \forall $ with new term $\delta$
+\item $ \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))),  \forall  y P(\alpha, y) \rightarrow  P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+ from [8] by rule $\rightarrow \forall $ with new term $\gamma$
+\item $P(\alpha, \gamma),  \forall  y P(\alpha, y),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [6, 5, 4]\\
+ from [12] by rule $\rightarrow \forall $ with new term $\zeta$
+\item $P(c1, \alpha), P(c1, \delta)  \vee  ( \forall  y P(\delta, y)),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [5]\\
+ from [10] by rule $\exists \rightarrow $ with new term $\varepsilon$
+\item $P(c1, \alpha), P(c1, \delta)  \vee  ( \forall  y P(\delta, y)),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\beta, w1),  \forall  y P(\varepsilon, y),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [6]\\
+ from [11] by rule $\forall \rightarrow $ with new term $w2$
+\item $P(c1, \alpha), P(c1, \delta)  \vee  ( \forall  y P(\delta, y)),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\varepsilon, w2), P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [9, 8, 7]\\
+ from [16, 17] by rule $\rightarrow  \vee $
+\item $P(\alpha, \zeta), P(\alpha, \gamma),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))),  \forall  y P(\alpha, y) \rightarrow  P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [7]\\
+ from [13] by rule $\rightarrow \forall $ with new term $\eta$
+\item $P(\alpha, \gamma), P(\alpha, \zeta), P(c1, \eta)  \vee  ( \forall  y P(\eta, y)),  \forall  y P(\alpha, y),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [8]\\
+ from [14] by rule $\exists \rightarrow $ with new term $\theta$
+\item $P(\alpha, \zeta), P(\alpha, \gamma), P(c1, \eta)  \vee  ( \forall  y P(\eta, y)),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))),  \forall  y P(\alpha, y) \rightarrow  P(\beta, w1),  \forall  y P(\theta, y),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [9]\\
+ from [15] by rule $\forall \rightarrow $ with new term $w3$
+\item $P(\alpha, \gamma), P(\alpha, \zeta), P(c1, \eta)  \vee  ( \forall  y P(\eta, y)),  \forall  y P(\alpha, y),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\theta, w3), P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [10]\\ 
+ unification succeded using [$\zeta \mapsto w1, \beta \mapsto c1, \alpha \mapsto c1$]
+\item $P(c1, \delta), P(c1, \alpha),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\beta, w1), P(\varepsilon, w2),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [10]\\ 
+ unification succeded using [$\varepsilon \mapsto w1, \delta \mapsto w1, \beta \mapsto c1, \alpha \mapsto c1$]
+\item $P(c1, \alpha),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))),  \forall  y P(\delta, y) \rightarrow  P(\beta, w1), P(\varepsilon, w2),  \exists  x ( \forall  y P(x, y))$\\
+ from [18] by rule $\rightarrow \forall $ with new term $\iota$
+\item $P(\delta, \iota), P(c1, \alpha),  \forall  y P(\delta, y),  \forall  x (P(c1, x)  \vee  ( \forall  y P(x, y))) \rightarrow  P(\varepsilon, w2), P(\beta, w1),  \exists  x ( \forall  y P(x, y))$\\
+  used in temporary unifications: [10]\\ 
+ unification succeded using [$\iota \mapsto w2, \varepsilon \mapsto w1, \delta \mapsto w1, \beta \mapsto c1, \alpha \mapsto c1$]
+\end{enumerate}

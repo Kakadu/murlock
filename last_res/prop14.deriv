@@ -1,0 +1,263 @@
+0 	 --> 
+	 --> 
+	 --> (p == q) == ((q OR !p) & (!q OR p))
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2, 1 by rule ->==
+
+1 	 --> 
+	 --> 
+	p == q --> (q OR !p) & (!q OR p)
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 5, 4 by rule ->&
+
+2 	 --> 
+	(q OR !p) & (!q OR p) --> 
+	 --> p == q
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 3 by rule &->
+
+3 	 --> 
+	 --> 
+	!q OR p, q OR !p --> p == q
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 9, 8 by rule ->==
+
+4 	 --> 
+	 --> q OR !p
+	p == q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 7 by rule ->OR
+
+5 	 --> 
+	 --> !q OR p
+	p == q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 6 by rule ->OR
+
+6 	 --> p
+	 --> !q
+	p == q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 16 by rule ->!
+
+7 	 --> q
+	 --> !p
+	p == q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 15 by rule ->!
+
+8 	p --> q
+	 --> 
+	q OR !p, !q OR p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 13, 12 by rule OR->
+
+9 	q --> p
+	 --> 
+	q OR !p, !q OR p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 11, 10 by rule OR->
+
+10 	q, q --> p
+	 --> 
+	!q OR p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 29, 28 by rule OR->
+
+11 	q --> p
+	!p --> 
+	!q OR p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 27 by rule !->
+
+12 	q, p --> q
+	 --> 
+	!q OR p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 14 by rule 
+
+13 	p --> q
+	!p --> 
+	!q OR p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 25 by rule !->
+
+14 LeafInfo of : [axiom]
+15 	p --> q
+	 --> 
+	p == q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 22, 21 by rule ==->
+
+16 	q --> p
+	 --> 
+	p == q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 18, 17 by rule ==->
+
+17 	q, p, q --> p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 20 by rule 
+
+18 	q --> q, p, p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 19 by rule 
+
+19 LeafInfo of : [axiom]
+20 LeafInfo of : [axiom]
+21 	q, p, p --> q
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 24 by rule 
+
+22 	p --> q, p, q
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 23 by rule 
+
+23 LeafInfo of : [axiom]
+24 LeafInfo of : [axiom]
+25 	p --> p, q
+	 --> 
+	!q OR p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 26 by rule 
+
+26 LeafInfo of : [axiom]
+27 	q --> p, p
+	 --> 
+	!q OR p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 34, 33 by rule OR->
+
+28 	q, q --> p
+	!q --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 31 by rule !->
+
+29 	p, q, q --> p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 30 by rule 
+
+30 LeafInfo of : [axiom]
+31 	q, q --> q, p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 32 by rule 
+
+32 LeafInfo of : [axiom]
+33 	q --> p, p
+	!q --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 36 by rule !->
+
+34 	p, q --> p, p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 35 by rule 
+
+35 LeafInfo of : [axiom]
+36 	q --> q, p, p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 37 by rule 
+
+37 LeafInfo of : [axiom]
+38 LeafInfo of 0: [Proving succeded]

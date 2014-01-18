@@ -1,0 +1,21 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	7 [label="__t2 => w1\n"]
+	subgraph cluster1 {
+		6 [shape=record,label="{<seq> F(__t2), F(__t1) --\>F(w2), F(w1),  EXZ y ( ALL x (F(y) =\> F(x))) |<lastfip>  }"];
+	}
+	6 -> 7 [label=""]
+	5 [shape=record,label="{<seq> F(__t1) --\>F(w1), F(__t2) =\> F(w2),  EXZ y ( ALL x (F(y) =\> F(x))) |<lastfip> --\> F(__t2) =\> F(w2) }"];
+	5 -> 6 [label="->=>"]
+	4 [shape=record,label="{<seq> F(__t1) --\>F(w1),  ALL x (F(__t2) =\> F(x)),  EXZ y ( ALL x (F(y) =\> F(x))) |<lastfip> --\>  ALL x (F(__t2) =\> F(x)) }"];
+	4 -> 5 [label="-->ALL"]
+	subgraph cluster2 {
+		3 [shape=record,label="{<seq> F(__t1) --\>F(w1),  EXZ y ( ALL x (F(y) =\> F(x))) |<lastfip> --\>  EXZ y ( ALL x (F(y) =\> F(x))) }"];
+	}
+	3 -> 4 [label="--> EXZ"]
+	2 [shape=record,label="{<seq>  --\>F(__t1) =\> F(w1),  EXZ y ( ALL x (F(y) =\> F(x))) |<lastfip> --\> F(__t1) =\> F(w1) }"];
+	2 -> 3 [label="->=>"]
+	1 [shape=record,label="{<seq>  --\> ALL x (F(__t1) =\> F(x)),  EXZ y ( ALL x (F(y) =\> F(x))) |<lastfip> --\>  ALL x (F(__t1) =\> F(x)) }"];
+	1 -> 2 [label="-->ALL"]
+	0 [shape=record,label="{<seq>  --\> EXZ y ( ALL x (F(y) =\> F(x))) |<lastfip> --\>  EXZ y ( ALL x (F(y) =\> F(x))) }"];
+	0 -> 1 [label="--> EXZ"]
+}

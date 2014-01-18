@@ -1,0 +1,40 @@
+18
+EXZ y (ALL x (F(y) => F(x)))
+19
+EXZ x (ALL y (ALL z (P(y)=>Q(z) => (P(x)=>Q(x))) ) )
+3. 20
+(ALL x (ALL y(EXZ z(ALL w [P(x)&Q(y) => R(z)&S(w)])))) => [(EXZ x (EXZ y (P(x)&Q(y)))) => (EXZ z R(z))]
+21
+(EXZ x (p => F(x))) & (EXZ x (F(x)=> p)) => (EXZ x (p <=> F(x)))
+22
+[ALL x (p == F(x))] => (p == (ALL x F(x)))
+6. 23
+[ALL x (p OR F(x))] == [p OR (ALL x F(x))]
+24
+[ALL x (P(x) => ALL y Q(y))] & [(ALL x (Q(x) OR R(x))) => (EXZ x (Q(x) & S(x)))] & [(EXZ x S(x)) => (ALL x(F(x)=>G(x)))] => (ALL x (P(x) & F(x) => G(x)))
+30
+(ALL x (F(x) OR G(x) => !H(x)))&(ALL x((G(x) => !I(x)) => F(x)&H(x))) => (ALL x I(x))
+9. 31
+!(EXZ x(F(x) & (G(x) OR H(x)))) & (EXZ x(I(x) & F(x))) & (ALL x(!H(x) => J(x))) => (EXZ x(I(x) & J(x)))
+32
+(ALL x (F(x) & (G(x) OR H(x)) => I(x)))&[ALL x (I(x)&H(x) => J(x))]&(ALL x(K(x)=>H(x))) => (ALL x(F(x) & K(x) => J(x)))
+11. 33
+[ALL x(P(_a)&(P(x)=>P(_b))=>P(_c))]==[ALL x((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c))))]
+12. 35
+EXZ x (EXZ y (P(x) => ALL x (ALL y P(y)) ) )
+36
+13. (ALL x EXZ y F(x,y)) & (ALL x EXZ y G(x,y)) & (ALL x ALL y (F(x,y) OR G(x,y) => (ALL z (F(y,z) OR G(y,z) => H(x,z))))) => (ALL x EXZ y H(x,y))
+14. 37
+(ALL z EXZ w ALL x EXZ y [(P(x,z)=>P(y,w))& P(y,z) &(P(y,w)=>(EXZ u Q(u,w)))]) & (ALL x ALL z (!P(x,z) => (EXZ y Q(y,z)))) & ((EXZ x EXZ y Q(x,y))  => (ALL x R(x,x))) => (ALL x EXZ y R(x,y))
+15. 38
+!(EXZ x (ALL y (P(y,x) <=> !P(y,y))))
+41
+(ALL z EXZ y ALL x (F(x,y) == (F(x,z) & !F(x,x)))) => ! EXZ z ALL x F(x,z)
+17. 42
+! EXZ y (ALL x ( P(x,y)<=> ! EXZ z (P(x,z)&P(z,x)) ) )
+50
+(ALL x [P(_a,x) OR (ALL y P(x,y))]) => (EXZ x (ALL y P(x,y)))
+57
+F(G(_a,_b),G(_b,_c)) & F(G(_b,_c),G(_a,_c)) & (ALL x ALL y ALL z [(F(x,y) & F(y,z)) => F(x,z)]) => F(G(_a,_b),G(_a,_c))
+62
+[ALL x(F(_a) & (F(x)=>F(G(x))) => F(G(G(x))) )] == ALL x [[!F(_a) OR F(x) OR F(G(G(x)))] & [!F(_a) OR !F(G(x)) OR F(G(G(x)))]]

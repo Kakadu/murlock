@@ -1,0 +1,136 @@
+0 	 --> 
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y)))))
+dead minuses count: 0
+;;
+from 1 by rule --> EXZ
+
+1 	 --> 
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) => ( ALL x ( ALL y P(y))))
+dead minuses count: 1
+;;
+from 2 by rule --> EXZ
+
+2 	 --> 
+	 --> P(__t1) => ( ALL x ( ALL y P(y)))
+	 --> 
+	 --> 
+	 -->  EXZ y (P(__t1) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y)))))
+dead minuses count: 2
+;;
+from 3 by rule ->=>
+
+3 	P(__t1) --> 
+	 --> 
+	 --> 
+	 -->  ALL x ( ALL y P(y))
+	 -->  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) => ( ALL x ( ALL y P(y))))
+dead minuses count: 2
+;;
+from 4 by rule -->ALL
+
+4 	P(__t1) --> 
+	 --> 
+	 --> 
+	 -->  ALL y P(y)
+	 -->  EXZ y (P(__t1) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y)))))
+dead minuses count: 2
+;;
+from 5 by rule -->ALL
+
+5 	P(__t1) --> P(w2)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) => ( ALL x ( ALL y P(y))))
+dead minuses count: 0
+;;
+from 6 by rule --> EXZ
+
+6 	P(__t1) --> P(w2)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ y (P(__t1) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) => ( ALL x ( ALL y P(y))))
+dead minuses count: 1
+;;
+from 7 by rule --> EXZ
+
+7 	P(__t1) --> P(w2)
+	 --> P(__t1) => ( ALL x ( ALL y P(y)))
+	 --> 
+	 --> 
+	 -->  EXZ y (P(__t3) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) => ( ALL x ( ALL y P(y))))
+dead minuses count: 2
+;;
+from 8 by rule ->=>
+
+8 	P(__t1), P(__t1) --> P(w2)
+	 --> 
+	 --> 
+	 -->  ALL x ( ALL y P(y))
+	 -->  EXZ y (P(__t1) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) => ( ALL x ( ALL y P(y))))
+dead minuses count: 2
+;;
+from 9 by rule -->ALL
+
+9 	P(__t1), P(__t1) --> P(w2)
+	 --> 
+	 --> 
+	 -->  ALL y P(y)
+	 -->  EXZ y (P(__t3) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) => ( ALL x ( ALL y P(y))))
+dead minuses count: 2
+;;
+from 10 by rule -->ALL
+
+10 	P(__t1), P(__t1) --> P(w4), P(w2)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ y (P(__t1) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) => ( ALL x ( ALL y P(y))))
+dead minuses count: 2
+;;
+from 11 by rule --> EXZ
+
+11 	P(__t1), P(__t1) --> P(w2), P(w4)
+	 --> P(__t3) => ( ALL x ( ALL y P(y)))
+	 --> 
+	 --> 
+	 -->  EXZ y (P(__t3) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) => ( ALL x ( ALL y P(y))))
+dead minuses count: 3
+;;
+from 12 by rule ->=>
+
+12 	P(__t3), P(__t1), P(__t1) --> P(w4), P(w2)
+	 --> 
+	 --> 
+	 -->  ALL x ( ALL y P(y))
+	 -->  EXZ y (P(__t1) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) => ( ALL x ( ALL y P(y))))
+dead minuses count: 3
+;;
+from 13 by rule -->ALL
+
+13 	P(__t1), P(__t1), P(__t3) --> P(w2), P(w4)
+	 --> 
+	 --> 
+	 -->  ALL y P(y)
+	 -->  EXZ y (P(__t3) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) => ( ALL x ( ALL y P(y))))
+dead minuses count: 3
+;;
+from 14 by rule -->ALL
+
+14 	P(__t3), P(__t1), P(__t1) --> P(w6), P(w4), P(w2)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ y (P(__t1) => ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) => ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) => ( ALL x ( ALL y P(y))))
+dead minuses count: 0
+;;
+from 15 by rule 
+
+15 LeafInfo of : [__t3 => w2\n]

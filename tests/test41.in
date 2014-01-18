@@ -1,0 +1,3 @@
+-dot on
+-o temp_res3/r41.dot
+(ALL z EXZ y ALL x (F(x,y) == (F(x,z) & !F(x,x)))) => ! EXZ z ALL x F(x,z)

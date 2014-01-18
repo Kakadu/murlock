@@ -1,0 +1,3 @@
+-o temp_res3/r43.dot
+#ASS
+(ALL x ALL y (Q(x,y) == (ALL z (F(z,x) == F(z,y))))) => (ALL x ALL y (Q(x,y) == Q(y,x)))

@@ -1,0 +1,6 @@
+#!/bin/bash
+./murlock < book1.in > /dev/null
+#
+cat book1.old.dot | sed "s/digraph X {/digraph X { d2tgraphstyle=\"scale=0.60\";/g " | sed "s/record/plaintext/g" | sed "s/=\"{/=\"/g" | sed "s/}\"]/\"]/g" | sed "s/:\ {/:\ /g" > .temp.dot
+#
+dot2tex --figonly .temp.dot | sed "s/EXZ/\$\\\\exists\$/g" | sed "s/ALL/\$ \\\\forall\$/g" | sed "s/-->/\$\\\\rightarrow\$\ /g" | sed "s/OR/\$\\\\vee\$/g" 

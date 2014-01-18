@@ -1,0 +1,2 @@
+!(EXZ x(F(x) & (G(x) OR H(x)))) & (EXZ x(I(x) & F(x))) & (ALL x(!H(x) => J(x))) => (EXZ x(I(x) & J(x)))
+

@@ -1,0 +1,2 @@
+-o last_res/r26.dot
+[(EXZ x P(x)) == (EXZ x Q(x))] & (ALL x ALL y (P(x) & Q(y) => (R(x) == S(y)))) => [(ALL x (P(x) => R(x))) == (ALL x (Q(x) => S(x)))]

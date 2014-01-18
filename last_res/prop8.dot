@@ -1,0 +1,17 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	7 [label="Proving succeded"]
+	7 -> 0
+	6 [label="axiom"]
+	5 [shape=record,label="{<seq> p --\>q, p |<lastfip>  }"];
+	5 -> 6 [label=""]
+	4 [label="axiom"]
+	3 [shape=record,label="{<seq> p --\>p |<lastfip>  }"];
+	3 -> 4 [label=""]
+	2 [shape=record,label="{<seq>  --\>p, p =\> q |<lastfip> --\> p =\> q }"];
+	2 -> 5 [label="->=>"]
+	1 [shape=record,label="{<seq> (p =\> q) =\> p --\>p |<lastfip> (p =\> q) =\> p --\> }"];
+	1 -> 3 [label="=>->"]
+	1 -> 2 [label="=>->"]
+	0 [shape=record,label="{<seq>  --\>((p =\> q) =\> p) =\> p |<lastfip> --\> ((p =\> q) =\> p) =\> p }"];
+	0 -> 1 [label="->=>"]
+}

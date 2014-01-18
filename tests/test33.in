@@ -1,0 +1,2 @@
+-o temp_res3/r33.dot
+[ALL x(P(_a)&(P(x)=>P(_b))=>P(_c))]==[ALL x((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c))))]

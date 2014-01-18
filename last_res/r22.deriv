@@ -1,0 +1,168 @@
+0 	 --> 
+	 --> ( ALL x (p == F(x))) => (p == ( ALL x F(x)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	 --> 
+	 --> p == ( ALL x F(x))
+	 --> 
+	 ALL x (p == F(x)) --> 
+dead minuses count: 0
+;;
+from 2 by rule ALL -->
+
+2 	 --> 
+	 --> 
+	p == F(__t1) --> p == ( ALL x F(x))
+	 --> 
+	 ALL x (p == F(x)) --> 
+dead minuses count: 1
+;;
+from 4, 3 by rule ->==
+
+3 	p --> 
+	 --> 
+	p == F(__t1) --> 
+	 -->  ALL x F(x)
+	 ALL x (p == F(x)) --> 
+dead minuses count: 1
+;;
+from 6 by rule -->ALL
+
+4 	 --> p
+	 --> 
+	p == F(__t1) --> 
+	 --> 
+	 ALL x (p == F(x)),  ALL x F(x) --> 
+dead minuses count: 1
+;;
+from 5 by rule ALL -->
+
+5 	F(__t2) --> p
+	 --> 
+	p == F(__t1) --> 
+	 --> 
+	 ALL x F(x),  ALL x (p == F(x)) --> 
+dead minuses count: 2
+;;
+from 8, 7 by rule ==->
+
+6 	p --> F(w1)
+	 --> 
+	p == F(__t1) --> 
+	 --> 
+	 ALL x (p == F(x)) --> 
+dead minuses count: 1
+;;
+from 11, 10 by rule ==->
+
+7 	F(__t1), p, F(__t2) --> p
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (p == F(x)),  ALL x F(x) --> 
+dead minuses count: 2
+;;
+from 9 by rule 
+
+8 	F(__t2) --> F(__t1), p, p
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (p == F(x)),  ALL x F(x) --> 
+dead minuses count: 0
+;;
+from 13 by rule ALL -->
+
+9 LeafInfo of : [axiom]
+10 	F(__t1), p, p --> F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (p == F(x)) --> 
+dead minuses count: 0
+;;
+from 14 by rule ALL -->
+
+11 	p --> F(__t1), p, F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (p == F(x)) --> 
+dead minuses count: 1
+;;
+from 12 by rule 
+
+12 LeafInfo of : [axiom]
+13 	F(__t2) --> p, p, F(__t1)
+	 --> 
+	p == F(__t3) --> 
+	 --> 
+	 ALL x F(x),  ALL x (p == F(x)) --> 
+dead minuses count: 1
+;;
+from 15 by rule ALL -->
+
+14 	p, p, F(__t1) --> F(w1)
+	 --> 
+	p == F(__t4) --> 
+	 --> 
+	 ALL x (p == F(x)) --> 
+dead minuses count: 1
+;;
+from 17, 16 by rule ==->
+
+15 	F(__t5), F(__t2) --> F(__t1), p, p
+	 --> 
+	p == F(__t3) --> 
+	 --> 
+	 ALL x (p == F(x)),  ALL x F(x) --> 
+dead minuses count: 2
+;;
+from 20, 19 by rule ==->
+
+16 	F(__t4), p, F(__t1), p, p --> F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (p == F(x)) --> 
+dead minuses count: 0
+;;
+from 22 by rule 
+
+17 	F(__t1), p, p --> F(__t4), p, F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (p == F(x)) --> 
+dead minuses count: 1
+;;
+from 18 by rule 
+
+18 LeafInfo of : [axiom]
+19 	F(__t3), p, F(__t2), F(__t5) --> p, p, F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x F(x),  ALL x (p == F(x)) --> 
+dead minuses count: 2
+;;
+from 21 by rule 
+
+20 	F(__t2), F(__t5) --> F(__t3), p, p, p, F(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x F(x),  ALL x (p == F(x)) --> 
+dead minuses count: 0
+;;
+from 23 by rule 
+
+21 LeafInfo of : [axiom]
+22 LeafInfo of : [__t4 => w1\n]
+23 LeafInfo of : [__t2 => __t3\n]

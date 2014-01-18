@@ -1,0 +1,488 @@
+0 	 --> 
+	 --> ! EXZ y ( ALL x (P(x, y) == ! EXZ z (P(x, z) & P(z, x))))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->!
+
+1 	 --> 
+	 --> 
+	 --> 
+	 EXZ y ( ALL x (P(x, y) == ! EXZ z (P(x, z) & P(z, x)))) --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule EXZ-->
+
+2 	 --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 0
+;;
+from 3 by rule ALL -->
+
+3 	 --> 
+	 --> 
+	P(__t1, w1) == ! EXZ z (P(__t1, z) & P(z, __t1)) --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 5, 4 by rule ==->
+
+4 	P(__t1, w1) --> 
+	! EXZ z (P(__t1, z) & P(z, __t1)) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 7 by rule !->
+
+5 	 --> P(__t1, w1)
+	 --> ! EXZ z (P(__t1, z) & P(z, __t1))
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 6 by rule ->!
+
+6 	 --> P(__t1, w1)
+	 --> 
+	 --> 
+	 EXZ z (P(__t1, z) & P(z, __t1)) --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 9 by rule EXZ-->
+
+7 	P(__t1, w1) --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 1
+;;
+from 8 by rule --> EXZ
+
+8 	P(__t1, w1) --> 
+	 --> 
+	 --> P(__t1, __t2) & P(__t2, __t1)
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 11, 10 by rule ->&
+
+9 	 --> P(__t1, w1)
+	P(__t1, w2) & P(w2, __t1) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 12 by rule &->
+
+10 	P(__t1, w1) --> P(__t1, __t2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 0
+;;
+from 14 by rule ALL -->
+
+11 	P(__t1, w1) --> P(__t2, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 0
+;;
+from 13 by rule ALL -->
+
+12 	P(w2, __t1), P(__t1, w2) --> P(__t1, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 0
+;;
+from 15 by rule ALL -->
+
+13 	P(__t1, w1) --> P(__t2, __t1)
+	 --> 
+	P(__t3, w1) == ! EXZ z (P(__t3, z) & P(z, __t3)) --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 1
+;;
+from 16 by rule --> EXZ
+
+14 	P(__t1, w1) --> P(__t1, __t2)
+	 --> 
+	P(__t4, w1) == ! EXZ z (P(__t4, z) & P(z, __t4)) --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 1
+;;
+from 17 by rule --> EXZ
+
+15 	P(__t1, w2), P(w2, __t1) --> P(__t1, w1)
+	 --> 
+	P(__t5, w1) == ! EXZ z (P(__t5, z) & P(z, __t5)) --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 19, 18 by rule ==->
+
+16 	P(__t1, w1) --> P(__t2, __t1)
+	 --> 
+	P(__t3, w1) == ! EXZ z (P(__t3, z) & P(z, __t3)) --> P(__t1, __t6) & P(__t6, __t1)
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 21, 20 by rule ->&
+
+17 	P(__t1, w1) --> P(__t1, __t2)
+	 --> 
+	P(__t4, w1) == ! EXZ z (P(__t4, z) & P(z, __t4)) --> P(__t1, __t7) & P(__t7, __t1)
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 23, 22 by rule ->&
+
+18 	P(__t5, w1), P(w2, __t1), P(__t1, w2) --> P(__t1, w1)
+	! EXZ z (P(__t5, z) & P(z, __t5)) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 33 by rule !->
+
+19 	P(w2, __t1), P(__t1, w2) --> P(__t5, w1), P(__t1, w1)
+	 --> ! EXZ z (P(__t5, z) & P(z, __t5))
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 32 by rule ->!
+
+20 	P(__t1, w1) --> P(__t1, __t6), P(__t2, __t1)
+	 --> 
+	P(__t3, w1) == ! EXZ z (P(__t3, z) & P(z, __t3)) --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 31, 30 by rule ==->
+
+21 	P(__t1, w1) --> P(__t6, __t1), P(__t2, __t1)
+	 --> 
+	P(__t3, w1) == ! EXZ z (P(__t3, z) & P(z, __t3)) --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 29, 28 by rule ==->
+
+22 	P(__t1, w1) --> P(__t1, __t7), P(__t1, __t2)
+	 --> 
+	P(__t4, w1) == ! EXZ z (P(__t4, z) & P(z, __t4)) --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 27, 26 by rule ==->
+
+23 	P(__t1, w1) --> P(__t7, __t1), P(__t1, __t2)
+	 --> 
+	P(__t4, w1) == ! EXZ z (P(__t4, z) & P(z, __t4)) --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 25, 24 by rule ==->
+
+24 	P(__t4, w1), P(__t1, w1) --> P(__t1, __t2), P(__t7, __t1)
+	! EXZ z (P(__t4, z) & P(z, __t4)) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 43 by rule !->
+
+25 	P(__t1, w1) --> P(__t4, w1), P(__t1, __t2), P(__t7, __t1)
+	 --> ! EXZ z (P(__t4, z) & P(z, __t4))
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 42 by rule ->!
+
+26 	P(__t4, w1), P(__t1, w1) --> P(__t1, __t2), P(__t1, __t7)
+	! EXZ z (P(__t4, z) & P(z, __t4)) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 41 by rule !->
+
+27 	P(__t1, w1) --> P(__t4, w1), P(__t1, __t2), P(__t1, __t7)
+	 --> ! EXZ z (P(__t4, z) & P(z, __t4))
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 40 by rule ->!
+
+28 	P(__t3, w1), P(__t1, w1) --> P(__t2, __t1), P(__t6, __t1)
+	! EXZ z (P(__t3, z) & P(z, __t3)) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 39 by rule !->
+
+29 	P(__t1, w1) --> P(__t3, w1), P(__t2, __t1), P(__t6, __t1)
+	 --> ! EXZ z (P(__t3, z) & P(z, __t3))
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 38 by rule ->!
+
+30 	P(__t3, w1), P(__t1, w1) --> P(__t2, __t1), P(__t1, __t6)
+	! EXZ z (P(__t3, z) & P(z, __t3)) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 37 by rule !->
+
+31 	P(__t1, w1) --> P(__t3, w1), P(__t2, __t1), P(__t1, __t6)
+	 --> ! EXZ z (P(__t3, z) & P(z, __t3))
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 36 by rule ->!
+
+32 	P(__t1, w2), P(w2, __t1) --> P(__t1, w1), P(__t5, w1)
+	 --> 
+	 --> 
+	 EXZ z (P(__t5, z) & P(z, __t5)) --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 35 by rule EXZ-->
+
+33 	P(__t1, w2), P(w2, __t1), P(__t5, w1) --> P(__t1, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t5, z) & P(z, __t5))
+dead minuses count: 1
+;;
+from 34 by rule --> EXZ
+
+34 	P(__t5, w1), P(w2, __t1), P(__t1, w2) --> P(__t1, w1)
+	 --> 
+	 --> P(__t5, __t8) & P(__t8, __t5)
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t5, z) & P(z, __t5))
+dead minuses count: 2
+;;
+from 45, 44 by rule ->&
+
+35 	P(w2, __t1), P(__t1, w2) --> P(__t5, w1), P(__t1, w1)
+	P(__t5, w3) & P(w3, __t5) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) --> 
+dead minuses count: 1
+;;
+from 54 by rule 
+
+36 	P(__t1, w1) --> P(__t1, __t6), P(__t2, __t1), P(__t3, w1)
+	 --> 
+	 --> 
+	 EXZ z (P(__t3, z) & P(z, __t3)) --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 53 by rule 
+
+37 	P(__t1, w1), P(__t3, w1) --> P(__t1, __t6), P(__t2, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1)),  EXZ z (P(__t3, z) & P(z, __t3))
+dead minuses count: 2
+;;
+from 52 by rule --> EXZ
+
+38 	P(__t1, w1) --> P(__t6, __t1), P(__t2, __t1), P(__t3, w1)
+	 --> 
+	 --> 
+	 EXZ z (P(__t3, z) & P(z, __t3)) --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 51 by rule EXZ-->
+
+39 	P(__t1, w1), P(__t3, w1) --> P(__t6, __t1), P(__t2, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1)),  EXZ z (P(__t3, z) & P(z, __t3))
+dead minuses count: 2
+;;
+from 50 by rule --> EXZ
+
+40 	P(__t1, w1) --> P(__t1, __t7), P(__t1, __t2), P(__t4, w1)
+	 --> 
+	 --> 
+	 EXZ z (P(__t4, z) & P(z, __t4)) --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 49 by rule EXZ-->
+
+41 	P(__t1, w1), P(__t4, w1) --> P(__t1, __t7), P(__t1, __t2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1)),  EXZ z (P(__t4, z) & P(z, __t4))
+dead minuses count: 2
+;;
+from 48 by rule --> EXZ
+
+42 	P(__t1, w1) --> P(__t7, __t1), P(__t1, __t2), P(__t4, w1)
+	 --> 
+	 --> 
+	 EXZ z (P(__t4, z) & P(z, __t4)) --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 47 by rule EXZ-->
+
+43 	P(__t1, w1), P(__t4, w1) --> P(__t7, __t1), P(__t1, __t2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1)),  EXZ z (P(__t4, z) & P(z, __t4))
+dead minuses count: 2
+;;
+from 46 by rule --> EXZ
+
+44 	P(__t1, w2), P(w2, __t1), P(__t5, w1) --> P(__t5, __t8), P(__t1, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t5, z) & P(z, __t5))
+dead minuses count: 2
+;;
+from 56 by rule 
+
+45 	P(__t1, w2), P(w2, __t1), P(__t5, w1) --> P(__t8, __t5), P(__t1, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t5, z) & P(z, __t5))
+dead minuses count: 2
+;;
+from 57 by rule 
+
+46 	P(__t4, w1), P(__t1, w1) --> P(__t1, __t2), P(__t7, __t1)
+	 --> 
+	 --> P(__t4, __t9) & P(__t9, __t4)
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t4, z) & P(z, __t4)),  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 3
+;;
+from 55 by rule 
+
+47 	P(__t1, w1) --> P(__t4, w1), P(__t1, __t2), P(__t7, __t1)
+	P(__t4, w4) & P(w4, __t4) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 59 by rule 
+
+48 	P(__t4, w1), P(__t1, w1) --> P(__t1, __t2), P(__t1, __t7)
+	 --> 
+	 --> P(__t4, __t10) & P(__t10, __t4)
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t4, z) & P(z, __t4)),  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 3
+;;
+from 58 by rule 
+
+49 	P(__t1, w1) --> P(__t4, w1), P(__t1, __t2), P(__t1, __t7)
+	P(__t4, w5) & P(w5, __t4) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 61 by rule 
+
+50 	P(__t3, w1), P(__t1, w1) --> P(__t2, __t1), P(__t6, __t1)
+	 --> 
+	 --> P(__t3, __t11) & P(__t11, __t3)
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t3, z) & P(z, __t3)),  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 3
+;;
+from 60 by rule 
+
+51 	P(__t1, w1) --> P(__t3, w1), P(__t2, __t1), P(__t6, __t1)
+	P(__t3, w6) & P(w6, __t3) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 2
+;;
+from 63 by rule 
+
+52 	P(__t3, w1), P(__t1, w1) --> P(__t2, __t1), P(__t1, __t6)
+	 --> 
+	 --> P(__t3, __t12) & P(__t12, __t3)
+	 --> 
+	 ALL x (P(x, w1) == ! EXZ z (P(x, z) & P(z, x))) -->  EXZ z (P(__t3, z) & P(z, __t3)),  EXZ z (P(__t1, z) & P(z, __t1))
+dead minuses count: 3
+;;
+from 62 by rule 
+
+53 LeafInfo of : [__t6 => w1\n__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+54 LeafInfo of : [__t5 => w2\n__t1 => w1\n]
+55 LeafInfo of : [__t4 => w1\n__t2 => w1\n__t1 => w1\n]
+56 LeafInfo of : [__t8 => w1\n__t5 => w2\n__t1 => w1\n]
+57 LeafInfo of : [__t8 => w1\n__t5 => w2\n__t1 => w1\n]
+58 LeafInfo of : [__t4 => w1\n__t2 => w1\n__t1 => w1\n]
+59 LeafInfo of : [__t4 => w1\n__t2 => w1\n__t1 => w1\n]
+60 LeafInfo of : [__t6 => w1\n__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+61 LeafInfo of : [__t4 => w1\n__t2 => w1\n__t1 => w1\n]
+62 LeafInfo of : [__t6 => w1\n__t3 => w1\n__t2 => w1\n__t1 => w1\n]
+63 LeafInfo of : [__t6 => w1\n__t3 => w1\n__t2 => w1\n__t1 => w1\n]

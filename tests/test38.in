@@ -1,0 +1,2 @@
+-o temp_res/r38.dot
+[ALL x[P(_a) & (P(x) => (EXZ y(P(y)&R(x,y)))) => (EXZ z EXZ w (P(z) & R(x,w) & R(w,z)))]] == (ALL x[!P(_a) OR P(x) OR (EXZ z EXZ w P(z)) & R(x,w) &R(w,z)]) & (!P(_a) OR !(EXZ y (P(y) & R(x,y))) OR (EXZ z EXZ w (P(z) & R(x,w) & R(w,z))))

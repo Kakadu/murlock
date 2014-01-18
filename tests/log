@@ -1,0 +1,7 @@
+Go proving
+start seq: --> 
+ --> 
+ --> 
+ --> 
+ -->  EXZ x ( ALL y ( ALL z ((P(y) => Q(z)) => (P(x) => Q(x)))))
+max unifs count =1

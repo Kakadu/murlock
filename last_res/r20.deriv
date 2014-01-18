@@ -1,0 +1,147 @@
+0 	 --> 
+	 --> ( ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w))))))) => (( EXZ x ( EXZ y (P(x) & Q(y)))) => ( EXZ z R(z)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	 --> ( EXZ x ( EXZ y (P(x) & Q(y)))) => ( EXZ z R(z))
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))) --> 
+dead minuses count: 0
+;;
+from 2 by rule ->=>
+
+2 	 --> 
+	 --> 
+	 --> 
+	 EXZ x ( EXZ y (P(x) & Q(y))) --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))) -->  EXZ z R(z)
+dead minuses count: 0
+;;
+from 3 by rule EXZ-->
+
+3 	 --> 
+	 --> 
+	 --> 
+	 EXZ y (P(w1) & Q(y)) --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))) -->  EXZ z R(z)
+dead minuses count: 0
+;;
+from 4 by rule EXZ-->
+
+4 	 --> 
+	P(w1) & Q(w2) --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))) -->  EXZ z R(z)
+dead minuses count: 0
+;;
+from 5 by rule &->
+
+5 	Q(w2), P(w1) --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))) -->  EXZ z R(z)
+dead minuses count: 0
+;;
+from 6 by rule ALL -->
+
+6 	P(w1), Q(w2) --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))) -->  EXZ z R(z)
+dead minuses count: 1
+;;
+from 7 by rule ALL -->
+
+7 	Q(w2), P(w1) --> 
+	 --> 
+	 --> 
+	 EXZ z ( ALL w ((P(__t1) & Q(__t2)) => (R(z) & S(w)))) --> 
+	 ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))) -->  EXZ z R(z)
+dead minuses count: 2
+;;
+from 8 by rule EXZ-->
+
+8 	P(w1), Q(w2) --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) => (R(w3) & S(w))) -->  EXZ z R(z)
+dead minuses count: 2
+;;
+from 9 by rule ALL -->
+
+9 	Q(w2), P(w1) --> 
+	 --> 
+	(P(__t1) & Q(__t2)) => (R(w3) & S(__t3)) --> 
+	 --> 
+	 ALL w ((P(__t1) & Q(__t2)) => (R(w3) & S(w))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))) -->  EXZ z R(z)
+dead minuses count: 3
+;;
+from 10 by rule --> EXZ
+
+10 	P(w1), Q(w2) --> R(__t4)
+	 --> 
+	(P(__t1) & Q(__t2)) => (R(w3) & S(__t3)) --> 
+	 --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) => (R(w3) & S(w))) -->  EXZ z R(z)
+dead minuses count: 4
+;;
+from 12, 11 by rule =>->
+
+11 	Q(w2), P(w1) --> R(__t4)
+	 --> 
+	 --> P(__t1) & Q(__t2)
+	 --> 
+	 ALL w ((P(__t1) & Q(__t2)) => (R(w3) & S(w))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))) -->  EXZ z R(z)
+dead minuses count: 4
+;;
+from 15, 14 by rule ->&
+
+12 	Q(w2), P(w1) --> R(__t4)
+	R(w3) & S(__t3) --> 
+	 --> 
+	 --> 
+	 ALL w ((P(__t1) & Q(__t2)) => (R(w3) & S(w))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))) -->  EXZ z R(z)
+dead minuses count: 4
+;;
+from 13 by rule &->
+
+13 	S(__t3), R(w3), P(w1), Q(w2) --> R(__t4)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) => (R(w3) & S(w))) -->  EXZ z R(z)
+dead minuses count: 0
+;;
+from 16 by rule 
+
+14 	P(w1), Q(w2) --> P(__t1), R(__t4)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) => (R(w3) & S(w))) -->  EXZ z R(z)
+dead minuses count: 0
+;;
+from 17 by rule 
+
+15 	P(w1), Q(w2) --> Q(__t2), R(__t4)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) => (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) => (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) => (R(w3) & S(w))) -->  EXZ z R(z)
+dead minuses count: 0
+;;
+from 18 by rule 
+
+16 LeafInfo of : [__t4 => w3\n__t2 => w2\n__t1 => w1\n]
+17 LeafInfo of : [__t4 => w3\n__t2 => w2\n__t1 => w1\n]
+18 LeafInfo of : [__t4 => w3\n__t2 => w2\n__t1 => w1\n]

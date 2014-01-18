@@ -1,0 +1,29 @@
+0 	 --> 
+	 --> p OR !p
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->OR
+
+1 	 --> p
+	 --> !p
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule ->!
+
+2 	p --> p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 3 by rule 
+
+3 LeafInfo of : [axiom]
+4 LeafInfo of 0: [Proving succeded]

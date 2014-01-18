@@ -1,0 +1,6 @@
+-dot on
+-dt normal
+-ug 1
+-op 201
+-o ./last_res/50.lists
+(ALL x [P(_a,x) OR (ALL y P(x,y))]) => (EXZ x (ALL y P(x,y)))

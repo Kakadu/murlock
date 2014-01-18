@@ -1,0 +1,2 @@
+-o temp_res3/test37.dot
+(ALL z EXZ w ALL x EXZ y [(P(x,z)=>P(y,w))& P(y,z) &(P(y,w)=>(EXZ u Q(u,w)))]) & (ALL x ALL z (!P(x,z) => (EXZ y Q(y,z)))) & ((EXZ x EXZ y Q(x,y))  => (ALL x R(x,x))) => (ALL x EXZ y R(x,y))

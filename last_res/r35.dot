@@ -1,0 +1,37 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	15 [label="__t3 => w2\n"]
+	subgraph cluster1 {
+		14 [shape=record,label="{<seq> P(__t3), P(__t1), P(__t1) \n--\>\nP(w6), P(w4), P(w2),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))) |<lastfip>  }"];
+	}
+	14 -> 15 [label=""]
+	13 [shape=record,label="{<seq> P(__t1), P(__t1), P(__t3) \n--\>\nP(w2), P(w4),  ALL y P(y),  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\>  ALL y P(y) }"];
+	13 -> 14 [label="-->ALL"]
+	12 [shape=record,label="{<seq> P(__t3), P(__t1), P(__t1) \n--\>\nP(w4), P(w2),  ALL x ( ALL y P(y)),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\>  ALL x ( ALL y P(y)) }"];
+	12 -> 13 [label="-->ALL"]
+	11 [shape=record,label="{<seq> P(__t1), P(__t1) \n--\>\nP(w2), P(w4), P(__t3) =\> ( ALL x ( ALL y P(y))),  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\> P(__t3) =\> ( ALL x ( ALL y P(y))) }"];
+	11 -> 12 [label="->=>"]
+	10 [shape=record,label="{<seq> P(__t1), P(__t1) \n--\>\nP(w4), P(w2),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\>  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))) }"];
+	10 -> 11 [label="--> EXZ"]
+	9 [shape=record,label="{<seq> P(__t1), P(__t1) \n--\>\nP(w2),  ALL y P(y),  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\>  ALL y P(y) }"];
+	9 -> 10 [label="-->ALL"]
+	8 [shape=record,label="{<seq> P(__t1), P(__t1) \n--\>\nP(w2),  ALL x ( ALL y P(y)),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\>  ALL x ( ALL y P(y)) }"];
+	8 -> 9 [label="-->ALL"]
+	7 [shape=record,label="{<seq> P(__t1) \n--\>\nP(w2), P(__t1) =\> ( ALL x ( ALL y P(y))),  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\> P(__t1) =\> ( ALL x ( ALL y P(y))) }"];
+	7 -> 8 [label="->=>"]
+	6 [shape=record,label="{<seq> P(__t1) \n--\>\nP(w2),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t3) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\>  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))) }"];
+	6 -> 7 [label="--> EXZ"]
+	subgraph cluster2 {
+		5 [shape=record,label="{<seq> P(__t1) \n--\>\nP(w2),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\>  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))) }"];
+	}
+	5 -> 6 [label="--> EXZ"]
+	4 [shape=record,label="{<seq> P(__t1) \n--\>\n ALL y P(y),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))) |<lastfip> --\>  ALL y P(y) }"];
+	4 -> 5 [label="-->ALL"]
+	3 [shape=record,label="{<seq> P(__t1) \n--\>\n ALL x ( ALL y P(y)),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\>  ALL x ( ALL y P(y)) }"];
+	3 -> 4 [label="-->ALL"]
+	2 [shape=record,label="{<seq>  \n--\>\nP(__t1) =\> ( ALL x ( ALL y P(y))),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))),  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))) |<lastfip> --\> P(__t1) =\> ( ALL x ( ALL y P(y))) }"];
+	2 -> 3 [label="->=>"]
+	1 [shape=record,label="{<seq>  \n--\>\n EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))),  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))) |<lastfip> --\>  EXZ y (P(__t1) =\> ( ALL x ( ALL y P(y)))) }"];
+	1 -> 2 [label="--> EXZ"]
+	0 [shape=record,label="{<seq>  --\> EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))) |<lastfip> --\>  EXZ x ( EXZ y (P(x) =\> ( ALL x ( ALL y P(y))))) }"];
+	0 -> 1 [label="--> EXZ"]
+}

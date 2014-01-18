@@ -1,0 +1,2 @@
+-o temp_res3/r66.dot
+[ALL x ALL y T(I(x,I(y,x)))] & [ALL x ALL y ALL z(T(I(I(x,I(y,z))),I(I(x,y),I(x,z))))] & [ALL x ALL y T(I(I(N(x),N(y)),I(y,x)))] & [ALL x ALL y (T(I(x,y)) & T(x) => T(y))] => [ALL x T(I(x, N(N(x))))]

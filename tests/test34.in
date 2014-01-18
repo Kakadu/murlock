@@ -1,0 +1,2 @@
+#ASS
+[(EXZ x (ALL y (P(x)==P(y)))) == ((EXZ x Q(x)) == (ALL y P(y))) ] == [(EXZ x(ALL y (Q(x)==Q(y)))) == ((EXZ x P(x)) == ALL y P(y)) ]

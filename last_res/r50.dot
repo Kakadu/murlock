@@ -1,0 +1,53 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	23 [label="__t9 => w2\n__t7 => w1\n__t5 => w1\n__t2 => _a\n__t1 => _a\n"]
+	22 [label="__t6 => w1\n__t4 => w1\n__t2 => _a\n__t1 => _a\n"]
+	21 [label="__t6 => w1\n__t4 => w1\n__t2 => _a\n__t1 => _a\n"]
+	20 [label="__t7 => w1\n__t5 => w1\n__t2 => _a\n__t1 => _a\n"]
+	19 [shape=record,label="{<seq> P(__t5, __t9), P(_a, __t1),  ALL y P(__t5, y),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\nP(__t7, w2), P(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip>  }"];
+	19 -> 23 [label=""]
+	18 [shape=record,label="{<seq> P(_a, __t1),  ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t5, y) --\>P(__t2, w1), P(__t7, w2),  EXZ x ( ALL y P(x, y)) |<lastfip>  ALL y P(__t5, y) --\> }"];
+	18 -> 19 [label="ALL -->"]
+	17 [shape=record,label="{<seq> P(_a, __t5), P(_a, __t1),  ALL x (P(_a, x) OR ( ALL y P(x, y))) --\>P(__t2, w1), P(__t7, w2),  EXZ x ( ALL y P(x, y)) |<lastfip>  }"];
+	17 -> 20 [label=""]
+	16 [shape=record,label="{<seq> P(__t1, __t4), P(__t1, __t3),  ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y),  ALL y P(__t6, y) \n--\>\nP(__t2, w1), P(__t8, w3),  EXZ x ( ALL y P(x, y)) |<lastfip>  }"];
+	16 -> 21 [label=""]
+	15 [shape=record,label="{<seq> P(_a, __t6), P(__t1, __t4), P(__t1, __t3),  ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y) \n--\>\nP(__t2, w1), P(__t8, w3),  EXZ x ( ALL y P(x, y)) |<lastfip>  }"];
+	15 -> 22 [label=""]
+	14 [shape=record,label="{<seq> P(__t1, __t3), P(__t1, __t4), P(_a, __t6) OR ( ALL y P(__t6, y)),  ALL y P(__t1, y),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\nP(__t8, w3), P(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip> P(_a, __t6) OR ( ALL y P(__t6, y)) --\> }"];
+	14 -> 16 [label="OR->"]
+	14 -> 15 [label="OR->"]
+	13 [shape=record,label="{<seq> P(_a, __t1), P(_a, __t5) OR ( ALL y P(__t5, y)),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\nP(__t7, w2), P(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip> P(_a, __t5) OR ( ALL y P(__t5, y)) --\> }"];
+	13 -> 18 [label="OR->"]
+	13 -> 17 [label="OR->"]
+	12 [shape=record,label="{<seq> P(__t1, __t4), P(__t1, __t3), P(_a, __t6) OR ( ALL y P(__t6, y)),  ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y) \n--\>\nP(__t2, w1),  ALL y P(__t8, y),  EXZ x ( ALL y P(x, y)) |<lastfip> --\>  ALL y P(__t8, y) }"];
+	12 -> 14 [label="-->ALL"]
+	11 [shape=record,label="{<seq> P(_a, __t1), P(_a, __t5) OR ( ALL y P(__t5, y)),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\nP(__t2, w1),  ALL y P(__t7, y),  EXZ x ( ALL y P(x, y)) |<lastfip> --\>  ALL y P(__t7, y) }"];
+	11 -> 13 [label="-->ALL"]
+	10 [shape=record,label="{<seq> P(__t1, __t3), P(__t1, __t4), P(_a, __t6) OR ( ALL y P(__t6, y)),  ALL y P(__t1, y),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\nP(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip> --\>  EXZ x ( ALL y P(x, y)) }"];
+	10 -> 12 [label="--> EXZ"]
+	9 [shape=record,label="{<seq> P(_a, __t1), P(_a, __t5) OR ( ALL y P(__t5, y)),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\nP(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip> --\>  EXZ x ( ALL y P(x, y)) }"];
+	9 -> 11 [label="--> EXZ"]
+	8 [shape=record,label="{<seq> P(__t1, __t4), P(__t1, __t3),  ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y) \n--\>\nP(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip>  ALL x (P(_a, x) OR ( ALL y P(x, y))) --\> }"];
+	8 -> 10 [label="ALL -->"]
+	subgraph cluster2 {
+		7 [shape=record,label="{<seq> P(__t1, __t3),  ALL y P(__t1, y),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\nP(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip>  ALL y P(__t1, y) --\> }"];
+	}
+	7 -> 8 [label="ALL -->"]
+	6 [shape=record,label="{<seq>  ALL x (P(_a, x) OR ( ALL y P(x, y))),  ALL y P(__t1, y) --\>P(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip>  ALL y P(__t1, y) --\> }"];
+	6 -> 7 [label="ALL -->"]
+	subgraph cluster2 {
+		5 [shape=record,label="{<seq> P(_a, __t1),  ALL x (P(_a, x) OR ( ALL y P(x, y))) --\>P(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip>  ALL x (P(_a, x) OR ( ALL y P(x, y))) --\> }"];
+	}
+	5 -> 9 [label="ALL -->"]
+	4 [shape=record,label="{<seq> P(_a, __t1) OR ( ALL y P(__t1, y)),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\nP(__t2, w1),  EXZ x ( ALL y P(x, y)) |<lastfip> P(_a, __t1) OR ( ALL y P(__t1, y)) --\> }"];
+	4 -> 6 [label="OR->"]
+	4 -> 5 [label="OR->"]
+	3 [shape=record,label="{<seq> P(_a, __t1) OR ( ALL y P(__t1, y)),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\n ALL y P(__t2, y),  EXZ x ( ALL y P(x, y)) |<lastfip> --\>  ALL y P(__t2, y) }"];
+	3 -> 4 [label="-->ALL"]
+	2 [shape=record,label="{<seq> P(_a, __t1) OR ( ALL y P(__t1, y)),  ALL x (P(_a, x) OR ( ALL y P(x, y))) \n--\>\n EXZ x ( ALL y P(x, y)) |<lastfip> --\>  EXZ x ( ALL y P(x, y)) }"];
+	2 -> 3 [label="--> EXZ"]
+	1 [shape=record,label="{<seq>  ALL x (P(_a, x) OR ( ALL y P(x, y))) --\> EXZ x ( ALL y P(x, y)) |<lastfip>  ALL x (P(_a, x) OR ( ALL y P(x, y))) --\> }"];
+	1 -> 2 [label="ALL -->"]
+	0 [shape=record,label="{<seq>  --\>( ALL x (P(_a, x) OR ( ALL y P(x, y)))) =\> ( EXZ x ( ALL y P(x, y))) |<lastfip> --\> ( ALL x (P(_a, x) OR ( ALL y P(x, y)))) =\> ( EXZ x ( ALL y P(x, y))) }"];
+	0 -> 1 [label="->=>"]
+}

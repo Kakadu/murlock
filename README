@@ -1,0 +1,5 @@
+This is my 1st OCaml project -- Autoprover for 1st order language
+
+TODO:
+возможно, стоит изменить язык таким образом, чтобы вместо BinOp (type, fip1, fip2) было ORop of fip list,
+ANDop of fip list. Тогда будет проще контрприменять правила. Но, наверное, сложнее парсить.

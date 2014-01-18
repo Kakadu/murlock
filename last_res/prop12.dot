@@ -1,0 +1,145 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	71 [label="Proving succeded"]
+	71 -> 0
+	70 [label="axiom"]
+	69 [label="axiom"]
+	68 [shape=record,label="{<seq> r --\>q, q, p, r, p |<lastfip>  }"];
+	68 -> 69 [label=""]
+	67 [shape=record,label="{<seq> q --\>r, q, p, r, p |<lastfip>  }"];
+	67 -> 70 [label=""]
+	66 [label="axiom"]
+	65 [label="axiom"]
+	64 [shape=record,label="{<seq> q, p, p --\>r, q, r |<lastfip>  }"];
+	64 -> 65 [label=""]
+	63 [shape=record,label="{<seq> r, q, q, p, p --\>r |<lastfip>  }"];
+	63 -> 66 [label=""]
+	62 [label="axiom"]
+	61 [label="axiom"]
+	60 [shape=record,label="{<seq> r, q, r --\>q, p, p |<lastfip>  }"];
+	60 -> 61 [label=""]
+	59 [shape=record,label="{<seq> q, q, r --\>r, p, p |<lastfip>  }"];
+	59 -> 62 [label=""]
+	58 [label="axiom"]
+	57 [label="axiom"]
+	56 [shape=record,label="{<seq> p, r, p --\>r, q, q |<lastfip>  }"];
+	56 -> 57 [label=""]
+	55 [shape=record,label="{<seq> r, q, p, r, p --\>q |<lastfip>  }"];
+	55 -> 58 [label=""]
+	54 [label="axiom"]
+	53 [label="axiom"]
+	52 [shape=record,label="{<seq> r, p, r --\>q, p, q |<lastfip>  }"];
+	52 -> 53 [label=""]
+	51 [shape=record,label="{<seq> q, p, r, p, r --\>q |<lastfip>  }"];
+	51 -> 54 [label=""]
+	50 [label="axiom"]
+	49 [label="axiom"]
+	48 [shape=record,label="{<seq> q, q, p --\>p, r, r |<lastfip>  }"];
+	48 -> 49 [label=""]
+	47 [shape=record,label="{<seq> p, q, p --\>q, r, r |<lastfip>  }"];
+	47 -> 50 [label=""]
+	46 [label="axiom"]
+	45 [label="axiom"]
+	44 [shape=record,label="{<seq> q --\>p, r, q, p, r |<lastfip>  }"];
+	44 -> 45 [label=""]
+	43 [shape=record,label="{<seq> p --\>q, r, q, p, r |<lastfip>  }"];
+	43 -> 46 [label=""]
+	42 [label="axiom"]
+	41 [label="axiom"]
+	40 [shape=record,label="{<seq> r, q, r --\>q, p, p |<lastfip>  }"];
+	40 -> 41 [label=""]
+	39 [shape=record,label="{<seq> q, p, r, q, r --\>p |<lastfip>  }"];
+	39 -> 42 [label=""]
+	38 [label="axiom"]
+	37 [shape=record,label="{<seq> q, r --\>r, p, p == q |<lastfip>  }"];
+	37 -> 38 [label=""]
+	36 [shape=record,label="{<seq> r, q, r, p == q --\>p |<lastfip> p == q --\> }"];
+	36 -> 40 [label="==->"]
+	36 -> 39 [label="==->"]
+	35 [label="axiom"]
+	34 [shape=record,label="{<seq>  --\>r, p, q, r, p == q |<lastfip> --\> p == q }"];
+	34 -> 44 [label="->=="]
+	34 -> 43 [label="->=="]
+	33 [shape=record,label="{<seq> r, p == q --\>p, q, r |<lastfip>  }"];
+	33 -> 35 [label=""]
+	32 [label="axiom"]
+	31 [shape=record,label="{<seq> p, q --\>r, r, p == q |<lastfip> --\> p == q }"];
+	31 -> 48 [label="->=="]
+	31 -> 47 [label="->=="]
+	30 [shape=record,label="{<seq> r, p, q, p == q --\>r |<lastfip>  }"];
+	30 -> 32 [label=""]
+	29 [label="axiom"]
+	28 [shape=record,label="{<seq> p, r --\>r, q, p == q |<lastfip>  }"];
+	28 -> 29 [label=""]
+	27 [shape=record,label="{<seq> r, p, r, p == q --\>q |<lastfip> p == q --\> }"];
+	27 -> 52 [label="==->"]
+	27 -> 51 [label="==->"]
+	26 [label="axiom"]
+	25 [shape=record,label="{<seq> r, p --\>p, q, q == r |<lastfip>  }"];
+	25 -> 26 [label=""]
+	24 [shape=record,label="{<seq> p, r, p, q == r --\>q |<lastfip> q == r --\> }"];
+	24 -> 56 [label="==->"]
+	24 -> 55 [label="==->"]
+	23 [label="axiom"]
+	22 [shape=record,label="{<seq> r, q --\>p, p, q == r |<lastfip> --\> q == r }"];
+	22 -> 60 [label="->=="]
+	22 -> 59 [label="->=="]
+	21 [shape=record,label="{<seq> p, r, q, q == r --\>p |<lastfip>  }"];
+	21 -> 23 [label=""]
+	20 [label="axiom"]
+	19 [shape=record,label="{<seq> p, q --\>p, r, q == r |<lastfip>  }"];
+	19 -> 20 [label=""]
+	18 [shape=record,label="{<seq> p, p, q, q == r --\>r |<lastfip> q == r --\> }"];
+	18 -> 64 [label="==->"]
+	18 -> 63 [label="==->"]
+	17 [label="axiom"]
+	16 [shape=record,label="{<seq>  --\>p, r, p, q, q == r |<lastfip> --\> q == r }"];
+	16 -> 68 [label="->=="]
+	16 -> 67 [label="->=="]
+	15 [shape=record,label="{<seq> p, q == r --\>r, p, q |<lastfip>  }"];
+	15 -> 17 [label=""]
+	14 [shape=record,label="{<seq> p == (q == r) --\>q, p, r |<lastfip> p == (q == r) --\> }"];
+	14 -> 16 [label="==->"]
+	14 -> 15 [label="==->"]
+	13 [shape=record,label="{<seq> q, p, p == (q == r) --\>r |<lastfip> p == (q == r) --\> }"];
+	13 -> 19 [label="==->"]
+	13 -> 18 [label="==->"]
+	12 [shape=record,label="{<seq> q, r, p == (q == r) --\>p |<lastfip> p == (q == r) --\> }"];
+	12 -> 22 [label="==->"]
+	12 -> 21 [label="==->"]
+	11 [shape=record,label="{<seq> p, r, p == (q == r) --\>q |<lastfip> p == (q == r) --\> }"];
+	11 -> 25 [label="==->"]
+	11 -> 24 [label="==->"]
+	10 [shape=record,label="{<seq> r, p, (p == q) == r --\>q |<lastfip> (p == q) == r --\> }"];
+	10 -> 28 [label="==->"]
+	10 -> 27 [label="==->"]
+	9 [shape=record,label="{<seq> q, p, (p == q) == r --\>r |<lastfip> (p == q) == r --\> }"];
+	9 -> 31 [label="==->"]
+	9 -> 30 [label="==->"]
+	8 [shape=record,label="{<seq> (p == q) == r --\>r, q, p |<lastfip> (p == q) == r --\> }"];
+	8 -> 34 [label="==->"]
+	8 -> 33 [label="==->"]
+	7 [shape=record,label="{<seq> r, q, (p == q) == r --\>p |<lastfip> (p == q) == r --\> }"];
+	7 -> 37 [label="==->"]
+	7 -> 36 [label="==->"]
+	6 [shape=record,label="{<seq> q == r, (p == q) == r --\>p |<lastfip> q == r --\> }"];
+	6 -> 8 [label="==->"]
+	6 -> 7 [label="==->"]
+	5 [shape=record,label="{<seq> p, (p == q) == r --\>q == r |<lastfip> --\> q == r }"];
+	5 -> 10 [label="->=="]
+	5 -> 9 [label="->=="]
+	4 [shape=record,label="{<seq> r, p == (q == r) --\>p == q |<lastfip> --\> p == q }"];
+	4 -> 12 [label="->=="]
+	4 -> 11 [label="->=="]
+	3 [shape=record,label="{<seq> p == q, p == (q == r) --\>r |<lastfip> p == q --\> }"];
+	3 -> 14 [label="==->"]
+	3 -> 13 [label="==->"]
+	2 [shape=record,label="{<seq> p == (q == r) --\>(p == q) == r |<lastfip> --\> (p == q) == r }"];
+	2 -> 4 [label="->=="]
+	2 -> 3 [label="->=="]
+	1 [shape=record,label="{<seq> (p == q) == r --\>p == (q == r) |<lastfip> --\> p == (q == r) }"];
+	1 -> 6 [label="->=="]
+	1 -> 5 [label="->=="]
+	0 [shape=record,label="{<seq>  --\>((p == q) == r) == (p == (q == r)) |<lastfip> --\> ((p == q) == r) == (p == (q == r)) }"];
+	0 -> 2 [label="->=="]
+	0 -> 1 [label="->=="]
+}

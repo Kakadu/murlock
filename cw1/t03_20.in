@@ -1,0 +1,2 @@
+ (ALL x (ALL y(EXZ z(ALL w [P(x)&Q(y) => R(z)&S(w)])))) => [(EXZ x (EXZ y (P(x)&Q(y)))) => (EXZ z R(z))]
+

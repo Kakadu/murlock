@@ -1,0 +1,175 @@
+0 	 --> 
+	 --> (( ALL x ((F(x) OR G(x)) => !H(x))) & ( ALL x ((G(x) => !I(x)) => (F(x) & H(x))))) => ( ALL x I(x))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	( ALL x ((F(x) OR G(x)) => !H(x))) & ( ALL x ((G(x) => !I(x)) => (F(x) & H(x)))) --> 
+	 --> 
+	 -->  ALL x I(x)
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule &->
+
+2 	 --> 
+	 --> 
+	 --> 
+	 -->  ALL x I(x)
+	 ALL x ((G(x) => !I(x)) => (F(x) & H(x))),  ALL x ((F(x) OR G(x)) => !H(x)) --> 
+dead minuses count: 0
+;;
+from 3 by rule -->ALL
+
+3 	 --> I(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) OR G(x)) => !H(x)),  ALL x ((G(x) => !I(x)) => (F(x) & H(x))) --> 
+dead minuses count: 0
+;;
+from 4 by rule ALL -->
+
+4 	 --> I(w1)
+	 --> 
+	(F(__t1) OR G(__t1)) => !H(__t1) --> 
+	 --> 
+	 ALL x ((G(x) => !I(x)) => (F(x) & H(x))),  ALL x ((F(x) OR G(x)) => !H(x)) --> 
+dead minuses count: 1
+;;
+from 5 by rule ALL -->
+
+5 	 --> I(w1)
+	 --> 
+	(G(__t2) => !I(__t2)) => (F(__t2) & H(__t2)), (F(__t1) OR G(__t1)) => !H(__t1) --> 
+	 --> 
+	 ALL x ((F(x) OR G(x)) => !H(x)),  ALL x ((G(x) => !I(x)) => (F(x) & H(x))) --> 
+dead minuses count: 2
+;;
+from 7, 6 by rule =>->
+
+6 	 --> I(w1)
+	 --> G(__t2) => !I(__t2)
+	(F(__t1) OR G(__t1)) => !H(__t1) --> 
+	 --> 
+	 ALL x ((G(x) => !I(x)) => (F(x) & H(x))),  ALL x ((F(x) OR G(x)) => !H(x)) --> 
+dead minuses count: 2
+;;
+from 9 by rule ->=>
+
+7 	 --> I(w1)
+	F(__t2) & H(__t2) --> 
+	(F(__t1) OR G(__t1)) => !H(__t1) --> 
+	 --> 
+	 ALL x ((G(x) => !I(x)) => (F(x) & H(x))),  ALL x ((F(x) OR G(x)) => !H(x)) --> 
+dead minuses count: 2
+;;
+from 8 by rule &->
+
+8 	H(__t2), F(__t2) --> I(w1)
+	 --> 
+	(F(__t1) OR G(__t1)) => !H(__t1) --> 
+	 --> 
+	 ALL x ((F(x) OR G(x)) => !H(x)),  ALL x ((G(x) => !I(x)) => (F(x) & H(x))) --> 
+dead minuses count: 2
+;;
+from 12, 11 by rule =>->
+
+9 	G(__t2) --> I(w1)
+	 --> !I(__t2)
+	(F(__t1) OR G(__t1)) => !H(__t1) --> 
+	 --> 
+	 ALL x ((F(x) OR G(x)) => !H(x)),  ALL x ((G(x) => !I(x)) => (F(x) & H(x))) --> 
+dead minuses count: 2
+;;
+from 10 by rule ->!
+
+10 	I(__t2), G(__t2) --> I(w1)
+	 --> 
+	(F(__t1) OR G(__t1)) => !H(__t1) --> 
+	 --> 
+	 ALL x ((G(x) => !I(x)) => (F(x) & H(x))),  ALL x ((F(x) OR G(x)) => !H(x)) --> 
+dead minuses count: 2
+;;
+from 16, 15 by rule =>->
+
+11 	F(__t2), H(__t2) --> I(w1)
+	 --> F(__t1) OR G(__t1)
+	 --> 
+	 --> 
+	 ALL x ((G(x) => !I(x)) => (F(x) & H(x))),  ALL x ((F(x) OR G(x)) => !H(x)) --> 
+dead minuses count: 2
+;;
+from 14 by rule ->OR
+
+12 	F(__t2), H(__t2) --> I(w1)
+	!H(__t1) --> 
+	 --> 
+	 --> 
+	 ALL x ((G(x) => !I(x)) => (F(x) & H(x))),  ALL x ((F(x) OR G(x)) => !H(x)) --> 
+dead minuses count: 2
+;;
+from 13 by rule !->
+
+13 	H(__t2), F(__t2) --> H(__t1), I(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) OR G(x)) => !H(x)),  ALL x ((G(x) => !I(x)) => (F(x) & H(x))) --> 
+dead minuses count: 0
+;;
+from 22 by rule 
+
+14 	H(__t2), F(__t2) --> G(__t1), F(__t1), I(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) OR G(x)) => !H(x)),  ALL x ((G(x) => !I(x)) => (F(x) & H(x))) --> 
+dead minuses count: 0
+;;
+from 21 by rule 
+
+15 	G(__t2), I(__t2) --> I(w1)
+	 --> F(__t1) OR G(__t1)
+	 --> 
+	 --> 
+	 ALL x ((F(x) OR G(x)) => !H(x)),  ALL x ((G(x) => !I(x)) => (F(x) & H(x))) --> 
+dead minuses count: 2
+;;
+from 18 by rule ->OR
+
+16 	G(__t2), I(__t2) --> I(w1)
+	!H(__t1) --> 
+	 --> 
+	 --> 
+	 ALL x ((F(x) OR G(x)) => !H(x)),  ALL x ((G(x) => !I(x)) => (F(x) & H(x))) --> 
+dead minuses count: 2
+;;
+from 17 by rule !->
+
+17 	I(__t2), G(__t2) --> H(__t1), I(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((G(x) => !I(x)) => (F(x) & H(x))),  ALL x ((F(x) OR G(x)) => !H(x)) --> 
+dead minuses count: 0
+;;
+from 19 by rule 
+
+18 	I(__t2), G(__t2) --> G(__t1), F(__t1), I(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((G(x) => !I(x)) => (F(x) & H(x))),  ALL x ((F(x) OR G(x)) => !H(x)) --> 
+dead minuses count: 0
+;;
+from 20 by rule 
+
+19 LeafInfo of : [__t2 => w1\n__t1 => w1\n]
+20 LeafInfo of : [__t2 => w1\n__t1 => w1\n]
+21 LeafInfo of : [__t2 => w1\n__t1 => w1\n]
+22 LeafInfo of : [__t2 => w1\n__t1 => w1\n]

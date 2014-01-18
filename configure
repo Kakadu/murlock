@@ -1,0 +1,4 @@
+rm -f .depend
+echo "lexer.cmo: parser.cmi" > .depend
+echo "lexer.cmx: parser.cmx" >>.depend
+ocamlfind dep *.ml *.mli >> .depend

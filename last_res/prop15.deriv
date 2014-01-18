@@ -1,0 +1,104 @@
+0 	 --> 
+	 --> 
+	 --> (p => q) == (!p OR q)
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2, 1 by rule ->==
+
+1 	 --> 
+	 --> !p OR q
+	p => q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 4 by rule ->OR
+
+2 	 --> 
+	 --> p => q
+	!p OR q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 3 by rule ->=>
+
+3 	p --> q
+	 --> 
+	!p OR q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 7, 6 by rule OR->
+
+4 	 --> q
+	 --> !p
+	p => q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 5 by rule ->!
+
+5 	p --> q
+	 --> 
+	p => q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 12, 11 by rule =>->
+
+6 	p --> q
+	!p --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 9 by rule !->
+
+7 	q, p --> q
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 8 by rule 
+
+8 LeafInfo of : [axiom]
+9 	p --> p, q
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 10 by rule 
+
+10 LeafInfo of : [axiom]
+11 	p --> p, q
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 14 by rule 
+
+12 	q, p --> q
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 13 by rule 
+
+13 LeafInfo of : [axiom]
+14 LeafInfo of : [axiom]
+15 LeafInfo of 0: [Proving succeded]

@@ -1,0 +1,121 @@
+0 	 --> 
+	 --> 
+	 --> ( ALL x (p OR F(x))) == (p OR ( ALL x F(x)))
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2, 1 by rule ->==
+
+1 	 --> 
+	 --> p OR ( ALL x F(x))
+	 --> 
+	 --> 
+	 ALL x (p OR F(x)) --> 
+dead minuses count: 0
+;;
+from 4 by rule ->OR
+
+2 	 --> 
+	 --> 
+	p OR ( ALL x F(x)) --> 
+	 -->  ALL x (p OR F(x))
+	 --> 
+dead minuses count: 0
+;;
+from 3 by rule -->ALL
+
+3 	 --> 
+	 --> p OR F(w1)
+	p OR ( ALL x F(x)) --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 6 by rule ->OR
+
+4 	 --> p
+	 --> 
+	 --> 
+	 -->  ALL x F(x)
+	 ALL x (p OR F(x)) --> 
+dead minuses count: 0
+;;
+from 5 by rule -->ALL
+
+5 	 --> F(w2), p
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (p OR F(x)) --> 
+dead minuses count: 0
+;;
+from 10 by rule ALL -->
+
+6 	 --> F(w1), p
+	 --> 
+	p OR ( ALL x F(x)) --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 8, 7 by rule OR->
+
+7 	p --> p, F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 9 by rule 
+
+8 	 --> p, F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x F(x) --> 
+dead minuses count: 0
+;;
+from 14 by rule ALL -->
+
+9 LeafInfo of : [axiom]
+10 	 --> p, F(w2)
+	 --> 
+	p OR F(__t1) --> 
+	 --> 
+	 ALL x (p OR F(x)) --> 
+dead minuses count: 1
+;;
+from 12, 11 by rule OR->
+
+11 	p --> F(w2), p
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (p OR F(x)) --> 
+dead minuses count: 1
+;;
+from 13 by rule 
+
+12 	F(__t1) --> F(w2), p
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (p OR F(x)) --> 
+dead minuses count: 1
+;;
+from 16 by rule 
+
+13 LeafInfo of : [axiom]
+14 	F(__t2) --> F(w1), p
+	 --> 
+	 --> 
+	 --> 
+	 ALL x F(x) --> 
+dead minuses count: 1
+;;
+from 15 by rule 
+
+15 LeafInfo of : [__t2 => w1\n]
+16 LeafInfo of : [__t1 => w2\n]

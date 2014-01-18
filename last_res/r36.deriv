@@ -1,0 +1,390 @@
+0 	 --> 
+	 --> ((( ALL x ( EXZ y F(x, y))) & ( ALL x ( EXZ y G(x, y)))) & ( ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))))) => ( ALL x ( EXZ y H(x, y)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	(( ALL x ( EXZ y F(x, y))) & ( ALL x ( EXZ y G(x, y)))) & ( ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z)))))) --> 
+	 --> 
+	 -->  ALL x ( EXZ y H(x, y))
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule &->
+
+2 	 --> 
+	( ALL x ( EXZ y F(x, y))) & ( ALL x ( EXZ y G(x, y))) --> 
+	 --> 
+	 -->  ALL x ( EXZ y H(x, y))
+	 ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))) --> 
+dead minuses count: 0
+;;
+from 3 by rule &->
+
+3 	 --> 
+	 --> 
+	 --> 
+	 -->  ALL x ( EXZ y H(x, y))
+	 ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)) --> 
+dead minuses count: 0
+;;
+from 4 by rule -->ALL
+
+4 	 --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))) -->  EXZ y H(w1, y)
+dead minuses count: 0
+;;
+from 5 by rule ALL -->
+
+5 	 --> 
+	 --> 
+	 --> 
+	 EXZ y F(__t1, y) --> 
+	 ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)) -->  EXZ y H(w1, y)
+dead minuses count: 1
+;;
+from 6 by rule EXZ-->
+
+6 	F(__t1, w2) --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))) -->  EXZ y H(w1, y)
+dead minuses count: 1
+;;
+from 7 by rule ALL -->
+
+7 	F(__t1, w2) --> 
+	 --> 
+	 --> 
+	 EXZ y G(__t2, y) --> 
+	 ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)) -->  EXZ y H(w1, y)
+dead minuses count: 2
+;;
+from 8 by rule EXZ-->
+
+8 	G(__t2, w3), F(__t1, w2) --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))) -->  EXZ y H(w1, y)
+dead minuses count: 2
+;;
+from 9 by rule ALL -->
+
+9 	F(__t1, w2), G(__t2, w3) --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 3
+;;
+from 10 by rule ALL -->
+
+10 	G(__t2, w3), F(__t1, w2) --> 
+	 --> 
+	(F(__t3, __t4) OR G(__t3, __t4)) => ( ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))) -->  EXZ y H(w1, y)
+dead minuses count: 4
+;;
+from 11 by rule --> EXZ
+
+11 	F(__t1, w2), G(__t2, w3) --> H(w1, __t5)
+	 --> 
+	(F(__t3, __t4) OR G(__t3, __t4)) => ( ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 5
+;;
+from 13, 12 by rule =>->
+
+12 	G(__t2, w3), F(__t1, w2) --> H(w1, __t5)
+	 --> F(__t3, __t4) OR G(__t3, __t4)
+	 --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))) -->  EXZ y H(w1, y)
+dead minuses count: 5
+;;
+from 15 by rule ->OR
+
+13 	G(__t2, w3), F(__t1, w2) --> H(w1, __t5)
+	 --> 
+	 --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)) -->  EXZ y H(w1, y)
+dead minuses count: 5
+;;
+from 14 by rule ALL -->
+
+14 	F(__t1, w2), G(__t2, w3) --> H(w1, __t5)
+	 --> 
+	(F(__t4, __t6) OR G(__t4, __t6)) => H(__t3, __t6) --> 
+	 --> 
+	 ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 6
+;;
+from 17, 16 by rule =>->
+
+15 	F(__t1, w2), G(__t2, w3) --> G(__t3, __t4), F(__t3, __t4), H(w1, __t5)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 0
+;;
+from 21 by rule ALL -->
+
+16 	G(__t2, w3), F(__t1, w2) --> H(w1, __t5)
+	 --> F(__t4, __t6) OR G(__t4, __t6)
+	 --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)) -->  EXZ y H(w1, y)
+dead minuses count: 6
+;;
+from 18 by rule ->OR
+
+17 	H(__t3, __t6), G(__t2, w3), F(__t1, w2) --> H(w1, __t5)
+	 --> 
+	 --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)) -->  EXZ y H(w1, y)
+dead minuses count: 0
+;;
+from 19 by rule ALL -->
+
+18 	F(__t1, w2), G(__t2, w3) --> G(__t4, __t6), F(__t4, __t6), H(w1, __t5)
+	 --> 
+	 --> 
+	 --> 
+	 ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 0
+;;
+from 20 by rule ALL -->
+
+19 	F(__t1, w2), G(__t2, w3), H(__t3, __t6) --> H(w1, __t5)
+	 --> 
+	(F(__t3, __t7) OR G(__t3, __t7)) => ( ALL z ((F(__t7, z) OR G(__t7, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 1
+;;
+from 22 by rule ALL -->
+
+20 	G(__t2, w3), F(__t1, w2) --> H(w1, __t5), F(__t4, __t6), G(__t4, __t6)
+	 --> 
+	(F(__t4, __t8) OR G(__t4, __t8)) => H(__t3, __t8) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)) -->  EXZ y H(w1, y)
+dead minuses count: 1
+;;
+from 23 by rule ALL -->
+
+21 	G(__t2, w3), F(__t1, w2) --> H(w1, __t5), F(__t3, __t4), G(__t3, __t4)
+	 --> 
+	 --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL y ((F(__t9, y) OR G(__t9, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t9, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 1
+;;
+from 24 by rule ALL -->
+
+22 	H(__t3, __t6), G(__t2, w3), F(__t1, w2) --> H(w1, __t5)
+	 --> 
+	(F(__t4, __t10) OR G(__t4, __t10)) => H(__t3, __t10), (F(__t3, __t7) OR G(__t3, __t7)) => ( ALL z ((F(__t7, z) OR G(__t7, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)) -->  EXZ y H(w1, y)
+dead minuses count: 2
+;;
+from 25 by rule ALL -->
+
+23 	F(__t1, w2), G(__t2, w3) --> G(__t4, __t6), F(__t4, __t6), H(w1, __t5)
+	 --> 
+	(F(__t3, __t11) OR G(__t3, __t11)) => ( ALL z ((F(__t11, z) OR G(__t11, z)) => H(__t3, z))), (F(__t4, __t8) OR G(__t4, __t8)) => H(__t3, __t8) --> 
+	 --> 
+	 ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 2
+;;
+from 26 by rule ALL -->
+
+24 	F(__t1, w2), G(__t2, w3) --> G(__t3, __t4), F(__t3, __t4), H(w1, __t5)
+	 --> 
+	(F(__t3, __t12) OR G(__t3, __t12)) => ( ALL z ((F(__t12, z) OR G(__t12, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t9, y) OR G(__t9, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t9, z)))),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 2
+;;
+from 27 by rule ALL -->
+
+25 	F(__t1, w2), G(__t2, w3), H(__t3, __t6) --> H(w1, __t5)
+	 --> 
+	(F(__t3, __t7) OR G(__t3, __t7)) => ( ALL z ((F(__t7, z) OR G(__t7, z)) => H(__t3, z))), (F(__t4, __t10) OR G(__t4, __t10)) => H(__t3, __t10) --> 
+	 EXZ y F(__t13, y) --> 
+	 ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 3
+;;
+from 28 by rule EXZ-->
+
+26 	G(__t2, w3), F(__t1, w2) --> H(w1, __t5), F(__t4, __t6), G(__t4, __t6)
+	 --> 
+	(F(__t4, __t8) OR G(__t4, __t8)) => H(__t3, __t8), (F(__t3, __t11) OR G(__t3, __t11)) => ( ALL z ((F(__t11, z) OR G(__t11, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL y ((F(__t14, y) OR G(__t14, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t14, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 3
+;;
+from 29 by rule ALL -->
+
+27 	G(__t2, w3), F(__t1, w2) --> H(w1, __t5), F(__t3, __t4), G(__t3, __t4)
+	 --> 
+	(F(__t9, __t15) OR G(__t9, __t15)) => ( ALL z ((F(__t15, z) OR G(__t15, z)) => H(__t9, z))), (F(__t3, __t12) OR G(__t3, __t12)) => ( ALL z ((F(__t12, z) OR G(__t12, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL y ((F(__t9, y) OR G(__t9, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t9, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 3
+;;
+from 30 by rule ALL -->
+
+28 	F(__t13, w4), H(__t3, __t6), G(__t2, w3), F(__t1, w2) --> H(w1, __t5)
+	 --> 
+	(F(__t4, __t10) OR G(__t4, __t10)) => H(__t3, __t10), (F(__t3, __t7) OR G(__t3, __t7)) => ( ALL z ((F(__t7, z) OR G(__t7, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)) -->  EXZ y H(w1, y)
+dead minuses count: 3
+;;
+from 32 by rule ALL -->
+
+29 	F(__t1, w2), G(__t2, w3) --> G(__t4, __t6), F(__t4, __t6), H(w1, __t5)
+	 --> 
+	(F(__t3, __t11) OR G(__t3, __t11)) => ( ALL z ((F(__t11, z) OR G(__t11, z)) => H(__t3, z))), (F(__t4, __t8) OR G(__t4, __t8)) => H(__t3, __t8) --> 
+	 EXZ y F(__t16, y) --> 
+	 ALL y ((F(__t14, y) OR G(__t14, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t14, z)))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 4
+;;
+from 31 by rule EXZ-->
+
+30 	F(__t1, w2), G(__t2, w3) --> G(__t3, __t4), F(__t3, __t4), H(w1, __t5)
+	 --> 
+	(F(__t3, __t12) OR G(__t3, __t12)) => ( ALL z ((F(__t12, z) OR G(__t12, z)) => H(__t3, z))), (F(__t9, __t15) OR G(__t9, __t15)) => ( ALL z ((F(__t15, z) OR G(__t15, z)) => H(__t9, z))) --> 
+	 EXZ y F(__t17, y) --> 
+	 ALL y ((F(__t9, y) OR G(__t9, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t9, z)))),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 4
+;;
+from 33 by rule EXZ-->
+
+31 	F(__t16, w5), G(__t2, w3), F(__t1, w2) --> H(w1, __t5), F(__t4, __t6), G(__t4, __t6)
+	 --> 
+	(F(__t4, __t8) OR G(__t4, __t8)) => H(__t3, __t8), (F(__t3, __t11) OR G(__t3, __t11)) => ( ALL z ((F(__t11, z) OR G(__t11, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL y ((F(__t14, y) OR G(__t14, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t14, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 4
+;;
+from 35 by rule ALL -->
+
+32 	F(__t1, w2), G(__t2, w3), H(__t3, __t6), F(__t13, w4) --> H(w1, __t5)
+	 --> 
+	(F(__t3, __t7) OR G(__t3, __t7)) => ( ALL z ((F(__t7, z) OR G(__t7, z)) => H(__t3, z))), (F(__t4, __t10) OR G(__t4, __t10)) => H(__t3, __t10) --> 
+	 EXZ y G(__t18, y) --> 
+	 ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 4
+;;
+from 34 by rule EXZ-->
+
+33 	F(__t17, w6), G(__t2, w3), F(__t1, w2) --> H(w1, __t5), F(__t3, __t4), G(__t3, __t4)
+	 --> 
+	(F(__t9, __t15) OR G(__t9, __t15)) => ( ALL z ((F(__t15, z) OR G(__t15, z)) => H(__t9, z))), (F(__t3, __t12) OR G(__t3, __t12)) => ( ALL z ((F(__t12, z) OR G(__t12, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL y ((F(__t9, y) OR G(__t9, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t9, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 4
+;;
+from 38 by rule ALL -->
+
+34 	G(__t18, w7), F(__t13, w4), H(__t3, __t6), G(__t2, w3), F(__t1, w2) --> H(w1, __t5)
+	 --> 
+	(F(__t4, __t10) OR G(__t4, __t10)) => H(__t3, __t10), (F(__t3, __t7) OR G(__t3, __t7)) => ( ALL z ((F(__t7, z) OR G(__t7, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)) -->  EXZ y H(w1, y)
+dead minuses count: 4
+;;
+from 37 by rule ALL -->
+
+35 	F(__t1, w2), G(__t2, w3), F(__t16, w5) --> G(__t4, __t6), F(__t4, __t6), H(w1, __t5)
+	 --> 
+	(F(__t3, __t11) OR G(__t3, __t11)) => ( ALL z ((F(__t11, z) OR G(__t11, z)) => H(__t3, z))), (F(__t4, __t8) OR G(__t4, __t8)) => H(__t3, __t8) --> 
+	 EXZ y G(__t19, y) --> 
+	 ALL y ((F(__t14, y) OR G(__t14, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t14, z)))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 5
+;;
+from 36 by rule EXZ-->
+
+36 	G(__t19, w8), F(__t16, w5), G(__t2, w3), F(__t1, w2) --> H(w1, __t5), F(__t4, __t6), G(__t4, __t6)
+	 --> 
+	(F(__t4, __t8) OR G(__t4, __t8)) => H(__t3, __t8), (F(__t3, __t11) OR G(__t3, __t11)) => ( ALL z ((F(__t11, z) OR G(__t11, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL y ((F(__t14, y) OR G(__t14, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t14, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 5
+;;
+from 40 by rule ALL -->
+
+37 	F(__t1, w2), G(__t2, w3), H(__t3, __t6), F(__t13, w4), G(__t18, w7) --> H(w1, __t5)
+	 --> 
+	(F(__t3, __t7) OR G(__t3, __t7)) => ( ALL z ((F(__t7, z) OR G(__t7, z)) => H(__t3, z))), (F(__t4, __t10) OR G(__t4, __t10)) => H(__t3, __t10) --> 
+	 --> 
+	 ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL y ((F(__t20, y) OR G(__t20, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t20, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 5
+;;
+from 39 by rule ALL -->
+
+38 	F(__t1, w2), G(__t2, w3), F(__t17, w6) --> G(__t3, __t4), F(__t3, __t4), H(w1, __t5)
+	 --> 
+	(F(__t3, __t12) OR G(__t3, __t12)) => ( ALL z ((F(__t12, z) OR G(__t12, z)) => H(__t3, z))), (F(__t9, __t15) OR G(__t9, __t15)) => ( ALL z ((F(__t15, z) OR G(__t15, z)) => H(__t9, z))) --> 
+	 EXZ y G(__t21, y) --> 
+	 ALL y ((F(__t9, y) OR G(__t9, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t9, z)))),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 5
+;;
+from 41 by rule EXZ-->
+
+39 	G(__t18, w7), F(__t13, w4), H(__t3, __t6), G(__t2, w3), F(__t1, w2) --> H(w1, __t5)
+	 --> 
+	(F(__t20, __t22) OR G(__t20, __t22)) => ( ALL z ((F(__t22, z) OR G(__t22, z)) => H(__t20, z))), (F(__t4, __t10) OR G(__t4, __t10)) => H(__t3, __t10), (F(__t3, __t7) OR G(__t3, __t7)) => ( ALL z ((F(__t7, z) OR G(__t7, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t20, y) OR G(__t20, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t20, z)))),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)) -->  EXZ y H(w1, y)
+dead minuses count: 6
+;;
+from 42 by rule --> EXZ
+
+40 	F(__t1, w2), G(__t2, w3), F(__t16, w5), G(__t19, w8) --> G(__t4, __t6), F(__t4, __t6), H(w1, __t5)
+	 --> 
+	(F(__t14, __t23) OR G(__t14, __t23)) => ( ALL z ((F(__t23, z) OR G(__t23, z)) => H(__t14, z))), (F(__t3, __t11) OR G(__t3, __t11)) => ( ALL z ((F(__t11, z) OR G(__t11, z)) => H(__t3, z))), (F(__t4, __t8) OR G(__t4, __t8)) => H(__t3, __t8) --> 
+	 --> 
+	 ALL y ((F(__t14, y) OR G(__t14, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t14, z)))),  ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 6
+;;
+from 43 by rule 
+
+41 	G(__t21, w9), F(__t17, w6), G(__t2, w3), F(__t1, w2) --> H(w1, __t5), F(__t3, __t4), G(__t3, __t4)
+	 --> 
+	(F(__t9, __t15) OR G(__t9, __t15)) => ( ALL z ((F(__t15, z) OR G(__t15, z)) => H(__t9, z))), (F(__t3, __t12) OR G(__t3, __t12)) => ( ALL z ((F(__t12, z) OR G(__t12, z)) => H(__t3, z))) --> 
+	 --> 
+	 ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL x ( EXZ y F(x, y)),  ALL x ( EXZ y G(x, y)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL y ((F(__t9, y) OR G(__t9, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t9, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 5
+;;
+from 45 by rule 
+
+42 	F(__t1, w2), G(__t2, w3), H(__t3, __t6), F(__t13, w4), G(__t18, w7) --> H(w1, __t24), H(w1, __t5)
+	 --> 
+	(F(__t3, __t7) OR G(__t3, __t7)) => ( ALL z ((F(__t7, z) OR G(__t7, z)) => H(__t3, z))), (F(__t4, __t10) OR G(__t4, __t10)) => H(__t3, __t10), (F(__t20, __t22) OR G(__t20, __t22)) => ( ALL z ((F(__t22, z) OR G(__t22, z)) => H(__t20, z))) --> 
+	 --> 
+	 ALL z ((F(__t4, z) OR G(__t4, z)) => H(__t3, z)),  ALL x ( ALL y ((F(x, y) OR G(x, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(x, z))))),  ALL x ( EXZ y G(x, y)),  ALL x ( EXZ y F(x, y)),  ALL y ((F(__t3, y) OR G(__t3, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t3, z)))),  ALL y ((F(__t20, y) OR G(__t20, y)) => ( ALL z ((F(y, z) OR G(y, z)) => H(__t20, z)))) -->  EXZ y H(w1, y)
+dead minuses count: 7
+;;
+from 44 by rule 
+
+43 LeafInfo of : [__t6 => w2\n__t4 => w3\n__t3 => w1\n__t2 => w1\n__t1 => __t4\n]
+44 LeafInfo of : [__t6 => w2\n__t4 => w3\n__t3 => w1\n__t24 => w2\n__t2 => w1\n__t1 => __t4\n]
+45 LeafInfo of : [__t4 => w3\n__t3 => w1\n__t2 => w1\n__t1 => __t4\n]

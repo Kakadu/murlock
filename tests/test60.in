@@ -1,0 +1,3 @@
+-dot on
+#-o last_res/r60.dot
+ALL x [F(x,G(x)) == (EXZ y [(ALL z (F(z,y) => F(x,G(x)))) & F(x,y)])]

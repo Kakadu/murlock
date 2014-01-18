@@ -1,0 +1,3 @@
+-o temp_res2/test24.dot
+!(EXZ x (S(x)&Q(x))) & [ALL x(P(x) => (Q(x) OR R(x)))] & [!(EXZ x P(x)) => EXZ x Q(x)] & [ALL x(Q(x) OR R(x) => S(x))] => [EXZ x (P(x) & R(x))]
+

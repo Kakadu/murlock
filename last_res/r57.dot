@@ -1,0 +1,35 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	13 [label="__t3 => G(_a, _c)\n__t2 => G(_b, _c)\n__t1 => G(_a, _b)\n"]
+	12 [label="__t2 => G(_b, _c)\n__t1 => G(_a, _b)\n"]
+	11 [label="__t3 => G(_a, _c)\n__t2 => G(_b, _c)\n__t1 => G(_a, _b)\n"]
+	subgraph cluster2 {
+		10 [shape=record,label="{<seq> F(G(_a, _b), G(_b, _c)), F(G(_b, _c), G(_a, _c)),  ALL z ((F(__t1, __t2) & F(__t2, z)) =\> F(__t1, z)),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) =\> F(__t1, z))) \n--\>\nF(__t2, __t3), F(G(_a, _b), G(_a, _c)) |<lastfip>  }"];
+	}
+	10 -> 13 [label=""]
+	subgraph cluster2 {
+		9 [shape=record,label="{<seq> F(G(_a, _b), G(_b, _c)), F(G(_b, _c), G(_a, _c)),  ALL z ((F(__t1, __t2) & F(__t2, z)) =\> F(__t1, z)),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) =\> F(__t1, z))) \n--\>\nF(__t1, __t2), F(G(_a, _b), G(_a, _c)) |<lastfip>  }"];
+	}
+	9 -> 12 [label=""]
+	subgraph cluster2 {
+		8 [shape=record,label="{<seq> F(__t1, __t3), F(G(_b, _c), G(_a, _c)), F(G(_a, _b), G(_b, _c)),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) =\> F(__t1, z))),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))),  ALL z ((F(__t1, __t2) & F(__t2, z)) =\> F(__t1, z)) \n--\>\nF(G(_a, _b), G(_a, _c)) |<lastfip>  }"];
+	}
+	8 -> 11 [label=""]
+	7 [shape=record,label="{<seq> F(G(_b, _c), G(_a, _c)), F(G(_a, _b), G(_b, _c)),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) =\> F(__t1, z))),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))),  ALL z ((F(__t1, __t2) & F(__t2, z)) =\> F(__t1, z)) \n--\>\nF(G(_a, _b), G(_a, _c)), F(__t1, __t2) & F(__t2, __t3) |<lastfip> --\> F(__t1, __t2) & F(__t2, __t3) }"];
+	7 -> 10 [label="->&"]
+	7 -> 9 [label="->&"]
+	6 [shape=record,label="{<seq> F(G(_a, _b), G(_b, _c)), F(G(_b, _c), G(_a, _c)), (F(__t1, __t2) & F(__t2, __t3)) =\> F(__t1, __t3),  ALL z ((F(__t1, __t2) & F(__t2, z)) =\> F(__t1, z)),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) =\> F(__t1, z))) \n--\>\nF(G(_a, _b), G(_a, _c)) |<lastfip> (F(__t1, __t2) & F(__t2, __t3)) =\> F(__t1, __t3) --\> }"];
+	6 -> 8 [label="=>->"]
+	6 -> 7 [label="=>->"]
+	5 [shape=record,label="{<seq> F(G(_b, _c), G(_a, _c)), F(G(_a, _b), G(_b, _c)),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) =\> F(__t1, z))),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))),  ALL z ((F(__t1, __t2) & F(__t2, z)) =\> F(__t1, z)) \n--\>\nF(G(_a, _b), G(_a, _c)) |<lastfip>  ALL z ((F(__t1, __t2) & F(__t2, z)) =\> F(__t1, z)) --\> }"];
+	5 -> 6 [label="ALL -->"]
+	4 [shape=record,label="{<seq> F(G(_a, _b), G(_b, _c)), F(G(_b, _c), G(_a, _c)),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) =\> F(__t1, z))) \n--\>\nF(G(_a, _b), G(_a, _c)) |<lastfip>  ALL y ( ALL z ((F(__t1, y) & F(y, z)) =\> F(__t1, z))) --\> }"];
+	4 -> 5 [label="ALL -->"]
+	3 [shape=record,label="{<seq> F(G(_b, _c), G(_a, _c)), F(G(_a, _b), G(_b, _c)),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))) \n--\>\nF(G(_a, _b), G(_a, _c)) |<lastfip>  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))) --\> }"];
+	3 -> 4 [label="ALL -->"]
+	2 [shape=record,label="{<seq> F(G(_a, _b), G(_b, _c)) & F(G(_b, _c), G(_a, _c)),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))) \n--\>\nF(G(_a, _b), G(_a, _c)) |<lastfip> F(G(_a, _b), G(_b, _c)) & F(G(_b, _c), G(_a, _c)) --\> }"];
+	2 -> 3 [label="&->"]
+	1 [shape=record,label="{<seq> (F(G(_a, _b), G(_b, _c)) & F(G(_b, _c), G(_a, _c))) & ( ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z))))) \n--\>\nF(G(_a, _b), G(_a, _c)) |<lastfip> (F(G(_a, _b), G(_b, _c)) & F(G(_b, _c), G(_a, _c))) & ( ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z))))) --\> }"];
+	1 -> 2 [label="&->"]
+	0 [shape=record,label="{<seq>  \n--\>\n((F(G(_a, _b), G(_b, _c)) & F(G(_b, _c), G(_a, _c))) & ( ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))))) =\> F(G(_a, _b), G(_a, _c)) |<lastfip> --\> ((F(G(_a, _b), G(_b, _c)) & F(G(_b, _c), G(_a, _c))) & ( ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) =\> F(x, z)))))) =\> F(G(_a, _b), G(_a, _c)) }"];
+	0 -> 1 [label="->=>"]
+}

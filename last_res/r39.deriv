@@ -1,0 +1,74 @@
+0 	 --> 
+	 --> ! EXZ x ( ALL y (F(y, x) == !F(y, y)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->!
+
+1 	 --> 
+	 --> 
+	 --> 
+	 EXZ x ( ALL y (F(y, x) == !F(y, y))) --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule EXZ-->
+
+2 	 --> 
+	 --> 
+	 --> 
+	 --> 
+	 ALL y (F(y, w1) == !F(y, y)) --> 
+dead minuses count: 0
+;;
+from 3 by rule ALL -->
+
+3 	 --> 
+	 --> 
+	F(__t1, w1) == !F(__t1, __t1) --> 
+	 --> 
+	 ALL y (F(y, w1) == !F(y, y)) --> 
+dead minuses count: 1
+;;
+from 5, 4 by rule ==->
+
+4 	F(__t1, w1) --> 
+	!F(__t1, __t1) --> 
+	 --> 
+	 --> 
+	 ALL y (F(y, w1) == !F(y, y)) --> 
+dead minuses count: 1
+;;
+from 7 by rule !->
+
+5 	 --> F(__t1, w1)
+	 --> !F(__t1, __t1)
+	 --> 
+	 --> 
+	 ALL y (F(y, w1) == !F(y, y)) --> 
+dead minuses count: 1
+;;
+from 6 by rule ->!
+
+6 	F(__t1, __t1) --> F(__t1, w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL y (F(y, w1) == !F(y, y)) --> 
+dead minuses count: 0
+;;
+from 8 by rule 
+
+7 	F(__t1, w1) --> F(__t1, __t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL y (F(y, w1) == !F(y, y)) --> 
+dead minuses count: 0
+;;
+from 9 by rule 
+
+8 LeafInfo of : [__t1 => w1\n]
+9 LeafInfo of : [__t1 => w1\n]

@@ -1,0 +1,30 @@
+0 	 --> 
+	 --> 
+	 --> p == p
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2, 1 by rule ->==
+
+1 	p --> p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 4 by rule 
+
+2 	p --> p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 3 by rule 
+
+3 LeafInfo of : [axiom]
+4 LeafInfo of : [axiom]
+5 LeafInfo of 0: [Proving succeded]

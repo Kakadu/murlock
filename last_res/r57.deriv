@@ -1,0 +1,102 @@
+0 	 --> 
+	 --> ((F(G(_a, _b), G(_b, _c)) & F(G(_b, _c), G(_a, _c))) & ( ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))))) => F(G(_a, _b), G(_a, _c))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> F(G(_a, _b), G(_a, _c))
+	(F(G(_a, _b), G(_b, _c)) & F(G(_b, _c), G(_a, _c))) & ( ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z))))) --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule &->
+
+2 	 --> F(G(_a, _b), G(_a, _c))
+	F(G(_a, _b), G(_b, _c)) & F(G(_b, _c), G(_a, _c)) --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))) --> 
+dead minuses count: 0
+;;
+from 3 by rule &->
+
+3 	F(G(_b, _c), G(_a, _c)), F(G(_a, _b), G(_b, _c)) --> F(G(_a, _b), G(_a, _c))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))) --> 
+dead minuses count: 0
+;;
+from 4 by rule ALL -->
+
+4 	F(G(_a, _b), G(_b, _c)), F(G(_b, _c), G(_a, _c)) --> F(G(_a, _b), G(_a, _c))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) => F(__t1, z))) --> 
+dead minuses count: 1
+;;
+from 5 by rule ALL -->
+
+5 	F(G(_b, _c), G(_a, _c)), F(G(_a, _b), G(_b, _c)) --> F(G(_a, _b), G(_a, _c))
+	 --> 
+	 --> 
+	 --> 
+	 ALL y ( ALL z ((F(__t1, y) & F(y, z)) => F(__t1, z))),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))),  ALL z ((F(__t1, __t2) & F(__t2, z)) => F(__t1, z)) --> 
+dead minuses count: 2
+;;
+from 6 by rule ALL -->
+
+6 	F(G(_a, _b), G(_b, _c)), F(G(_b, _c), G(_a, _c)) --> F(G(_a, _b), G(_a, _c))
+	 --> 
+	(F(__t1, __t2) & F(__t2, __t3)) => F(__t1, __t3) --> 
+	 --> 
+	 ALL z ((F(__t1, __t2) & F(__t2, z)) => F(__t1, z)),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) => F(__t1, z))) --> 
+dead minuses count: 3
+;;
+from 8, 7 by rule =>->
+
+7 	F(G(_b, _c), G(_a, _c)), F(G(_a, _b), G(_b, _c)) --> F(G(_a, _b), G(_a, _c))
+	 --> 
+	 --> F(__t1, __t2) & F(__t2, __t3)
+	 --> 
+	 ALL y ( ALL z ((F(__t1, y) & F(y, z)) => F(__t1, z))),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))),  ALL z ((F(__t1, __t2) & F(__t2, z)) => F(__t1, z)) --> 
+dead minuses count: 3
+;;
+from 10, 9 by rule ->&
+
+8 	F(__t1, __t3), F(G(_b, _c), G(_a, _c)), F(G(_a, _b), G(_b, _c)) --> F(G(_a, _b), G(_a, _c))
+	 --> 
+	 --> 
+	 --> 
+	 ALL y ( ALL z ((F(__t1, y) & F(y, z)) => F(__t1, z))),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))),  ALL z ((F(__t1, __t2) & F(__t2, z)) => F(__t1, z)) --> 
+dead minuses count: 0
+;;
+from 11 by rule 
+
+9 	F(G(_a, _b), G(_b, _c)), F(G(_b, _c), G(_a, _c)) --> F(__t1, __t2), F(G(_a, _b), G(_a, _c))
+	 --> 
+	 --> 
+	 --> 
+	 ALL z ((F(__t1, __t2) & F(__t2, z)) => F(__t1, z)),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) => F(__t1, z))) --> 
+dead minuses count: 0
+;;
+from 12 by rule 
+
+10 	F(G(_a, _b), G(_b, _c)), F(G(_b, _c), G(_a, _c)) --> F(__t2, __t3), F(G(_a, _b), G(_a, _c))
+	 --> 
+	 --> 
+	 --> 
+	 ALL z ((F(__t1, __t2) & F(__t2, z)) => F(__t1, z)),  ALL x ( ALL y ( ALL z ((F(x, y) & F(y, z)) => F(x, z)))),  ALL y ( ALL z ((F(__t1, y) & F(y, z)) => F(__t1, z))) --> 
+dead minuses count: 0
+;;
+from 13 by rule 
+
+11 LeafInfo of : [__t3 => G(_a, _c)\n__t2 => G(_b, _c)\n__t1 => G(_a, _b)\n]
+12 LeafInfo of : [__t2 => G(_b, _c)\n__t1 => G(_a, _b)\n]
+13 LeafInfo of : [__t3 => G(_a, _c)\n__t2 => G(_b, _c)\n__t1 => G(_a, _b)\n]

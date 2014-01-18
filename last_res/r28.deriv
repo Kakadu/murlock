@@ -1,0 +1,797 @@
+0 	 --> 
+	 --> ((( ALL x (P(x) => ( ALL y Q(y)))) & (( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))))) & (( EXZ x S(x)) => ( ALL x (F(x) => G(x))))) => ( ALL x ((P(x) & F(x)) => G(x)))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule ->=>
+
+1 	 --> 
+	(( ALL x (P(x) => ( ALL y Q(y)))) & (( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))))) & (( EXZ x S(x)) => ( ALL x (F(x) => G(x)))) --> 
+	 --> 
+	 -->  ALL x ((P(x) & F(x)) => G(x))
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule &->
+
+2 	 --> 
+	( ALL x (P(x) => ( ALL y Q(y)))) & (( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x)))) --> 
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 -->  ALL x ((P(x) & F(x)) => G(x))
+	 --> 
+dead minuses count: 0
+;;
+from 3 by rule &->
+
+3 	 --> 
+	 --> 
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))), ( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 -->  ALL x ((P(x) & F(x)) => G(x))
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 0
+;;
+from 4 by rule -->ALL
+
+4 	 --> 
+	 --> (P(w1) & F(w1)) => G(w1)
+	( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))), ( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 0
+;;
+from 5 by rule ->=>
+
+5 	 --> G(w1)
+	P(w1) & F(w1) --> 
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))), ( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 0
+;;
+from 6 by rule &->
+
+6 	F(w1), P(w1) --> G(w1)
+	 --> 
+	( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))), ( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 0
+;;
+from 7 by rule ALL -->
+
+7 	P(w1), F(w1) --> G(w1)
+	 --> 
+	P(__t1) => ( ALL y Q(y)), ( EXZ x S(x)) => ( ALL x (F(x) => G(x))), ( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 9, 8 by rule =>->
+
+8 	F(w1), P(w1) --> P(__t1), G(w1)
+	 --> 
+	( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))), ( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 12, 11 by rule =>->
+
+9 	F(w1), P(w1) --> G(w1)
+	 --> 
+	( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))), ( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y) --> 
+dead minuses count: 1
+;;
+from 10 by rule ALL -->
+
+10 	Q(__t2), P(w1), F(w1) --> G(w1)
+	 --> 
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))), ( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 --> 
+	 ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 14, 13 by rule =>->
+
+11 	P(w1), F(w1) --> G(w1), P(__t1)
+	 --> 
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 -->  ALL x (Q(x) OR R(x))
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 18 by rule -->ALL
+
+12 	P(w1), F(w1) --> G(w1), P(__t1)
+	 --> 
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 EXZ x (Q(x) & S(x)) --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 17 by rule EXZ-->
+
+13 	F(w1), P(w1), Q(__t2) --> G(w1)
+	 --> 
+	( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y) -->  EXZ x S(x)
+dead minuses count: 2
+;;
+from 16 by rule --> EXZ
+
+14 	F(w1), P(w1), Q(__t2) --> G(w1)
+	 --> 
+	( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 2
+;;
+from 15 by rule ALL -->
+
+15 	Q(__t2), P(w1), F(w1) --> G(w1)
+	 --> 
+	F(__t3) => G(__t3), ( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 3
+;;
+from 20, 19 by rule =>->
+
+16 	Q(__t2), P(w1), F(w1) --> S(__t4), G(w1)
+	 --> 
+	( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 --> 
+	 ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 3
+;;
+from 22, 21 by rule =>->
+
+17 	F(w1), P(w1) --> P(__t1), G(w1)
+	Q(w2) & S(w2) --> 
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 30 by rule &->
+
+18 	F(w1), P(w1) --> P(__t1), G(w1)
+	 --> Q(w3) OR R(w3)
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 29 by rule ->OR
+
+19 	F(w1), P(w1), Q(__t2) --> F(__t3), G(w1)
+	 --> 
+	( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 28, 27 by rule =>->
+
+20 	G(__t3), F(w1), P(w1), Q(__t2) --> G(w1)
+	 --> 
+	( ALL x (Q(x) OR R(x))) => ( EXZ x (Q(x) & S(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 26, 25 by rule =>->
+
+21 	F(w1), P(w1), Q(__t2) --> G(w1), S(__t4)
+	 --> 
+	 --> 
+	 -->  ALL x (Q(x) OR R(x))
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y) -->  EXZ x S(x)
+dead minuses count: 3
+;;
+from 24 by rule -->ALL
+
+22 	F(w1), P(w1), Q(__t2) --> G(w1), S(__t4)
+	 --> 
+	 --> 
+	 EXZ x (Q(x) & S(x)) --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y) -->  EXZ x S(x)
+dead minuses count: 3
+;;
+from 23 by rule EXZ-->
+
+23 	Q(__t2), P(w1), F(w1) --> S(__t4), G(w1)
+	Q(w4) & S(w4) --> 
+	 --> 
+	 --> 
+	 ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 3
+;;
+from 40 by rule &->
+
+24 	Q(__t2), P(w1), F(w1) --> S(__t4), G(w1)
+	 --> Q(w5) OR R(w5)
+	 --> 
+	 --> 
+	 ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 3
+;;
+from 39 by rule ->OR
+
+25 	Q(__t2), P(w1), F(w1), G(__t3) --> G(w1)
+	 --> 
+	 --> 
+	 -->  ALL x (Q(x) OR R(x))
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 3
+;;
+from 38 by rule -->ALL
+
+26 	Q(__t2), P(w1), F(w1), G(__t3) --> G(w1)
+	 --> 
+	 --> 
+	 EXZ x (Q(x) & S(x)) --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 3
+;;
+from 37 by rule EXZ-->
+
+27 	Q(__t2), P(w1), F(w1) --> G(w1), F(__t3)
+	 --> 
+	 --> 
+	 -->  ALL x (Q(x) OR R(x))
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 3
+;;
+from 36 by rule -->ALL
+
+28 	Q(__t2), P(w1), F(w1) --> G(w1), F(__t3)
+	 --> 
+	 --> 
+	 EXZ x (Q(x) & S(x)) --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 3
+;;
+from 35 by rule EXZ-->
+
+29 	P(w1), F(w1) --> R(w3), Q(w3), G(w1), P(__t1)
+	 --> 
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 34, 33 by rule =>->
+
+30 	S(w2), Q(w2), P(w1), F(w1) --> G(w1), P(__t1)
+	 --> 
+	( EXZ x S(x)) => ( ALL x (F(x) => G(x))) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 32, 31 by rule =>->
+
+31 	F(w1), P(w1), Q(w2), S(w2) --> P(__t1), G(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 1
+;;
+from 48 by rule --> EXZ
+
+32 	F(w1), P(w1), Q(w2), S(w2) --> P(__t1), G(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 1
+;;
+from 47 by rule ALL -->
+
+33 	F(w1), P(w1) --> P(__t1), G(w1), Q(w3), R(w3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 1
+;;
+from 46 by rule --> EXZ
+
+34 	F(w1), P(w1) --> P(__t1), G(w1), Q(w3), R(w3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 1
+;;
+from 45 by rule ALL -->
+
+35 	F(w1), P(w1), Q(__t2) --> F(__t3), G(w1)
+	Q(w6) & S(w6) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 44 by rule &->
+
+36 	F(w1), P(w1), Q(__t2) --> F(__t3), G(w1)
+	 --> Q(w7) OR R(w7)
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 43 by rule ->OR
+
+37 	G(__t3), F(w1), P(w1), Q(__t2) --> G(w1)
+	Q(w8) & S(w8) --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 42 by rule &->
+
+38 	G(__t3), F(w1), P(w1), Q(__t2) --> G(w1)
+	 --> Q(w9) OR R(w9)
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 41 by rule ->OR
+
+39 	F(w1), P(w1), Q(__t2) --> R(w5), Q(w5), G(w1), S(__t4)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y) -->  EXZ x S(x)
+dead minuses count: 0
+;;
+from 59 by rule ALL -->
+
+40 	S(w4), Q(w4), F(w1), P(w1), Q(__t2) --> G(w1), S(__t4)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y) -->  EXZ x S(x)
+dead minuses count: 0
+;;
+from 60 by rule ALL -->
+
+41 	Q(__t2), P(w1), F(w1), G(__t3) --> R(w9), Q(w9), G(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 0
+;;
+from 58 by rule ALL -->
+
+42 	S(w8), Q(w8), Q(__t2), P(w1), F(w1), G(__t3) --> G(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 0
+;;
+from 57 by rule ALL -->
+
+43 	Q(__t2), P(w1), F(w1) --> R(w7), Q(w7), G(w1), F(__t3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 0
+;;
+from 56 by rule ALL -->
+
+44 	S(w6), Q(w6), Q(__t2), P(w1), F(w1) --> G(w1), F(__t3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 0
+;;
+from 55 by rule ALL -->
+
+45 	P(w1), F(w1) --> R(w3), Q(w3), G(w1), P(__t1)
+	 --> 
+	F(__t5) => G(__t5) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 50, 49 by rule =>->
+
+46 	P(w1), F(w1) --> S(__t6), R(w3), Q(w3), G(w1), P(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 0
+;;
+from 61 by rule ALL -->
+
+47 	S(w2), Q(w2), P(w1), F(w1) --> G(w1), P(__t1)
+	 --> 
+	F(__t7) => G(__t7) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 52, 51 by rule =>->
+
+48 	S(w2), Q(w2), P(w1), F(w1) --> S(__t8), G(w1), P(__t1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 0
+;;
+from 64 by rule ALL -->
+
+49 	F(w1), P(w1) --> F(__t5), P(__t1), G(w1), Q(w3), R(w3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 0
+;;
+from 53 by rule ALL -->
+
+50 	G(__t5), F(w1), P(w1) --> P(__t1), G(w1), Q(w3), R(w3)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 0
+;;
+from 54 by rule ALL -->
+
+51 	F(w1), P(w1), Q(w2), S(w2) --> F(__t7), P(__t1), G(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 0
+;;
+from 62 by rule ALL -->
+
+52 	G(__t7), F(w1), P(w1), Q(w2), S(w2) --> P(__t1), G(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 0
+;;
+from 63 by rule ALL -->
+
+53 	P(w1), F(w1) --> R(w3), Q(w3), G(w1), P(__t1), F(__t5)
+	 --> 
+	P(__t9) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 65 by rule ALL -->
+
+54 	P(w1), F(w1), G(__t5) --> R(w3), Q(w3), G(w1), P(__t1)
+	 --> 
+	P(__t10) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 66 by rule ALL -->
+
+55 	F(w1), P(w1), Q(__t2), Q(w6), S(w6) --> F(__t3), G(w1)
+	 --> 
+	F(__t11) => G(__t11) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 1
+;;
+from 67 by rule ALL -->
+
+56 	F(w1), P(w1), Q(__t2) --> F(__t3), G(w1), Q(w7), R(w7)
+	 --> 
+	F(__t12) => G(__t12) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 1
+;;
+from 68 by rule ALL -->
+
+57 	G(__t3), F(w1), P(w1), Q(__t2), Q(w8), S(w8) --> G(w1)
+	 --> 
+	F(__t13) => G(__t13) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 1
+;;
+from 69 by rule ALL -->
+
+58 	G(__t3), F(w1), P(w1), Q(__t2) --> G(w1), Q(w9), R(w9)
+	 --> 
+	F(__t14) => G(__t14) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 1
+;;
+from 70 by rule ALL -->
+
+59 	Q(__t2), P(w1), F(w1) --> S(__t4), G(w1), Q(w5), R(w5)
+	 --> 
+	P(__t15) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 1
+;;
+from 71 by rule ALL -->
+
+60 	Q(__t2), P(w1), F(w1), Q(w4), S(w4) --> S(__t4), G(w1)
+	 --> 
+	P(__t16) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 1
+;;
+from 72 by rule ALL -->
+
+61 	F(w1), P(w1) --> P(__t1), G(w1), Q(w3), R(w3), S(__t6)
+	 --> 
+	P(__t17) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 1
+;;
+from 73 by rule --> EXZ
+
+62 	S(w2), Q(w2), P(w1), F(w1) --> G(w1), P(__t1), F(__t7)
+	 --> 
+	P(__t18) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 74 by rule ALL -->
+
+63 	S(w2), Q(w2), P(w1), F(w1), G(__t7) --> G(w1), P(__t1)
+	 --> 
+	P(__t19) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 1
+;;
+from 75 by rule ALL -->
+
+64 	F(w1), P(w1), Q(w2), S(w2) --> P(__t1), G(w1), S(__t8)
+	 --> 
+	P(__t20) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 1
+;;
+from 76 by rule --> EXZ
+
+65 	F(w1), P(w1) --> F(__t5), P(__t1), G(w1), Q(w3), R(w3)
+	 --> 
+	F(__t21) => G(__t21), P(__t9) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 2
+;;
+from 78, 77 by rule =>->
+
+66 	G(__t5), F(w1), P(w1) --> P(__t1), G(w1), Q(w3), R(w3)
+	 --> 
+	F(__t22) => G(__t22), P(__t10) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 2
+;;
+from 80, 79 by rule =>->
+
+67 	S(w6), Q(w6), Q(__t2), P(w1), F(w1) --> G(w1), F(__t3)
+	 --> 
+	P(__t23) => ( ALL y Q(y)), F(__t11) => G(__t11) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 81 by rule ALL -->
+
+68 	Q(__t2), P(w1), F(w1) --> R(w7), Q(w7), G(w1), F(__t3)
+	 --> 
+	P(__t24) => ( ALL y Q(y)), F(__t12) => G(__t12) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 82 by rule ALL -->
+
+69 	S(w8), Q(w8), Q(__t2), P(w1), F(w1), G(__t3) --> G(w1)
+	 --> 
+	P(__t25) => ( ALL y Q(y)), F(__t13) => G(__t13) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 83 by rule ALL -->
+
+70 	Q(__t2), P(w1), F(w1), G(__t3) --> R(w9), Q(w9), G(w1)
+	 --> 
+	P(__t26) => ( ALL y Q(y)), F(__t14) => G(__t14) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 84 by rule ALL -->
+
+71 	Q(__t27), F(w1), P(w1), Q(__t2) --> R(w5), Q(w5), G(w1), S(__t4)
+	 --> 
+	P(__t15) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y) -->  EXZ x S(x)
+dead minuses count: 2
+;;
+from 85 by rule --> EXZ
+
+72 	Q(__t28), S(w4), Q(w4), F(w1), P(w1), Q(__t2) --> G(w1), S(__t4)
+	 --> 
+	P(__t16) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y) -->  EXZ x S(x)
+dead minuses count: 2
+;;
+from 86 by rule --> EXZ
+
+73 	P(w1), F(w1) --> S(__t29), S(__t6), R(w3), Q(w3), G(w1), P(__t1)
+	 --> 
+	P(__t17) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 2
+;;
+from 87 by rule 
+
+74 	F(w1), P(w1), Q(w2), S(w2) --> F(__t7), P(__t1), G(w1)
+	 --> 
+	F(__t30) => G(__t30), P(__t18) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 2
+;;
+from 88 by rule 
+
+75 	G(__t7), F(w1), P(w1), Q(w2), S(w2) --> P(__t1), G(w1)
+	 --> 
+	F(__t31) => G(__t31), P(__t19) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 2
+;;
+from 89 by rule 
+
+76 	S(w2), Q(w2), P(w1), F(w1) --> S(__t32), S(__t8), G(w1), P(__t1)
+	 --> 
+	P(__t20) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 2
+;;
+from 90 by rule 
+
+77 	P(w1), F(w1) --> F(__t21), R(w3), Q(w3), G(w1), P(__t1), F(__t5)
+	 --> 
+	P(__t9) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 95 by rule 
+
+78 	G(__t21), P(w1), F(w1) --> R(w3), Q(w3), G(w1), P(__t1), F(__t5)
+	 --> 
+	P(__t9) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 94 by rule 
+
+79 	P(w1), F(w1), G(__t5) --> F(__t22), R(w3), Q(w3), G(w1), P(__t1)
+	 --> 
+	P(__t10) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 93 by rule 
+
+80 	G(__t22), P(w1), F(w1), G(__t5) --> R(w3), Q(w3), G(w1), P(__t1)
+	 --> 
+	P(__t10) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (F(x) => G(x)),  ALL x (P(x) => ( ALL y Q(y))) --> 
+dead minuses count: 2
+;;
+from 92 by rule 
+
+81 	Q(__t33), F(w1), P(w1), Q(__t2), Q(w6), S(w6) --> F(__t3), G(w1)
+	 --> 
+	F(__t11) => G(__t11), P(__t23) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 91 by rule 
+
+82 	Q(__t34), F(w1), P(w1), Q(__t2) --> F(__t3), G(w1), Q(w7), R(w7)
+	 --> 
+	F(__t12) => G(__t12), P(__t24) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 96 by rule 
+
+83 	Q(__t35), G(__t3), F(w1), P(w1), Q(__t2), Q(w8), S(w8) --> G(w1)
+	 --> 
+	F(__t13) => G(__t13), P(__t25) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 97 by rule 
+
+84 	Q(__t36), G(__t3), F(w1), P(w1), Q(__t2) --> G(w1), Q(w9), R(w9)
+	 --> 
+	F(__t14) => G(__t14), P(__t26) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL x (P(x) => ( ALL y Q(y))),  ALL y Q(y),  ALL x (F(x) => G(x)) --> 
+dead minuses count: 3
+;;
+from 98 by rule 
+
+85 	Q(__t2), P(w1), F(w1), Q(__t27) --> S(__t37), S(__t4), G(w1), Q(w5), R(w5)
+	 --> 
+	P(__t15) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 3
+;;
+from 99 by rule 
+
+86 	Q(__t2), P(w1), F(w1), Q(w4), S(w4), Q(__t28) --> S(__t38), S(__t4), G(w1)
+	 --> 
+	P(__t16) => ( ALL y Q(y)) --> 
+	 --> 
+	 ALL y Q(y),  ALL x (P(x) => ( ALL y Q(y))) -->  EXZ x S(x)
+dead minuses count: 3
+;;
+from 100 by rule 
+
+87 LeafInfo of : [__t1 => w1\n]
+88 LeafInfo of : [__t7 => w1\n__t1 => w1\n]
+89 LeafInfo of : [__t7 => w1\n__t1 => w1\n]
+90 LeafInfo of : [__t32 => w2\n__t1 => w1\n]
+91 LeafInfo of : [__t3 => w1\n]
+92 LeafInfo of : [__t22 => w1\n__t1 => w1\n]
+93 LeafInfo of : [__t22 => w1\n__t1 => w1\n]
+94 LeafInfo of : [__t21 => w1\n__t1 => w1\n]
+95 LeafInfo of : [__t21 => w1\n__t1 => w1\n]
+96 LeafInfo of : [__t34 => w7\n__t3 => w1\n]
+97 LeafInfo of : [__t3 => w1\n]
+98 LeafInfo of : [__t36 => w9\n__t3 => w1\n]
+99 LeafInfo of : [__t27 => w5\n]
+100 LeafInfo of : [__t38 => w4\n]

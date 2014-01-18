@@ -1,0 +1,64 @@
+0 	 --> 
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ y ( ALL x (F(y) => F(x)))
+dead minuses count: 0
+;;
+from 1 by rule --> EXZ
+
+1 	 --> 
+	 --> 
+	 --> 
+	 -->  ALL x (F(__t1) => F(x))
+	 -->  EXZ y ( ALL x (F(y) => F(x)))
+dead minuses count: 1
+;;
+from 2 by rule -->ALL
+
+2 	 --> 
+	 --> F(__t1) => F(w1)
+	 --> 
+	 --> 
+	 -->  EXZ y ( ALL x (F(y) => F(x)))
+dead minuses count: 1
+;;
+from 3 by rule ->=>
+
+3 	F(__t1) --> F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ y ( ALL x (F(y) => F(x)))
+dead minuses count: 0
+;;
+from 4 by rule --> EXZ
+
+4 	F(__t1) --> F(w1)
+	 --> 
+	 --> 
+	 -->  ALL x (F(__t2) => F(x))
+	 -->  EXZ y ( ALL x (F(y) => F(x)))
+dead minuses count: 1
+;;
+from 5 by rule -->ALL
+
+5 	F(__t1) --> F(w1)
+	 --> F(__t2) => F(w2)
+	 --> 
+	 --> 
+	 -->  EXZ y ( ALL x (F(y) => F(x)))
+dead minuses count: 1
+;;
+from 6 by rule ->=>
+
+6 	F(__t2), F(__t1) --> F(w2), F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 -->  EXZ y ( ALL x (F(y) => F(x)))
+dead minuses count: 0
+;;
+from 7 by rule 
+
+7 LeafInfo of : [__t2 => w1\n]

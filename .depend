@@ -1,0 +1,44 @@
+ans_dic.cmo : lang.cmi ans_dic.cmi
+ans_dic.cmx : lang.cmx ans_dic.cmi
+bigseq.cmo : utils.cmi proprules.cmi predRules.cmi log.cmi lang.cmi \
+    bigseq.cmi
+bigseq.cmx : utils.cmx proprules.cmx predRules.cmx log.cmx lang.cmx \
+    bigseq.cmi
+config.cmo :
+config.cmx :
+lang.cmo : utils.cmi lang.cmi
+lang.cmx : utils.cmx lang.cmi
+lexer.cmo : parser.cmi
+lexer.cmx : parser.cmx
+log.cmo : log.cmi
+log.cmx : log.cmi
+main.cmo : utils.cmi prover2.cmi proprules.cmi parser.cmi log.cmi lexer.cmo \
+    lang.cmi config.cmo
+main.cmx : utils.cmx prover2.cmx proprules.cmx parser.cmx log.cmx lexer.cmx \
+    lang.cmx config.cmx
+parser.cmo : utils.cmi lang.cmi parser.cmi
+parser.cmx : utils.cmx lang.cmx parser.cmi
+predRules.cmo : utils.cmi proprules.cmi lang.cmi predRules.cmi
+predRules.cmx : utils.cmx proprules.cmx lang.cmx predRules.cmi
+proprules.cmo : utils.cmi lang.cmi proprules.cmi
+proprules.cmx : utils.cmx lang.cmx proprules.cmi
+prover2.cmo : utils.cmi unif.cmi proprules.cmi log.cmi lang.cmi config.cmo \
+    bigseq.cmi ans_dic.cmi prover2.cmi
+prover2.cmx : utils.cmx unif.cmx proprules.cmx log.cmx lang.cmx config.cmx \
+    bigseq.cmx ans_dic.cmx prover2.cmi
+unif.cmo : utils.cmi proprules.cmi predRules.cmi lang.cmi config.cmo \
+    ans_dic.cmi unif.cmi
+unif.cmx : utils.cmx proprules.cmx predRules.cmx lang.cmx config.cmx \
+    ans_dic.cmx unif.cmi
+utils.cmo : utils.cmi
+utils.cmx : utils.cmi
+ans_dic.cmi : lang.cmi
+bigseq.cmi : proprules.cmi lang.cmi
+lang.cmi :
+log.cmi :
+parser.cmi : lang.cmi
+predRules.cmi : proprules.cmi lang.cmi
+proprules.cmi : lang.cmi
+prover2.cmi : proprules.cmi lang.cmi config.cmo bigseq.cmi
+unif.cmi : proprules.cmi lang.cmi config.cmo ans_dic.cmi
+utils.cmi :

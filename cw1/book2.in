@@ -1,0 +1,5 @@
+-dot off
+-o book2
+-dt light
+-p4 EXZ x ((ALL z P(z)) OR !P(x))
+

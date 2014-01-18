@@ -1,0 +1,2 @@
+-o temp_res3/r25.dot
+(EXZ x P(x)) & (ALL x (F(x) => (!G(x) & R(x)))) & (ALL x (P(x) => (G(x)&F(x)))) & [(ALL x(P(x) => Q(x))) OR (EXZ x(P(x) & R(x)))] => (EXZ x (Q(x) & P(x)))

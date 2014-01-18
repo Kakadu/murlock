@@ -1,0 +1,661 @@
+0 	 --> 
+	 --> 
+	 --> ( ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x))))) == ( ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))))
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2, 1 by rule ->==
+
+1 	 --> 
+	 --> 
+	 --> 
+	 -->  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x)))))
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 0
+;;
+from 4 by rule -->ALL
+
+2 	 --> 
+	 --> 
+	 --> 
+	 -->  ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x))))
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 3 by rule -->ALL
+
+3 	 --> 
+	 --> (F(_a) & (F(w1) => F(G(w1)))) => F(G(G(w1)))
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 6 by rule ->=>
+
+4 	 --> 
+	 --> 
+	 --> ((!F(_a) OR F(w2)) OR F(G(G(w2)))) & ((!F(_a) OR !F(G(w2))) OR F(G(G(w2))))
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 0
+;;
+from 5 by rule ALL -->
+
+5 	 --> 
+	 --> 
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> ((!F(_a) OR F(w2)) OR F(G(G(w2)))) & ((!F(_a) OR !F(G(w2))) OR F(G(G(w2))))
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 8, 7 by rule ->&
+
+6 	 --> F(G(G(w1)))
+	F(_a) & (F(w1) => F(G(w1))) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 11 by rule &->
+
+7 	 --> 
+	 --> (!F(_a) OR F(w2)) OR F(G(G(w2)))
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 10 by rule ->OR
+
+8 	 --> 
+	 --> (!F(_a) OR !F(G(w2))) OR F(G(G(w2)))
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 9 by rule ->OR
+
+9 	 --> F(G(G(w2)))
+	 --> !F(_a) OR !F(G(w2))
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 14 by rule ->OR
+
+10 	 --> F(G(G(w2)))
+	 --> !F(_a) OR F(w2)
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 13 by rule ->OR
+
+11 	F(_a) --> F(G(G(w1)))
+	 --> 
+	F(w1) => F(G(w1)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 12 by rule ALL -->
+
+12 	F(_a) --> F(G(G(w1)))
+	((!F(_a) OR F(__t2)) OR F(G(G(__t2)))) & ((!F(_a) OR !F(G(__t2))) OR F(G(G(__t2)))) --> 
+	F(w1) => F(G(w1)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 15 by rule &->
+
+13 	 --> F(w2), F(G(G(w2)))
+	 --> !F(_a)
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 19 by rule ->!
+
+14 	 --> F(G(G(w2)))
+	 --> !F(G(w2)), !F(_a)
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 18 by rule ->!
+
+15 	F(_a) --> F(G(G(w1)))
+	 --> 
+	F(w1) => F(G(w1)), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))), (!F(_a) OR F(__t2)) OR F(G(G(__t2))) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 17, 16 by rule =>->
+
+16 	F(_a) --> F(w1), F(G(G(w1)))
+	 --> 
+	(!F(_a) OR F(__t2)) OR F(G(G(__t2))), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 26, 25 by rule OR->
+
+17 	F(G(w1)), F(_a) --> F(G(G(w1)))
+	 --> 
+	(!F(_a) OR F(__t2)) OR F(G(G(__t2))), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 24, 23 by rule OR->
+
+18 	F(G(w2)) --> F(G(G(w2)))
+	 --> !F(_a)
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 22 by rule ->!
+
+19 	F(_a) --> F(G(G(w2))), F(w2)
+	 --> 
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 21, 20 by rule =>->
+
+20 	F(_a) --> F(w2), F(G(G(w2)))
+	 --> 
+	 --> F(_a) & (F(__t1) => F(G(__t1)))
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 38, 37 by rule ->&
+
+21 	F(G(G(__t1))), F(_a) --> F(w2), F(G(G(w2)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 0
+;;
+from 82 by rule 
+
+22 	F(_a), F(G(w2)) --> F(G(G(w2)))
+	 --> 
+	(F(_a) & (F(__t1) => F(G(__t1)))) => F(G(G(__t1))) --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 36, 35 by rule =>->
+
+23 	F(_a), F(G(w1)) --> F(G(G(w1)))
+	 --> 
+	(!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))), !F(_a) OR F(__t2) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 34, 33 by rule OR->
+
+24 	F(G(G(__t2))), F(_a), F(G(w1)) --> F(G(G(w1)))
+	 --> 
+	(!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 32, 31 by rule OR->
+
+25 	F(_a) --> F(G(G(w1))), F(w1)
+	 --> 
+	(!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))), !F(_a) OR F(__t2) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 30, 29 by rule OR->
+
+26 	F(G(G(__t2))), F(_a) --> F(G(G(w1))), F(w1)
+	 --> 
+	(!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 28, 27 by rule OR->
+
+27 	F(_a), F(G(G(__t2))) --> F(w1), F(G(G(w1)))
+	 --> 
+	!F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 55, 54 by rule OR->
+
+28 	F(G(G(__t2))), F(_a), F(G(G(__t2))) --> F(w1), F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 91 by rule 
+
+29 	F(_a) --> F(w1), F(G(G(w1)))
+	 --> 
+	!F(_a) OR F(__t2), !F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 53, 52 by rule OR->
+
+30 	F(G(G(__t2))), F(_a) --> F(w1), F(G(G(w1)))
+	 --> 
+	!F(_a) OR F(__t2) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 51, 50 by rule OR->
+
+31 	F(G(w1)), F(_a), F(G(G(__t2))) --> F(G(G(w1)))
+	 --> 
+	!F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 49, 48 by rule OR->
+
+32 	F(G(G(__t2))), F(G(w1)), F(_a), F(G(G(__t2))) --> F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 87 by rule 
+
+33 	F(G(w1)), F(_a) --> F(G(G(w1)))
+	 --> 
+	!F(_a) OR F(__t2), !F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 47, 46 by rule OR->
+
+34 	F(G(G(__t2))), F(G(w1)), F(_a) --> F(G(G(w1)))
+	 --> 
+	!F(_a) OR F(__t2) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 45, 44 by rule OR->
+
+35 	F(G(w2)), F(_a) --> F(G(G(w2)))
+	 --> 
+	 --> F(_a) & (F(__t1) => F(G(__t1)))
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 42, 41 by rule ->&
+
+36 	F(G(G(__t1))), F(G(w2)), F(_a) --> F(G(G(w2)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 0
+;;
+from 83 by rule 
+
+37 	F(_a) --> F(_a), F(G(G(w2))), F(w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 39 by rule 
+
+38 	F(_a) --> F(G(G(w2))), F(w2)
+	 --> F(__t1) => F(G(__t1))
+	 --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 40 by rule ->=>
+
+39 LeafInfo of : [axiom]
+40 	F(__t1), F(_a) --> F(G(__t1)), F(w2), F(G(G(w2)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 0
+;;
+from 81 by rule 
+
+41 	F(_a), F(G(w2)) --> F(_a), F(G(G(w2)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 43 by rule 
+
+42 	F(_a), F(G(w2)) --> F(G(G(w2)))
+	 --> F(__t1) => F(G(__t1))
+	 --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 1
+;;
+from 74 by rule ->=>
+
+43 LeafInfo of : [axiom]
+44 	F(_a), F(G(w1)), F(G(G(__t2))) --> F(G(G(w1)))
+	!F(_a) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 72 by rule !->
+
+45 	F(__t2), F(_a), F(G(w1)), F(G(G(__t2))) --> F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 85 by rule 
+
+46 	F(_a), F(G(w1)) --> F(G(G(w1)))
+	!F(_a) --> 
+	!F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 70 by rule !->
+
+47 	F(__t2), F(_a), F(G(w1)) --> F(G(G(w1)))
+	 --> 
+	!F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 69, 68 by rule OR->
+
+48 	F(G(G(__t2))), F(_a), F(G(w1)) --> F(G(G(w1)))
+	!F(_a) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 66 by rule !->
+
+49 	F(G(G(__t2))), F(_a), F(G(w1)) --> F(G(G(w1)))
+	!F(G(__t2)) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 65 by rule !->
+
+50 	F(_a), F(G(G(__t2))) --> F(G(G(w1))), F(w1)
+	!F(_a) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 63 by rule !->
+
+51 	F(__t2), F(_a), F(G(G(__t2))) --> F(G(G(w1))), F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 89 by rule 
+
+52 	F(_a) --> F(G(G(w1))), F(w1)
+	!F(_a) --> 
+	!F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 61 by rule !->
+
+53 	F(__t2), F(_a) --> F(G(G(w1))), F(w1)
+	 --> 
+	!F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 60, 59 by rule OR->
+
+54 	F(G(G(__t2))), F(_a) --> F(G(G(w1))), F(w1)
+	!F(_a) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 57 by rule !->
+
+55 	F(G(G(__t2))), F(_a) --> F(G(G(w1))), F(w1)
+	!F(G(__t2)) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 56 by rule !->
+
+56 	F(_a), F(G(G(__t2))) --> F(G(__t2)), F(w1), F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 92 by rule 
+
+57 	F(_a), F(G(G(__t2))) --> F(_a), F(w1), F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 58 by rule 
+
+58 LeafInfo of : [axiom]
+59 	F(_a), F(__t2) --> F(w1), F(G(G(w1)))
+	!F(_a) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 79 by rule !->
+
+60 	F(_a), F(__t2) --> F(w1), F(G(G(w1)))
+	!F(G(__t2)) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 78 by rule !->
+
+61 	F(_a) --> F(_a), F(w1), F(G(G(w1)))
+	 --> 
+	!F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 62 by rule 
+
+62 LeafInfo of : [axiom]
+63 	F(G(G(__t2))), F(_a) --> F(_a), F(w1), F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 64 by rule 
+
+64 LeafInfo of : [axiom]
+65 	F(G(w1)), F(_a), F(G(G(__t2))) --> F(G(__t2)), F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 88 by rule 
+
+66 	F(G(w1)), F(_a), F(G(G(__t2))) --> F(_a), F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 67 by rule 
+
+67 LeafInfo of : [axiom]
+68 	F(G(w1)), F(_a), F(__t2) --> F(G(G(w1)))
+	!F(_a) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 76 by rule !->
+
+69 	F(G(w1)), F(_a), F(__t2) --> F(G(G(w1)))
+	!F(G(__t2)) --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 75 by rule !->
+
+70 	F(G(w1)), F(_a) --> F(_a), F(G(G(w1)))
+	 --> 
+	!F(_a) OR !F(G(__t2)) --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 71 by rule 
+
+71 LeafInfo of : [axiom]
+72 	F(G(G(__t2))), F(G(w1)), F(_a) --> F(_a), F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 73 by rule 
+
+73 LeafInfo of : [axiom]
+74 	F(__t1), F(G(w2)), F(_a) --> F(G(__t1)), F(G(G(w2)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((F(_a) & (F(x) => F(G(x)))) => F(G(G(x)))) --> 
+dead minuses count: 0
+;;
+from 84 by rule 
+
+75 	F(__t2), F(_a), F(G(w1)) --> F(G(__t2)), F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 86 by rule 
+
+76 	F(__t2), F(_a), F(G(w1)) --> F(_a), F(G(G(w1)))
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 77 by rule 
+
+77 LeafInfo of : [axiom]
+78 	F(__t2), F(_a) --> F(G(__t2)), F(G(G(w1))), F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 0
+;;
+from 90 by rule 
+
+79 	F(__t2), F(_a) --> F(_a), F(G(G(w1))), F(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --> 
+dead minuses count: 1
+;;
+from 80 by rule 
+
+80 LeafInfo of : [axiom]
+81 LeafInfo of : [__t1 => w2\n]
+82 LeafInfo of : [__t1 => w2\n]
+83 LeafInfo of : [__t1 => w2\n]
+84 LeafInfo of : [__t1 => w2\n]
+85 LeafInfo of : [__t2 => w1\n]
+86 LeafInfo of : [__t2 => w1\n]
+87 LeafInfo of : [__t2 => w1\n]
+88 LeafInfo of : [__t2 => w1\n]
+89 LeafInfo of : [__t2 => w1\n]
+90 LeafInfo of : [__t2 => w1\n]
+91 LeafInfo of : [__t2 => w1\n]
+92 LeafInfo of : [__t2 => w1\n]

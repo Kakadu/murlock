@@ -1,0 +1,122 @@
+0 	 --> 
+	 --> 
+	 --> (!p => q) == (!q => p)
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2, 1 by rule ->==
+
+1 	 --> 
+	 --> !q => p
+	!p => q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 4 by rule ->=>
+
+2 	 --> 
+	 --> !p => q
+	!q => p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 3 by rule ->=>
+
+3 	 --> q
+	!p --> 
+	!q => p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 6 by rule !->
+
+4 	 --> p
+	!q --> 
+	!p => q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 5 by rule !->
+
+5 	 --> q, p
+	 --> 
+	!p => q --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 11, 10 by rule =>->
+
+6 	 --> p, q
+	 --> 
+	!q => p --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 8, 7 by rule =>->
+
+7 	 --> q, p
+	 --> !q
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 15 by rule ->!
+
+8 	p --> q, p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 9 by rule 
+
+9 LeafInfo of : [axiom]
+10 	 --> p, q
+	 --> !p
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 13 by rule ->!
+
+11 	q --> p, q
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 12 by rule 
+
+12 LeafInfo of : [axiom]
+13 	p --> q, p
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 14 by rule 
+
+14 LeafInfo of : [axiom]
+15 	q --> p, q
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 16 by rule 
+
+16 LeafInfo of : [axiom]
+17 LeafInfo of 0: [Proving succeded]

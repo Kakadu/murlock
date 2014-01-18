@@ -1,0 +1,493 @@
+0 	 --> 
+	 --> 
+	 --> ( ALL x ((P(_a) & (P(x) => P(_b))) => P(_c))) == ( ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))))
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2, 1 by rule ->==
+
+1 	 --> 
+	 --> 
+	 --> 
+	 -->  ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c))))
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 0
+;;
+from 4 by rule -->ALL
+
+2 	 --> 
+	 --> 
+	 --> 
+	 -->  ALL x ((P(_a) & (P(x) => P(_b))) => P(_c))
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 0
+;;
+from 3 by rule -->ALL
+
+3 	 --> 
+	 --> (P(_a) & (P(w1) => P(_b))) => P(_c)
+	 --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 0
+;;
+from 6 by rule ->=>
+
+4 	 --> 
+	 --> 
+	 --> (!P(_a) OR (P(w2) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 0
+;;
+from 5 by rule ALL -->
+
+5 	 --> 
+	 --> 
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> (!P(_a) OR (P(w2) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 8, 7 by rule ->&
+
+6 	 --> P(_c)
+	P(_a) & (P(w1) => P(_b)) --> 
+	 --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 0
+;;
+from 11 by rule &->
+
+7 	 --> 
+	 --> !P(_a) OR (P(w2) OR P(_c))
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 10 by rule ->OR
+
+8 	 --> 
+	 --> !P(_a) OR (!P(_b) OR P(_c))
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 9 by rule ->OR
+
+9 	 --> 
+	 --> !P(_b) OR P(_c), !P(_a)
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 14 by rule ->OR
+
+10 	 --> 
+	 --> P(w2) OR P(_c), !P(_a)
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 13 by rule ->OR
+
+11 	P(_a) --> P(_c)
+	 --> 
+	P(w1) => P(_b) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 0
+;;
+from 12 by rule ALL -->
+
+12 	P(_a) --> P(_c)
+	(!P(_a) OR (P(__t2) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c))) --> 
+	P(w1) => P(_b) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 15 by rule &->
+
+13 	 --> P(_c), P(w2)
+	 --> !P(_a)
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 19 by rule ->!
+
+14 	 --> P(_c)
+	 --> !P(_a), !P(_b)
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 18 by rule ->!
+
+15 	P(_a) --> P(_c)
+	 --> 
+	P(w1) => P(_b), !P(_a) OR (!P(_b) OR P(_c)), !P(_a) OR (P(__t2) OR P(_c)) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 17, 16 by rule =>->
+
+16 	P(_a) --> P(w1), P(_c)
+	 --> 
+	!P(_a) OR (P(__t2) OR P(_c)), !P(_a) OR (!P(_b) OR P(_c)) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 27, 26 by rule OR->
+
+17 	P(_b), P(_a) --> P(_c)
+	 --> 
+	!P(_a) OR (P(__t2) OR P(_c)), !P(_a) OR (!P(_b) OR P(_c)) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 25, 24 by rule OR->
+
+18 	P(_a) --> P(_c)
+	 --> !P(_b)
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 23 by rule ->!
+
+19 	P(_a) --> P(w2), P(_c)
+	 --> 
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 21, 20 by rule =>->
+
+20 	P(_a) --> P(_c), P(w2)
+	 --> 
+	 --> P(_a) & (P(__t1) => P(_b))
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 40, 39 by rule ->&
+
+21 	P(_c), P(_a) --> P(_c), P(w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 22 by rule 
+
+22 LeafInfo of : [axiom]
+23 	P(_b), P(_a) --> P(_c)
+	 --> 
+	(P(_a) & (P(__t1) => P(_b))) => P(_c) --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 37, 36 by rule =>->
+
+24 	P(_a), P(_b) --> P(_c)
+	!P(_a) --> 
+	!P(_a) OR (!P(_b) OR P(_c)) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 34 by rule !->
+
+25 	P(_a), P(_b) --> P(_c)
+	 --> 
+	!P(_a) OR (!P(_b) OR P(_c)), P(__t2) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 33, 32 by rule OR->
+
+26 	P(_a) --> P(_c), P(w1)
+	!P(_a) --> 
+	!P(_a) OR (!P(_b) OR P(_c)) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 30 by rule !->
+
+27 	P(_a) --> P(_c), P(w1)
+	 --> 
+	!P(_a) OR (!P(_b) OR P(_c)), P(__t2) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 29, 28 by rule OR->
+
+28 	P(_a) --> P(w1), P(_c)
+	!P(_a) --> 
+	P(__t2) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 54 by rule !->
+
+29 	P(_a) --> P(w1), P(_c)
+	 --> 
+	P(__t2) OR P(_c), !P(_b) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 52, 51 by rule OR->
+
+30 	P(_a) --> P(_a), P(w1), P(_c)
+	 --> 
+	!P(_a) OR (!P(_b) OR P(_c)) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 31 by rule 
+
+31 LeafInfo of : [axiom]
+32 	P(_b), P(_a) --> P(_c)
+	!P(_a) --> 
+	P(__t2) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 49 by rule !->
+
+33 	P(_b), P(_a) --> P(_c)
+	 --> 
+	P(__t2) OR P(_c), !P(_b) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 47, 46 by rule OR->
+
+34 	P(_b), P(_a) --> P(_a), P(_c)
+	 --> 
+	!P(_a) OR (!P(_b) OR P(_c)) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 35 by rule 
+
+35 LeafInfo of : [axiom]
+36 	P(_a), P(_b) --> P(_c)
+	 --> 
+	 --> P(_a) & (P(__t1) => P(_b))
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 44, 43 by rule ->&
+
+37 	P(_c), P(_a), P(_b) --> P(_c)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 38 by rule 
+
+38 LeafInfo of : [axiom]
+39 	P(_a) --> P(_a), P(w2), P(_c)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 41 by rule 
+
+40 	P(_a) --> P(w2), P(_c)
+	 --> P(__t1) => P(_b)
+	 --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 42 by rule ->=>
+
+41 LeafInfo of : [axiom]
+42 	P(__t1), P(_a) --> P(_b), P(_c), P(w2)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 0
+;;
+from 67 by rule 
+
+43 	P(_b), P(_a) --> P(_a), P(_c)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 45 by rule 
+
+44 	P(_b), P(_a) --> P(_c)
+	 --> P(__t1) => P(_b)
+	 --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 62 by rule ->=>
+
+45 LeafInfo of : [axiom]
+46 	P(__t2), P(_a), P(_b) --> P(_c)
+	 --> 
+	!P(_b) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 60, 59 by rule OR->
+
+47 	P(_c), P(_a), P(_b) --> P(_c)
+	 --> 
+	!P(_b) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 48 by rule 
+
+48 LeafInfo of : [axiom]
+49 	P(_a), P(_b) --> P(_a), P(_c)
+	 --> 
+	P(__t2) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 50 by rule 
+
+50 LeafInfo of : [axiom]
+51 	P(__t2), P(_a) --> P(_c), P(w1)
+	 --> 
+	!P(_b) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 57, 56 by rule OR->
+
+52 	P(_c), P(_a) --> P(_c), P(w1)
+	 --> 
+	!P(_b) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 53 by rule 
+
+53 LeafInfo of : [axiom]
+54 	P(_a) --> P(_a), P(_c), P(w1)
+	 --> 
+	P(__t2) OR P(_c) --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 55 by rule 
+
+55 LeafInfo of : [axiom]
+56 	P(_a), P(__t2) --> P(w1), P(_c)
+	!P(_b) --> 
+	 --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 66 by rule !->
+
+57 	P(_c), P(_a), P(__t2) --> P(w1), P(_c)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 58 by rule 
+
+58 LeafInfo of : [axiom]
+59 	P(_b), P(_a), P(__t2) --> P(_c)
+	!P(_b) --> 
+	 --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 64 by rule !->
+
+60 	P(_c), P(_b), P(_a), P(__t2) --> P(_c)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 61 by rule 
+
+61 LeafInfo of : [axiom]
+62 	P(__t1), P(_a), P(_b) --> P(_b), P(_c)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((P(_a) & (P(x) => P(_b))) => P(_c)) --> 
+dead minuses count: 1
+;;
+from 63 by rule 
+
+63 LeafInfo of : [axiom]
+64 	P(__t2), P(_a), P(_b) --> P(_b), P(_c)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 1
+;;
+from 65 by rule 
+
+65 LeafInfo of : [axiom]
+66 	P(__t2), P(_a) --> P(_b), P(_c), P(w1)
+	 --> 
+	 --> 
+	 --> 
+	 ALL x ((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c)))) --> 
+dead minuses count: 0
+;;
+from 68 by rule 
+
+67 LeafInfo of : [__t1 => _b\n]
+68 LeafInfo of : [__t2 => _b\n]

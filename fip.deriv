@@ -1,0 +1,85 @@
+0 	 --> 
+	 --> 
+	 --> 
+	 -->  ALL x (((P(x) => Q(x)) & (Q(x) => R(x))) => (P(x) => R(x)))
+	 --> 
+dead minuses count: 0
+;;
+from 1 by rule -->ALL
+
+1 	 --> 
+	 --> ((P(w1) => Q(w1)) & (Q(w1) => R(w1))) => (P(w1) => R(w1))
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 2 by rule ->=>
+
+2 	 --> 
+	(P(w1) => Q(w1)) & (Q(w1) => R(w1)) --> P(w1) => R(w1)
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 3 by rule ->=>
+
+3 	P(w1) --> R(w1)
+	(P(w1) => Q(w1)) & (Q(w1) => R(w1)) --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 4 by rule &->
+
+4 	P(w1) --> R(w1)
+	 --> 
+	Q(w1) => R(w1), P(w1) => Q(w1) --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 6, 5 by rule =>->
+
+5 	P(w1) --> Q(w1), R(w1)
+	 --> 
+	P(w1) => Q(w1) --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 9, 8 by rule =>->
+
+6 	R(w1), P(w1) --> R(w1)
+	 --> 
+	P(w1) => Q(w1) --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 7 by rule 
+
+7 LeafInfo of : [axiom]
+8 	P(w1) --> P(w1), R(w1), Q(w1)
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 11 by rule 
+
+9 	Q(w1), P(w1) --> R(w1), Q(w1)
+	 --> 
+	 --> 
+	 --> 
+	 --> 
+dead minuses count: 0
+;;
+from 10 by rule 
+
+10 LeafInfo of : [axiom]
+11 LeafInfo of : [axiom]
+12 LeafInfo of 0: [Proving succeded]

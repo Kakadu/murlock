@@ -1,0 +1,21 @@
+\begin{enumerate}
+\item $ \rightarrow   \exists  x (( \forall  z P(z))  \vee  !P(x))$\\
+ from [2] by rule $\exists \rightarrow $ with new term $\alpha$
+\item $ \rightarrow  ( \forall  z P(z))  \vee  !P(\alpha),  \exists  x (( \forall  z P(z))  \vee  !P(x))$\\
+ from [3] by rule $ \vee \rightarrow $
+\item $ \rightarrow  !P(\alpha),  \forall  z P(z),  \exists  x (( \forall  z P(z))  \vee  !P(x))$\\
+ from [4] by rule $NOT\rightarrow $
+\item $P(\alpha) \rightarrow   \forall  z P(z),  \exists  x (( \forall  z P(z))  \vee  !P(x))$\\
+ from [5] by rule $\forall \rightarrow $ with new term $w1$
+\item $P(\alpha) \rightarrow  P(w1),  \exists  x (( \forall  z P(z))  \vee  !P(x))$\\
+ from [6] by rule $\exists \rightarrow $ with new term $\beta$
+\item $P(\alpha) \rightarrow  P(w1), ( \forall  z P(z))  \vee  !P(\beta),  \exists  x (( \forall  z P(z))  \vee  !P(x))$\\
+  used in temporary unifications: [4]\\
+ from [7] by rule $ \vee \rightarrow $
+\item $P(\alpha) \rightarrow  P(w1), !P(\beta),  \forall  z P(z),  \exists  x (( \forall  z P(z))  \vee  !P(x))$\\
+ from [8] by rule $NOT\rightarrow $
+\item $P(\beta), P(\alpha) \rightarrow  P(w1),  \forall  z P(z),  \exists  x (( \forall  z P(z))  \vee  !P(x))$\\
+ from [9] by rule $\forall \rightarrow $ with new term $w2$
+\item $P(\alpha), P(\beta) \rightarrow  P(w2), P(w1),  \exists  x (( \forall  z P(z))  \vee  !P(x))$\\ 
+ unification succeded using [$\beta \mapsto w1$]
+\end{enumerate}

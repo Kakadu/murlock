@@ -1,0 +1,2 @@
+-o temp_res3/r28.dot
+[ALL x (P(x) => ALL y Q(y))] & [(ALL x (Q(x) OR R(x))) => (EXZ x (Q(x) & S(x)))] & [(EXZ x S(x)) => (ALL x(F(x)=>G(x)))] => (ALL x (P(x) & F(x) => G(x)))

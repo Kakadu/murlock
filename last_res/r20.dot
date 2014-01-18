@@ -1,0 +1,45 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	18 [label="__t4 => w3\n__t2 => w2\n__t1 => w1\n"]
+	17 [label="__t4 => w3\n__t2 => w2\n__t1 => w1\n"]
+	16 [label="__t4 => w3\n__t2 => w2\n__t1 => w1\n"]
+	subgraph cluster2 {
+		15 [shape=record,label="{<seq> P(w1), Q(w2),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) =\> (R(w3) & S(w))) \n--\>\nQ(__t2), R(__t4),  EXZ z R(z) |<lastfip>  }"];
+	}
+	15 -> 18 [label=""]
+	subgraph cluster2 {
+		14 [shape=record,label="{<seq> P(w1), Q(w2),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) =\> (R(w3) & S(w))) \n--\>\nP(__t1), R(__t4),  EXZ z R(z) |<lastfip>  }"];
+	}
+	14 -> 17 [label=""]
+	subgraph cluster2 {
+		13 [shape=record,label="{<seq> S(__t3), R(w3), P(w1), Q(w2),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) =\> (R(w3) & S(w))) \n--\>\nR(__t4),  EXZ z R(z) |<lastfip>  }"];
+	}
+	13 -> 16 [label=""]
+	12 [shape=record,label="{<seq> Q(w2), P(w1), R(w3) & S(__t3),  ALL w ((P(__t1) & Q(__t2)) =\> (R(w3) & S(w))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) \n--\>\nR(__t4),  EXZ z R(z) |<lastfip> R(w3) & S(__t3) --\> }"];
+	12 -> 13 [label="&->"]
+	11 [shape=record,label="{<seq> Q(w2), P(w1),  ALL w ((P(__t1) & Q(__t2)) =\> (R(w3) & S(w))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) \n--\>\nR(__t4), P(__t1) & Q(__t2),  EXZ z R(z) |<lastfip> --\> P(__t1) & Q(__t2) }"];
+	11 -> 15 [label="->&"]
+	11 -> 14 [label="->&"]
+	10 [shape=record,label="{<seq> P(w1), Q(w2), (P(__t1) & Q(__t2)) =\> (R(w3) & S(__t3)),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) =\> (R(w3) & S(w))) \n--\>\nR(__t4),  EXZ z R(z) |<lastfip> (P(__t1) & Q(__t2)) =\> (R(w3) & S(__t3)) --\> }"];
+	10 -> 12 [label="=>->"]
+	10 -> 11 [label="=>->"]
+	9 [shape=record,label="{<seq> Q(w2), P(w1), (P(__t1) & Q(__t2)) =\> (R(w3) & S(__t3)),  ALL w ((P(__t1) & Q(__t2)) =\> (R(w3) & S(w))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) \n--\>\n EXZ z R(z) |<lastfip> --\>  EXZ z R(z) }"];
+	9 -> 10 [label="--> EXZ"]
+	8 [shape=record,label="{<seq> P(w1), Q(w2),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))),  ALL w ((P(__t1) & Q(__t2)) =\> (R(w3) & S(w))) \n--\>\n EXZ z R(z) |<lastfip>  ALL w ((P(__t1) & Q(__t2)) =\> (R(w3) & S(w))) --\> }"];
+	8 -> 9 [label="ALL -->"]
+	7 [shape=record,label="{<seq> Q(w2), P(w1),  EXZ z ( ALL w ((P(__t1) & Q(__t2)) =\> (R(z) & S(w)))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) \n--\>\n EXZ z R(z) |<lastfip>  EXZ z ( ALL w ((P(__t1) & Q(__t2)) =\> (R(z) & S(w)))) --\> }"];
+	7 -> 8 [label="EXZ-->"]
+	6 [shape=record,label="{<seq> P(w1), Q(w2),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))),  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))) \n--\>\n EXZ z R(z) |<lastfip>  ALL y ( EXZ z ( ALL w ((P(__t1) & Q(y)) =\> (R(z) & S(w))))) --\> }"];
+	6 -> 7 [label="ALL -->"]
+	5 [shape=record,label="{<seq> Q(w2), P(w1),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) \n--\>\n EXZ z R(z) |<lastfip>  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) --\> }"];
+	5 -> 6 [label="ALL -->"]
+	4 [shape=record,label="{<seq> P(w1) & Q(w2),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) \n--\>\n EXZ z R(z) |<lastfip> P(w1) & Q(w2) --\> }"];
+	4 -> 5 [label="&->"]
+	3 [shape=record,label="{<seq>  EXZ y (P(w1) & Q(y)),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) \n--\>\n EXZ z R(z) |<lastfip>  EXZ y (P(w1) & Q(y)) --\> }"];
+	3 -> 4 [label="EXZ-->"]
+	2 [shape=record,label="{<seq>  EXZ x ( EXZ y (P(x) & Q(y))),  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) \n--\>\n EXZ z R(z) |<lastfip>  EXZ x ( EXZ y (P(x) & Q(y))) --\> }"];
+	2 -> 3 [label="EXZ-->"]
+	1 [shape=record,label="{<seq>  ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w)))))) --\>( EXZ x ( EXZ y (P(x) & Q(y)))) =\> ( EXZ z R(z)) |<lastfip> --\> ( EXZ x ( EXZ y (P(x) & Q(y)))) =\> ( EXZ z R(z)) }"];
+	1 -> 2 [label="->=>"]
+	0 [shape=record,label="{<seq>  \n--\>\n( ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w))))))) =\> (( EXZ x ( EXZ y (P(x) & Q(y)))) =\> ( EXZ z R(z))) |<lastfip> --\> ( ALL x ( ALL y ( EXZ z ( ALL w ((P(x) & Q(y)) =\> (R(z) & S(w))))))) =\> (( EXZ x ( EXZ y (P(x) & Q(y)))) =\> ( EXZ z R(z))) }"];
+	0 -> 1 [label="->=>"]
+}

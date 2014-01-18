@@ -1,0 +1,73 @@
+-dot on
+-o res/prop1.dot
+(p=>q) == (!q => !p)
+-o res/prop2.dot
+!!p == p
+-o res/prop3.dot
+!(p=>q) => (q=>p)
+-o res/prop4.dot
+(!p=>q) == (!q => p)
+-o res/prop5.dot
+((p  OR  q)=>(p  OR  r)) => (p  OR  (q=>r))
+-o res/prop6.dot
+p  OR  !p
+-o res/prop7.dot 
+p  OR  !!!p
+-o res/prop8.dot
+((p => q) => p) => p
+-o res/prop9.dot
+[(p OR q) & (!p OR q) & (p OR !q)] => !(!p OR !q)
+-o res/prop11.dot
+p == p
+-o res/prop12.dot
+[(p==q)==r]==[p==[q==r]]
+-o res/prop13.dot
+[p OR  (q&r)]==[(p OR q) & (p OR r)]
+-o res/prop14.dot 
+(p==q) == ((q  OR  !p) & (!q  OR  p))
+-o res/prop15.dot
+(p=>q) == (!p OR q)
+-o res/prop16.dot
+(p=>q) OR (q=>p)
+-o res/prop17.dot
+[(p & (q=>r))=>s]==[(!p OR q OR s) & (!p OR !r OR s)]
+-o res/r18.dot
+EXZ y (ALL x (F(y) => F(x)))
+-o res/r19.dot
+EXZ x (ALL y (ALL z (P(y)=>Q(z) => (P(x)=>Q(x))) ) )
+-o res/r20.dot
+(ALL x (ALL y(EXZ z(ALL w [P(x)&Q(y) => R(z)&S(w)])))) => [(EXZ x (EXZ y (P(x)&Q(y)))) => (EXZ z R(z))]
+-o res/r21.dot
+(EXZ x (p => F(x))) & (EXZ x (F(x)=> p)) => (EXZ x (p <=> F(x)))
+-o res/r22.dot
+[ALL x (p == F(x))] => (p == (ALL x F(x)))
+-o res/r23.dot
+[ALL x (p OR F(x))] == [p OR (ALL x F(x))]
+-o res/r28.dot
+[ALL x (P(x) => ALL y Q(y))] & [(ALL x (Q(x) OR R(x))) => (EXZ x (Q(x) & S(x)))] & [(EXZ x S(x)) => (ALL x(F(x)=>G(x)))] => (ALL x (P(x) & F(x) => G(x)))
+-o res/r30.dot
+(ALL x (F(x) OR G(x) => !H(x)))&(ALL x((G(x) => !I(x)) => F(x)&H(x))) => (ALL x I(x))
+-o res/r31.dot
+!(EXZ x(F(x) & (G(x) OR H(x)))) & (EXZ x(I(x) & F(x))) & (ALL x(!H(x) => J(x))) => (EXZ x(I(x) & J(x)))
+-o res/r32.dot
+(ALL x (F(x) & (G(x) OR H(x)) => I(x)))&[ALL x (I(x)&H(x) => J(x))]&(ALL x(K(x)=>H(x))) => (ALL x(F(x) & K(x) => J(x)))
+-o res/r33.dot
+[ALL x(P(_a)&(P(x)=>P(_b))=>P(_c))]==[ALL x((!P(_a) OR (P(x) OR P(_c))) & (!P(_a) OR (!P(_b) OR P(_c))))]
+-o res/r35.dot
+EXZ x (EXZ y (P(x) => ALL x (ALL y P(y)) ) )
+-o res/r36.dot
+(ALL x EXZ y F(x,y)) & (ALL x EXZ y G(x,y)) & (ALL x ALL y (F(x,y) OR G(x,y) => (ALL z (F(y,z) OR G(y,z) => H(x,z))))) => (ALL x EXZ y H(x,y))
+-o res/r37.dot
+(ALL z EXZ w ALL x EXZ y [(P(x,z)=>P(y,w))& P(y,z) &(P(y,w)=>(EXZ u Q(u,w)))]) & (ALL x ALL z (!P(x,z) => (EXZ y Q(y,z)))) & ((EXZ x EXZ y Q(x,y))  => (ALL x R(x,x))) => (ALL x EXZ y R(x,y))
+-o res/r39.dot
+!(EXZ x (ALL y (P(y,x) <=> !P(y,y))))
+-o res/r41.dot
+(ALL z EXZ y ALL x (F(x,y) == (F(x,z) & !F(x,x)))) => ! EXZ z ALL x F(x,z)
+-o res/r42.dot
+! EXZ y (ALL x ( P(x,y)<=> ! EXZ z (P(x,z)&P(z,x)) ) )
+-o res/r50.dot
+(ALL x [P(_a,x) OR (ALL y P(x,y))]) => (EXZ x (ALL y P(x,y)))
+-o res/r57.dot
+F(G(_a,_b),G(_b,_c)) & F(G(_b,_c),G(_a,_c)) & (ALL x ALL y ALL z [(F(x,y) & F(y,z)) => F(x,z)]) => F(G(_a,_b),G(_a,_c))
+-o res/r62.dot
+[ALL x(F(_a) & (F(x)=>F(G(x))) => F(G(G(x))) )] == ALL x [[!F(_a) OR F(x) OR F(G(G(x)))] & [!F(_a) OR !F(G(x)) OR F(G(G(x)))]]

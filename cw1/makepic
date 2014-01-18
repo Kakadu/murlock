@@ -1,0 +1,4 @@
+./getpic2
+sort -k 3 -n < .gnuplot.data | nl > picture.in
+gnuplot < gnuplot.in && epstopdf image1.eps
+okular image1.pdf

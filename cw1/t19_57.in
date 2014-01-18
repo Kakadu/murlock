@@ -1,0 +1,1 @@
+F(G(_a,_b),G(_b,_c)) & F(G(_b,_c),G(_a,_c)) & (ALL x ALL y ALL z [(F(x,y) & F(y,z)) => F(x,z)]) => F(G(_a,_b),G(_a,_c))

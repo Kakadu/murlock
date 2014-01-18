@@ -1,0 +1,211 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	92 [label="__t2 => w1\n"]
+	91 [label="__t2 => w1\n"]
+	90 [label="__t2 => w1\n"]
+	89 [label="__t2 => w1\n"]
+	88 [label="__t2 => w1\n"]
+	87 [label="__t2 => w1\n"]
+	86 [label="__t2 => w1\n"]
+	85 [label="__t2 => w1\n"]
+	84 [label="__t1 => w2\n"]
+	83 [label="__t1 => w2\n"]
+	82 [label="__t1 => w2\n"]
+	81 [label="__t1 => w2\n"]
+	80 [label="axiom"]
+	79 [shape=record,label="{<seq> F(__t2), F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(_a), F(G(G(w1))), F(w1) |<lastfip>  }"];
+	79 -> 80 [label=""]
+	subgraph cluster2 {
+		78 [shape=record,label="{<seq> F(__t2), F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(__t2)), F(G(G(w1))), F(w1) |<lastfip>  }"];
+	}
+	78 -> 90 [label=""]
+	77 [label="axiom"]
+	76 [shape=record,label="{<seq> F(__t2), F(_a), F(G(w1)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(_a), F(G(G(w1))) |<lastfip>  }"];
+	76 -> 77 [label=""]
+	subgraph cluster2 {
+		75 [shape=record,label="{<seq> F(__t2), F(_a), F(G(w1)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(__t2)), F(G(G(w1))) |<lastfip>  }"];
+	}
+	75 -> 86 [label=""]
+	subgraph cluster2 {
+		74 [shape=record,label="{<seq> F(__t1), F(G(w2)), F(_a),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(G(__t1)), F(G(G(w2))) |<lastfip>  }"];
+	}
+	74 -> 84 [label=""]
+	73 [label="axiom"]
+	72 [shape=record,label="{<seq> F(G(G(__t2))), F(G(w1)), F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(_a), F(G(G(w1))) |<lastfip>  }"];
+	72 -> 73 [label=""]
+	71 [label="axiom"]
+	70 [shape=record,label="{<seq> F(G(w1)), F(_a), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(_a), F(G(G(w1))) |<lastfip>  }"];
+	70 -> 71 [label=""]
+	69 [shape=record,label="{<seq> F(G(w1)), F(_a), F(__t2), !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(G(__t2)) --\> }"];
+	69 -> 75 [label="!->"]
+	68 [shape=record,label="{<seq> F(G(w1)), F(_a), F(__t2), !F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(_a) --\> }"];
+	68 -> 76 [label="!->"]
+	67 [label="axiom"]
+	66 [shape=record,label="{<seq> F(G(w1)), F(_a), F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(_a), F(G(G(w1))) |<lastfip>  }"];
+	66 -> 67 [label=""]
+	subgraph cluster2 {
+		65 [shape=record,label="{<seq> F(G(w1)), F(_a), F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(__t2)), F(G(G(w1))) |<lastfip>  }"];
+	}
+	65 -> 88 [label=""]
+	64 [label="axiom"]
+	63 [shape=record,label="{<seq> F(G(G(__t2))), F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(_a), F(w1), F(G(G(w1))) |<lastfip>  }"];
+	63 -> 64 [label=""]
+	62 [label="axiom"]
+	61 [shape=record,label="{<seq> F(_a), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(_a), F(w1), F(G(G(w1))) |<lastfip>  }"];
+	61 -> 62 [label=""]
+	60 [shape=record,label="{<seq> F(_a), F(__t2), !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(w1), F(G(G(w1))) |<lastfip> !F(G(__t2)) --\> }"];
+	60 -> 78 [label="!->"]
+	59 [shape=record,label="{<seq> F(_a), F(__t2), !F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(w1), F(G(G(w1))) |<lastfip> !F(_a) --\> }"];
+	59 -> 79 [label="!->"]
+	58 [label="axiom"]
+	57 [shape=record,label="{<seq> F(_a), F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(_a), F(w1), F(G(G(w1))) |<lastfip>  }"];
+	57 -> 58 [label=""]
+	subgraph cluster2 {
+		56 [shape=record,label="{<seq> F(_a), F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(__t2)), F(w1), F(G(G(w1))) |<lastfip>  }"];
+	}
+	56 -> 92 [label=""]
+	55 [shape=record,label="{<seq> F(G(G(__t2))), F(_a), !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))), F(w1) |<lastfip> !F(G(__t2)) --\> }"];
+	55 -> 56 [label="!->"]
+	54 [shape=record,label="{<seq> F(G(G(__t2))), F(_a), !F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))), F(w1) |<lastfip> !F(_a) --\> }"];
+	54 -> 57 [label="!->"]
+	53 [shape=record,label="{<seq> F(__t2), F(_a), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))), F(w1) |<lastfip> !F(_a) OR !F(G(__t2)) --\> }"];
+	53 -> 60 [label="OR->"]
+	53 -> 59 [label="OR->"]
+	52 [shape=record,label="{<seq> F(_a), !F(_a), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))), F(w1) |<lastfip> !F(_a) --\> }"];
+	52 -> 61 [label="!->"]
+	subgraph cluster2 {
+		51 [shape=record,label="{<seq> F(__t2), F(_a), F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))), F(w1) |<lastfip>  }"];
+	}
+	51 -> 89 [label=""]
+	50 [shape=record,label="{<seq> F(_a), F(G(G(__t2))), !F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))), F(w1) |<lastfip> !F(_a) --\> }"];
+	50 -> 63 [label="!->"]
+	49 [shape=record,label="{<seq> F(G(G(__t2))), F(_a), F(G(w1)), !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(G(__t2)) --\> }"];
+	49 -> 65 [label="!->"]
+	48 [shape=record,label="{<seq> F(G(G(__t2))), F(_a), F(G(w1)), !F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(_a) --\> }"];
+	48 -> 66 [label="!->"]
+	47 [shape=record,label="{<seq> F(__t2), F(_a), F(G(w1)), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(_a) OR !F(G(__t2)) --\> }"];
+	47 -> 69 [label="OR->"]
+	47 -> 68 [label="OR->"]
+	46 [shape=record,label="{<seq> F(_a), F(G(w1)), !F(_a), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(_a) --\> }"];
+	46 -> 70 [label="!->"]
+	subgraph cluster2 {
+		45 [shape=record,label="{<seq> F(__t2), F(_a), F(G(w1)), F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip>  }"];
+	}
+	45 -> 85 [label=""]
+	44 [shape=record,label="{<seq> F(_a), F(G(w1)), F(G(G(__t2))), !F(_a),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(_a) --\> }"];
+	44 -> 72 [label="!->"]
+	43 [label="axiom"]
+	42 [shape=record,label="{<seq> F(_a), F(G(w2)),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) --\>F(G(G(w2))), F(__t1) =\> F(G(__t1)) |<lastfip> --\> F(__t1) =\> F(G(__t1)) }"];
+	42 -> 74 [label="->=>"]
+	41 [shape=record,label="{<seq> F(_a), F(G(w2)),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) --\>F(_a), F(G(G(w2))) |<lastfip>  }"];
+	41 -> 43 [label=""]
+	subgraph cluster2 {
+		40 [shape=record,label="{<seq> F(__t1), F(_a),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) --\>F(G(__t1)), F(w2), F(G(G(w2))) |<lastfip>  }"];
+	}
+	40 -> 81 [label=""]
+	39 [label="axiom"]
+	38 [shape=record,label="{<seq> F(_a),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) --\>F(G(G(w2))), F(w2), F(__t1) =\> F(G(__t1)) |<lastfip> --\> F(__t1) =\> F(G(__t1)) }"];
+	38 -> 40 [label="->=>"]
+	37 [shape=record,label="{<seq> F(_a),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) --\>F(_a), F(G(G(w2))), F(w2) |<lastfip>  }"];
+	37 -> 39 [label=""]
+	subgraph cluster2 {
+		36 [shape=record,label="{<seq> F(G(G(__t1))), F(G(w2)), F(_a),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(G(G(w2))) |<lastfip>  }"];
+	}
+	36 -> 83 [label=""]
+	35 [shape=record,label="{<seq> F(G(w2)), F(_a),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) --\>F(G(G(w2))), F(_a) & (F(__t1) =\> F(G(__t1))) |<lastfip> --\> F(_a) & (F(__t1) =\> F(G(__t1))) }"];
+	35 -> 42 [label="->&"]
+	35 -> 41 [label="->&"]
+	34 [shape=record,label="{<seq> F(G(G(__t2))), F(G(w1)), F(_a), !F(_a) OR F(__t2),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(_a) OR F(__t2) --\> }"];
+	34 -> 45 [label="OR->"]
+	34 -> 44 [label="OR->"]
+	33 [shape=record,label="{<seq> F(G(w1)), F(_a), !F(_a) OR F(__t2), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(_a) OR F(__t2) --\> }"];
+	33 -> 47 [label="OR->"]
+	33 -> 46 [label="OR->"]
+	subgraph cluster2 {
+		32 [shape=record,label="{<seq> F(G(G(__t2))), F(G(w1)), F(_a), F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip>  }"];
+	}
+	32 -> 87 [label=""]
+	31 [shape=record,label="{<seq> F(G(w1)), F(_a), F(G(G(__t2))), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> !F(_a) OR !F(G(__t2)) --\> }"];
+	31 -> 49 [label="OR->"]
+	31 -> 48 [label="OR->"]
+	30 [shape=record,label="{<seq> F(G(G(__t2))), F(_a), !F(_a) OR F(__t2),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(w1), F(G(G(w1))) |<lastfip> !F(_a) OR F(__t2) --\> }"];
+	30 -> 51 [label="OR->"]
+	30 -> 50 [label="OR->"]
+	29 [shape=record,label="{<seq> F(_a), !F(_a) OR F(__t2), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(w1), F(G(G(w1))) |<lastfip> !F(_a) OR F(__t2) --\> }"];
+	29 -> 53 [label="OR->"]
+	29 -> 52 [label="OR->"]
+	subgraph cluster2 {
+		28 [shape=record,label="{<seq> F(G(G(__t2))), F(_a), F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(w1), F(G(G(w1))) |<lastfip>  }"];
+	}
+	28 -> 91 [label=""]
+	27 [shape=record,label="{<seq> F(_a), F(G(G(__t2))), !F(_a) OR !F(G(__t2)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(w1), F(G(G(w1))) |<lastfip> !F(_a) OR !F(G(__t2)) --\> }"];
+	27 -> 55 [label="OR->"]
+	27 -> 54 [label="OR->"]
+	26 [shape=record,label="{<seq> F(G(G(__t2))), F(_a), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))), F(w1) |<lastfip> (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))) --\> }"];
+	26 -> 28 [label="OR->"]
+	26 -> 27 [label="OR->"]
+	25 [shape=record,label="{<seq> F(_a), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))), !F(_a) OR F(__t2),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))), F(w1) |<lastfip> (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))) --\> }"];
+	25 -> 30 [label="OR->"]
+	25 -> 29 [label="OR->"]
+	24 [shape=record,label="{<seq> F(G(G(__t2))), F(_a), F(G(w1)), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))) --\> }"];
+	24 -> 32 [label="OR->"]
+	24 -> 31 [label="OR->"]
+	23 [shape=record,label="{<seq> F(_a), F(G(w1)), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))), !F(_a) OR F(__t2),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))) --\> }"];
+	23 -> 34 [label="OR->"]
+	23 -> 33 [label="OR->"]
+	22 [shape=record,label="{<seq> F(_a), F(G(w2)), (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(G(G(w2))) |<lastfip> (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))) --\> }"];
+	22 -> 36 [label="=>->"]
+	22 -> 35 [label="=>->"]
+	subgraph cluster2 {
+		21 [shape=record,label="{<seq> F(G(G(__t1))), F(_a),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(w2), F(G(G(w2))) |<lastfip>  }"];
+	}
+	21 -> 82 [label=""]
+	20 [shape=record,label="{<seq> F(_a),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) --\>F(w2), F(G(G(w2))), F(_a) & (F(__t1) =\> F(G(__t1))) |<lastfip> --\> F(_a) & (F(__t1) =\> F(G(__t1))) }"];
+	20 -> 38 [label="->&"]
+	20 -> 37 [label="->&"]
+	19 [shape=record,label="{<seq> F(_a), (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(G(G(w2))), F(w2) |<lastfip> (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))) --\> }"];
+	19 -> 21 [label="=>->"]
+	19 -> 20 [label="=>->"]
+	18 [shape=record,label="{<seq> F(G(w2)), (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(G(G(w2))), !F(_a) |<lastfip> --\> !F(_a) }"];
+	18 -> 22 [label="->!"]
+	17 [shape=record,label="{<seq> F(G(w1)), F(_a), (!F(_a) OR F(__t2)) OR F(G(G(__t2))), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> (!F(_a) OR F(__t2)) OR F(G(G(__t2))) --\> }"];
+	17 -> 24 [label="OR->"]
+	17 -> 23 [label="OR->"]
+	16 [shape=record,label="{<seq> F(_a), (!F(_a) OR F(__t2)) OR F(G(G(__t2))), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(w1), F(G(G(w1))) |<lastfip> (!F(_a) OR F(__t2)) OR F(G(G(__t2))) --\> }"];
+	16 -> 26 [label="OR->"]
+	16 -> 25 [label="OR->"]
+	15 [shape=record,label="{<seq> F(_a), F(w1) =\> F(G(w1)), (!F(_a) OR !F(G(__t2))) OR F(G(G(__t2))), (!F(_a) OR F(__t2)) OR F(G(G(__t2))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> F(w1) =\> F(G(w1)) --\> }"];
+	15 -> 17 [label="=>->"]
+	15 -> 16 [label="=>->"]
+	14 [shape=record,label="{<seq> (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(G(G(w2))), !F(G(w2)), !F(_a) |<lastfip> --\> !F(G(w2)) }"];
+	14 -> 18 [label="->!"]
+	13 [shape=record,label="{<seq> (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(w2), F(G(G(w2))), !F(_a) |<lastfip> --\> !F(_a) }"];
+	13 -> 19 [label="->!"]
+	12 [shape=record,label="{<seq> F(_a), ((!F(_a) OR F(__t2)) OR F(G(G(__t2)))) & ((!F(_a) OR !F(G(__t2))) OR F(G(G(__t2)))), F(w1) =\> F(G(w1)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> ((!F(_a) OR F(__t2)) OR F(G(G(__t2)))) & ((!F(_a) OR !F(G(__t2))) OR F(G(G(__t2)))) --\> }"];
+	12 -> 15 [label="&->"]
+	11 [shape=record,label="{<seq> F(_a), F(w1) =\> F(G(w1)),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip>  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) --\> }"];
+	11 -> 12 [label="ALL -->"]
+	10 [shape=record,label="{<seq> (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(G(G(w2))), !F(_a) OR F(w2) |<lastfip> --\> !F(_a) OR F(w2) }"];
+	10 -> 13 [label="->OR"]
+	9 [shape=record,label="{<seq> (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\nF(G(G(w2))), !F(_a) OR !F(G(w2)) |<lastfip> --\> !F(_a) OR !F(G(w2)) }"];
+	9 -> 14 [label="->OR"]
+	8 [shape=record,label="{<seq> (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\n(!F(_a) OR !F(G(w2))) OR F(G(G(w2))) |<lastfip> --\> (!F(_a) OR !F(G(w2))) OR F(G(G(w2))) }"];
+	8 -> 9 [label="->OR"]
+	7 [shape=record,label="{<seq> (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\n(!F(_a) OR F(w2)) OR F(G(G(w2))) |<lastfip> --\> (!F(_a) OR F(w2)) OR F(G(G(w2))) }"];
+	7 -> 10 [label="->OR"]
+	6 [shape=record,label="{<seq> F(_a) & (F(w1) =\> F(G(w1))),  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\nF(G(G(w1))) |<lastfip> F(_a) & (F(w1) =\> F(G(w1))) --\> }"];
+	6 -> 11 [label="&->"]
+	5 [shape=record,label="{<seq> (F(_a) & (F(__t1) =\> F(G(__t1)))) =\> F(G(G(__t1))),  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\n((!F(_a) OR F(w2)) OR F(G(G(w2)))) & ((!F(_a) OR !F(G(w2))) OR F(G(G(w2)))) |<lastfip> --\> ((!F(_a) OR F(w2)) OR F(G(G(w2)))) & ((!F(_a) OR !F(G(w2))) OR F(G(G(w2)))) }"];
+	5 -> 8 [label="->&"]
+	5 -> 7 [label="->&"]
+	4 [shape=record,label="{<seq>  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\n((!F(_a) OR F(w2)) OR F(G(G(w2)))) & ((!F(_a) OR !F(G(w2))) OR F(G(G(w2)))) |<lastfip>  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) --\> }"];
+	4 -> 5 [label="ALL -->"]
+	3 [shape=record,label="{<seq>  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\n(F(_a) & (F(w1) =\> F(G(w1)))) =\> F(G(G(w1))) |<lastfip> --\> (F(_a) & (F(w1) =\> F(G(w1)))) =\> F(G(G(w1))) }"];
+	3 -> 6 [label="->=>"]
+	2 [shape=record,label="{<seq>  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) \n--\>\n ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) |<lastfip> --\>  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) }"];
+	2 -> 3 [label="-->ALL"]
+	1 [shape=record,label="{<seq>  ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x)))) \n--\>\n ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) |<lastfip> --\>  ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x))))) }"];
+	1 -> 4 [label="-->ALL"]
+	0 [shape=record,label="{<seq>  \n--\>\n( ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x))))) == ( ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x)))))) |<lastfip> --\> ( ALL x ((F(_a) & (F(x) =\> F(G(x)))) =\> F(G(G(x))))) == ( ALL x (((!F(_a) OR F(x)) OR F(G(G(x)))) & ((!F(_a) OR !F(G(x))) OR F(G(G(x)))))) }"];
+	0 -> 2 [label="->=="]
+	0 -> 1 [label="->=="]
+}

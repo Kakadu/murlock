@@ -1,0 +1,101 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	45 [label="__t1 => w1\n"]
+	44 [label="__t3 => w2\n__t1 => w1\n"]
+	43 [label="__t2 => w2\n__t1 => w1\n"]
+	42 [label="__t1 => w1\n"]
+	41 [label="5"]
+	40 [label="5"]
+	39 [label="5"]
+	38 [label="5"]
+	37 [shape=record,label="{<seq> F(w2), F(__t1) --\>p, F(w1), p == F(__t4),  EXZ x (p == F(x)) |<lastfip>  }"];
+	37 -> 38 [label=""]
+	37 -> 42 [label=""]
+	36 [label="axiom"]
+	35 [shape=record,label="{<seq> F(__t3), p, p, F(w2) --\>p, F(__t1),  EXZ x (p == F(x)) |<lastfip>  }"];
+	35 -> 36 [label=""]
+	34 [shape=record,label="{<seq> p, p, p, F(w2) --\>F(__t3), F(__t1),  EXZ x (p == F(x)) |<lastfip>  }"];
+	34 -> 40 [label=""]
+	34 -> 44 [label=""]
+	33 [label="4"]
+	32 [label="4"]
+	31 [label="4"]
+	30 [label="4"]
+	29 [shape=record,label="{<seq> F(w2), p, p --\>F(__t1), p == F(__t3),  EXZ x (p == F(x)) |<lastfip> --\> p == F(__t3) }"];
+	29 -> 35 [label="->=="]
+	29 -> 34 [label="->=="]
+	29 -> 30 [label="->=="]
+	28 [label="axiom"]
+	27 [shape=record,label="{<seq> F(__t2), p, F(w2) --\>p, F(w1), F(__t1),  EXZ x (p == F(x)) |<lastfip>  }"];
+	27 -> 28 [label=""]
+	26 [shape=record,label="{<seq> p, p, F(w2) --\>F(__t2), F(w1), F(__t1),  EXZ x (p == F(x)) |<lastfip>  }"];
+	26 -> 39 [label=""]
+	26 -> 31 [label=""]
+	26 -> 43 [label=""]
+	25 [label="3"]
+	24 [label="3"]
+	23 [label="3"]
+	22 [label="3"]
+	21 [shape=record,label="{<seq> F(w2), p --\>F(__t1), F(w1), p == F(__t2),  EXZ x (p == F(x)) |<lastfip> --\> p == F(__t2) }"];
+	21 -> 27 [label="->=="]
+	21 -> 26 [label="->=="]
+	21 -> 22 [label="->=="]
+	20 [label="axiom"]
+	19 [shape=record,label="{<seq> p, F(__t1) --\>p, p,  EXZ x (p == F(x)) |<lastfip>  }"];
+	19 -> 20 [label=""]
+	subgraph cluster2 {
+		18 [shape=record,label="{<seq> F(__t1) --\>F(w1), p, p,  EXZ x (p == F(x)) |<lastfip>  }"];
+	}
+	18 -> 41 [label=""]
+	18 -> 33 [label=""]
+	18 -> 25 [label=""]
+	18 -> 45 [label=""]
+	17 [label="axiom"]
+	16 [shape=record,label="{<seq> p, F(__t1), F(w2) --\>p,  EXZ x (p == F(x)) |<lastfip>  }"];
+	16 -> 17 [label=""]
+	subgraph cluster2 {
+		15 [shape=record,label="{<seq> F(__t1), F(w2) --\>F(w1), p,  EXZ x (p == F(x)) |<lastfip> --\>  EXZ x (p == F(x)) }"];
+	}
+	15 -> 37 [label="--> EXZ"]
+	15 -> 32 [label="--> EXZ"]
+	15 -> 24 [label="--> EXZ"]
+	subgraph cluster2 {
+		14 [shape=record,label="{<seq> p, p, F(w2) --\>F(__t1),  EXZ x (p == F(x)) |<lastfip> --\>  EXZ x (p == F(x)) }"];
+	}
+	14 -> 29 [label="--> EXZ"]
+	14 -> 23 [label="--> EXZ"]
+	subgraph cluster2 {
+		13 [shape=record,label="{<seq> p, F(w2) --\>F(w1), F(__t1),  EXZ x (p == F(x)) |<lastfip> --\>  EXZ x (p == F(x)) }"];
+	}
+	13 -> 21 [label="--> EXZ"]
+	12 [label="axiom"]
+	11 [shape=record,label="{<seq> F(w2), p, F(w1) =\> p --\>F(__t1),  EXZ x (p == F(x)) |<lastfip> F(w1) =\> p --\> }"];
+	11 -> 14 [label="=>->"]
+	11 -> 13 [label="=>->"]
+	10 [shape=record,label="{<seq> p, F(w1) =\> p --\>p, F(__t1),  EXZ x (p == F(x)) |<lastfip>  }"];
+	10 -> 12 [label=""]
+	9 [shape=record,label="{<seq> F(w2), F(__t1), F(w1) =\> p --\>p,  EXZ x (p == F(x)) |<lastfip> F(w1) =\> p --\> }"];
+	9 -> 16 [label="=>->"]
+	9 -> 15 [label="=>->"]
+	8 [shape=record,label="{<seq> F(__t1), F(w1) =\> p --\>p, p,  EXZ x (p == F(x)) |<lastfip> F(w1) =\> p --\> }"];
+	8 -> 19 [label="=>->"]
+	8 -> 18 [label="=>->"]
+	7 [shape=record,label="{<seq> F(__t1), p =\> F(w2), F(w1) =\> p --\>p,  EXZ x (p == F(x)) |<lastfip> p =\> F(w2) --\> }"];
+	7 -> 9 [label="=>->"]
+	7 -> 8 [label="=>->"]
+	6 [shape=record,label="{<seq> p, p =\> F(w2), F(w1) =\> p --\>F(__t1),  EXZ x (p == F(x)) |<lastfip> p =\> F(w2) --\> }"];
+	6 -> 11 [label="=>->"]
+	6 -> 10 [label="=>->"]
+	5 [shape=record,label="{<seq> F(w1) =\> p, p =\> F(w2) --\>p == F(__t1),  EXZ x (p == F(x)) |<lastfip> --\> p == F(__t1) }"];
+	5 -> 7 [label="->=="]
+	5 -> 6 [label="->=="]
+	4 [shape=record,label="{<seq> p =\> F(w2), F(w1) =\> p --\> EXZ x (p == F(x)) |<lastfip> --\>  EXZ x (p == F(x)) }"];
+	4 -> 5 [label="--> EXZ"]
+	3 [shape=record,label="{<seq> F(w1) =\> p,  EXZ x (p =\> F(x)) --\> EXZ x (p == F(x)) |<lastfip>  EXZ x (p =\> F(x)) --\> }"];
+	3 -> 4 [label="EXZ-->"]
+	2 [shape=record,label="{<seq>  EXZ x (F(x) =\> p),  EXZ x (p =\> F(x)) --\> EXZ x (p == F(x)) |<lastfip>  EXZ x (F(x) =\> p) --\> }"];
+	2 -> 3 [label="EXZ-->"]
+	1 [shape=record,label="{<seq> ( EXZ x (p =\> F(x))) & ( EXZ x (F(x) =\> p)) --\> EXZ x (p == F(x)) |<lastfip> ( EXZ x (p =\> F(x))) & ( EXZ x (F(x) =\> p)) --\> }"];
+	1 -> 2 [label="&->"]
+	0 [shape=record,label="{<seq>  --\>(( EXZ x (p =\> F(x))) & ( EXZ x (F(x) =\> p))) =\> ( EXZ x (p == F(x))) |<lastfip> --\> (( EXZ x (p =\> F(x))) & ( EXZ x (F(x) =\> p))) =\> ( EXZ x (p == F(x))) }"];
+	0 -> 1 [label="->=>"]
+}

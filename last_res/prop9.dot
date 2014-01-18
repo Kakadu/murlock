@@ -1,0 +1,95 @@
+digraph X {
+legend [shape=box,label="LEGEND:\n__[a-z][a-z0-9] are MetaVars\n[a-z][a-z0-9] are SubjVars or LogVars\n[A-Z] are names of Predicates or FuncSymbols\n&=AND, OR, !=NOT is negotiation\n=> implication, == equevalence\nALL - quantifier of generality, EXZ is auantifier of existence"];	46 [label="Proving succeded"]
+	46 -> 0
+	45 [label="axiom"]
+	44 [label="axiom"]
+	43 [shape=record,label="{<seq> q --\>q, q, p |<lastfip>  }"];
+	43 -> 44 [label=""]
+	42 [shape=record,label="{<seq> p --\>q, q, p |<lastfip>  }"];
+	42 -> 45 [label=""]
+	41 [label="axiom"]
+	40 [label="axiom"]
+	39 [shape=record,label="{<seq> q --\>q, p, p |<lastfip>  }"];
+	39 -> 40 [label=""]
+	38 [shape=record,label="{<seq> p --\>q, p, p |<lastfip>  }"];
+	38 -> 41 [label=""]
+	37 [label="axiom"]
+	36 [shape=record,label="{<seq> p, p --\>p, q |<lastfip>  }"];
+	36 -> 37 [label=""]
+	35 [shape=record,label="{<seq> p OR q --\>p, p, q |<lastfip> p OR q --\> }"];
+	35 -> 39 [label="OR->"]
+	35 -> 38 [label="OR->"]
+	34 [shape=record,label="{<seq> p OR q --\>p, q, q |<lastfip> p OR q --\> }"];
+	34 -> 43 [label="OR->"]
+	34 -> 42 [label="OR->"]
+	33 [label="axiom"]
+	32 [shape=record,label="{<seq> q, p OR q --\>q, q |<lastfip>  }"];
+	32 -> 33 [label=""]
+	31 [shape=record,label="{<seq> !p, p OR q --\>q, q |<lastfip> !p --\> }"];
+	31 -> 34 [label="!->"]
+	30 [label="axiom"]
+	29 [shape=record,label="{<seq> q, p OR q --\>q, p |<lastfip>  }"];
+	29 -> 30 [label=""]
+	28 [shape=record,label="{<seq> !p, p OR q --\>q, p |<lastfip> !p --\> }"];
+	28 -> 35 [label="!->"]
+	27 [label="axiom"]
+	26 [shape=record,label="{<seq> q, p, p --\>q |<lastfip>  }"];
+	26 -> 27 [label=""]
+	25 [shape=record,label="{<seq> p, p, !p --\>q |<lastfip> !p --\> }"];
+	25 -> 36 [label="!->"]
+	24 [label="axiom"]
+	23 [shape=record,label="{<seq> q, p, !p OR q --\>p |<lastfip>  }"];
+	23 -> 24 [label=""]
+	22 [label="axiom"]
+	21 [shape=record,label="{<seq> q, p, !p OR q --\>q |<lastfip>  }"];
+	21 -> 22 [label=""]
+	20 [label="axiom"]
+	19 [shape=record,label="{<seq> p, p, !p OR q --\>p |<lastfip>  }"];
+	19 -> 20 [label=""]
+	18 [shape=record,label="{<seq> p, p, !p OR q --\>q |<lastfip> !p OR q --\> }"];
+	18 -> 26 [label="OR->"]
+	18 -> 25 [label="OR->"]
+	17 [shape=record,label="{<seq> !p OR q, p OR q --\>p, q |<lastfip> !p OR q --\> }"];
+	17 -> 29 [label="OR->"]
+	17 -> 28 [label="OR->"]
+	16 [shape=record,label="{<seq> !p OR q, p OR q --\>q, q |<lastfip> !p OR q --\> }"];
+	16 -> 32 [label="OR->"]
+	16 -> 31 [label="OR->"]
+	15 [shape=record,label="{<seq> !q, p OR q, !p OR q --\>q |<lastfip> !q --\> }"];
+	15 -> 16 [label="!->"]
+	14 [shape=record,label="{<seq> !p, p OR q, !p OR q --\>q |<lastfip> !p --\> }"];
+	14 -> 17 [label="!->"]
+	13 [shape=record,label="{<seq> p, p, !q, !p OR q --\> |<lastfip> !q --\> }"];
+	13 -> 18 [label="!->"]
+	12 [shape=record,label="{<seq> p, p, !p, !p OR q --\> |<lastfip> !p --\> }"];
+	12 -> 19 [label="!->"]
+	11 [shape=record,label="{<seq> p, q, !q, !p OR q --\> |<lastfip> !q --\> }"];
+	11 -> 21 [label="!->"]
+	10 [shape=record,label="{<seq> p, q, !p, !p OR q --\> |<lastfip> !p --\> }"];
+	10 -> 23 [label="!->"]
+	9 [shape=record,label="{<seq> q, p, !p OR !q, !p OR q --\> |<lastfip> !p OR !q --\> }"];
+	9 -> 11 [label="OR->"]
+	9 -> 10 [label="OR->"]
+	8 [shape=record,label="{<seq> p, p, !p OR !q, !p OR q --\> |<lastfip> !p OR !q --\> }"];
+	8 -> 13 [label="OR->"]
+	8 -> 12 [label="OR->"]
+	7 [shape=record,label="{<seq> !p OR !q, !p OR q, p OR q --\>q |<lastfip> !p OR !q --\> }"];
+	7 -> 15 [label="OR->"]
+	7 -> 14 [label="OR->"]
+	6 [shape=record,label="{<seq> !q, p OR q, !p OR q, !p OR !q --\> |<lastfip> !q --\> }"];
+	6 -> 7 [label="!->"]
+	5 [shape=record,label="{<seq> p, p OR q, !p OR q, !p OR !q --\> |<lastfip> p OR q --\> }"];
+	5 -> 9 [label="OR->"]
+	5 -> 8 [label="OR->"]
+	4 [shape=record,label="{<seq> p OR !q, !p OR !q, !p OR q, p OR q --\> |<lastfip> p OR !q --\> }"];
+	4 -> 6 [label="OR->"]
+	4 -> 5 [label="OR->"]
+	3 [shape=record,label="{<seq> (p OR q) & (!p OR q), !p OR !q, p OR !q --\> |<lastfip> (p OR q) & (!p OR q) --\> }"];
+	3 -> 4 [label="&->"]
+	2 [shape=record,label="{<seq> ((p OR q) & (!p OR q)) & (p OR !q), !p OR !q --\> |<lastfip> ((p OR q) & (!p OR q)) & (p OR !q) --\> }"];
+	2 -> 3 [label="&->"]
+	1 [shape=record,label="{<seq> ((p OR q) & (!p OR q)) & (p OR !q) --\>!(!p OR !q) |<lastfip> --\> !(!p OR !q) }"];
+	1 -> 2 [label="->!"]
+	0 [shape=record,label="{<seq>  --\>(((p OR q) & (!p OR q)) & (p OR !q)) =\> !(!p OR !q) |<lastfip> --\> (((p OR q) & (!p OR q)) & (p OR !q)) =\> !(!p OR !q) }"];
+	0 -> 1 [label="->=>"]
+}
